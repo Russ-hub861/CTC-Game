@@ -5,36 +5,38 @@
 
 **Working Title:**  
 
-**Genre:**  
+**Genre: Rougelike, Strategy RPG, Action Adventure**  
 
-**Platform(s):**  
+**Platform(s): Windows/MacOS**  
 
 **Elevator Pitch (1–2 sentences):** 
 
-**Target Audience:** 
+**Target Audience: For Everyone** 
 
 
 ---
 
 ## 2. Core Loop
 
-*Describe the main repeating cycle of your game (what the player does over and over)*:
+*Describe the main repeating cycle of your game (what the player does over and over)*: 
+**Go into dungeon -> fight enemies -> collect loot -> upgrade character-> die/getout 
+**
 
 ---
 
 ## 3. Game Mechanics
 
-**Player Actions (What can the player do?):**
+**Player Actions (What can the player do?): Move left, right, turn around, attack, block, heal**
 
-**Interactions (How do players interact with the game or characters? Controls setup?):**
+**Interactions (How do players interact with the game or characters? Controls setup?): Open chest?, buying weapons, buying moves, buying upgrades, move on to next room, selling weapons and moves**
 
-**Rules (What constraints or systems define the gameplay?):**
+**Rules (What constraints or systems define the gameplay?): You can only do one action per turn, once your health runs out game over**
 
-**Progression (How does your game increase in difficulty or complexity?):**
+**Progression (How does your game increase in difficulty or complexity?): Your character starts with 2 moves and you slowly improve your character and get more moves as you progress through the dungeon. Along the way you can buy new items or materials from the Embassy and find new moves, health, items/powerups. Enemies become stronger as you progress**
 
-**Rewards (How does your game reward the players after completing tasks or in the gameplay? What kind of reward system do you envision?):**
+**Rewards (How does your game reward the players after completing tasks or in the gameplay? What kind of reward system do you envision?): Progression based on how far into the dungeon you've gotten**
 
-**Feedback (How does your game notifies the player? Audio-visual cues? Progress tracking via HUD? Positive/negative feedback?):**
+**Feedback (How does your game notifies the player? Audio-visual cues? Progress tracking via HUD? Positive/negative feedback?): When the player gets hit the screen shakes, different music and background for fights, pop up notifications for unlocks, and a room completion animation**
 
 ---
 
