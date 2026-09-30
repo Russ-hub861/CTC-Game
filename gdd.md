@@ -3,13 +3,13 @@
 
 ## 1. Game Concept
 
-**Working Title:**  
+**Working Title: Only Way Out is Up**  
 
 **Genre: Rougelike, Strategy RPG, Action Adventure**  
 
 **Platform(s): Windows/MacOS**  
 
-**Elevator Pitch (1–2 sentences):** 
+**Elevator Pitch (1–2 sentences): In this game you play as a villager who went exploring and ended up trapped in a dungeon with no way out even through death. You must fight, get stronger, and find your way out to get back to your dog at home. ** 
 
 **Target Audience: For Everyone** 
 
@@ -19,8 +19,8 @@
 ## 2. Core Loop
 
 *Describe the main repeating cycle of your game (what the player does over and over)*: 
-**Go into dungeon -> fight enemies -> collect loot -> upgrade character-> die/getout 
-**
+Go into dungeon -> fight enemies -> collect loot -> upgrade character-> die/getout 
+
 
 ---
 
