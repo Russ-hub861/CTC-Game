@@ -46,7 +46,8 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 ## 4. Story & Narrative *(when applicable)*
 
-**Premise (What is the story/world about?): The main character a young villager ventures into a forest and finds a cave with a shiny gem deep inside. They go further in and touch it then suddenly appear in a room deep deep underground and as they try to get out they find themselves surrounded by monsters and dies and returns back to the room they first woke up in.
+**Premise (What is the story/world about?):**
+- The main character a young villager ventures into a forest and finds a cave with a shiny gem deep inside. They go further in and touch it then suddenly appear in a room deep deep underground and as they try to get out they find themselves surrounded by monsters and dies and returns back to the room they first woke up in. Determined to get back to their dog they decide to fight their way out no matter how long it takes. 
 
 
 **Main Characters: The player**
