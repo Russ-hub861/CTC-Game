@@ -9,7 +9,7 @@
 
 **Platform(s): Windows/MacOS**  
 
-**Elevator Pitch (1–2 sentences):** 
+**Elevator Pitch:** 
 In this game you play as a villager who went exploring and ended up trapped in a dungeon with no way out even through death. You must fight, get stronger, and find your way out to get back to your dog at home.  
 
 **Target Audience: For Everyone** 
@@ -18,9 +18,12 @@ In this game you play as a villager who went exploring and ended up trapped in a
 ---
 
 ## 2. Core Loop
-
-*Describe the main repeating cycle of your game (what the player does over and over)*: 
-Go into dungeon -> fight enemies -> collect loot -> upgrade character-> die/getout 
+ 
+Go into dungeon - pick your class and begin your journey out the dungeon
+-> fight enemies - Fight enemies along the way who get stronger closer to the top 
+-> collect loot - Find better items and materials to buy, sell, or equip
+-> upgrade character - Use the items and materials you found to make your character stronger as you go 
+->die/getout - You either die and get sent back to the bottom or find your way out 
 
 
 ---
