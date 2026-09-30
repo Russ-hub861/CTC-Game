@@ -19,11 +19,11 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 ## 2. Core Loop
  
-Go into dungeon - pick your class and begin your journey out the dungeon
--> fight enemies - Fight enemies along the way who get stronger closer to the top 
--> collect loot - Find better items and materials to buy, sell, or equip
--> upgrade character - Use the items and materials you found to make your character stronger as you go 
-->die/getout - You either die and get sent back to the bottom or find your way out 
+**Go into dungeon** - pick your class and begin your journey out the dungeon
+**Fight Enemies** - Fight enemies along the way who get stronger closer to the top 
+**Collect Loot** - Find better items and materials to buy, sell, or equip
+**Ipgrade Character** - Use the items and materials you found to make your character stronger as you go 
+**Die/Getout** - You either die and get sent back to the bottom or find your way out 
 
 
 ---
