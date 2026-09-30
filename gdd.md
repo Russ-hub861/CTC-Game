@@ -60,27 +60,27 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **Setting/Theme: Fantasy medival**
 
-**Level Structure (linear, open world, hub-based?): hub-based**
+**Level Structure: hub-based**
 
-**Tutorial/Onboarding (How will players learn mechanics?): Players learn the game as they die, try and get out the dungeon, and reapeat**
+**Tutorial/Onboarding: Players learn the game as they die, try and get out the dungeon, and reapeat**
 
-**Exploration/Challenges/Puzzles (if applicable): each level is different and might have different enemies, bosses, npcs, and traps**
+**Exploration/Challenges/Puzzles: each level is different and might have different enemies, bosses, npcs, and traps**
 
 ---
 
 ## 6. Visual & Audio Style
 
-**Art Style Reference (pixel art, 3D, realistic, low poly, etc.):**
+**Art Style Reference (pixel art, 3D, realistic, low poly, etc.): pixel art**
 
-**Color Palette:**
+**Color Palette: dark shades**
 
-**Music/Audio Resources (to complement the theme of your game):**
+**Music/Audio Resources (to complement the theme of your game): Older pixel game type**
 
 ---
 
 ## 7. User Interface (UI/UX)
 
-**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.):**
+**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): **
 
 **Menus (main, pause, inventory, etc.):**
 
