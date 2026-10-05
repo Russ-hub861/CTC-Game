@@ -90,9 +90,9 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 ## 8. Technical Requirements
 
-**Engine:**
+**Engine: Godot**
 
-**Programming Language(s):**
+**Programming Language(s):GDScript**
 
 **Tools for Assets (art, sound, etc.):**
 
