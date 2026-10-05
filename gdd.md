@@ -72,7 +72,7 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **Art Style Reference (pixel art, 3D, realistic, low poly, etc.): pixel art**
 
-**Color Palette: dark shades**
+**Color Palette: dark shades, underground earthy tones to fit the trappend underground theme**
 
 **Music/Audio Resources (to complement the theme of your game): Older pixel game type**
 
@@ -80,7 +80,7 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 ## 7. User Interface (UI/UX)
 
-**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): **
+**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): health**
 
 **Menus (main, pause, inventory, etc.):**
 
