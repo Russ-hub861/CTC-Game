@@ -82,7 +82,7 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): health similar to minecraft, currency, attacks available**
 
-**Menus (main, pause, inventory, etc.):**
+**Menus (main, pause, inventory, etc.):Pause menue will include a resume button as well as a stats button that would take a player to see their current run stats, and a help button that would show the controls and basic mechanics of the game**
 
 **Accessibility Features (if any):**
 
