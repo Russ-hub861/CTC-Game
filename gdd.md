@@ -12,7 +12,7 @@
 **Elevator Pitch:** 
 In this game you play as a villager who went exploring and ended up trapped in a dungeon with no way out even through death. You must fight, get stronger, and find your way out to get back to your dog at home.  
 
-**Target Audience: For Everyone** 
+**Target Audience: For Everyone, people who enjoy the rougue like genre as well as rpg's** 
 
 
 ---
