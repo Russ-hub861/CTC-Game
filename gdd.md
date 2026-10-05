@@ -80,7 +80,7 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 ## 7. User Interface (UI/UX)
 
-**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): health**
+**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): health similar to minecraft, currency, attacks available**
 
 **Menus (main, pause, inventory, etc.):**
 
