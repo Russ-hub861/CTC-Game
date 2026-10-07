@@ -82,6 +82,10 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): **
 
+- Health shown as Hearts
+- Progress tracking a bar on the side of the screen showing how close to the surface the player is
+- 
+
 **Menus (main, pause, inventory, etc.):**
 
 **Accessibility Features (if any):**
