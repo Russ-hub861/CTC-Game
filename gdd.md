@@ -96,7 +96,7 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **Tools for Assets (art, sound, etc.):**
 
-**Deployment Platform (PC build, web, mobile, etc.):**
+**Deployment Platform (PC build, web, mobile, etc.):PC**
 
 ---
 
