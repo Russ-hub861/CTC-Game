@@ -92,11 +92,11 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **Engine: Godot**
 
-**Programming Language(s):GDScript**
+**Programming Language(s): GDScript**
 
 **Tools for Assets (art, sound, etc.):**
 
-**Deployment Platform (PC build, web, mobile, etc.):PC**
+**Deployment Platform: PC**
 
 ---
 
