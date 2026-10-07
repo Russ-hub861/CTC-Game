@@ -96,10 +96,105 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **Tools for Assets (art, sound, etc.):**
 
-**Deployment Platform (PC build, web, mobile, etc.):PC**
+**Deployment Platform: PC**
 
 ---
 
 ## 9. Development Plan 
 
-*Proposed Work Schedule: Describe here what your team will work on each week for the remainder of the term. This should function as a schedule or work plan to be followed and successfully develop your game prototype*:
+## **Week 4 – Foundation & Setup**
+
+- Finish the Game Design Document (GDD)
+- Set up and organize the main Godot project
+- Start coding and working on the actual game
+- Create a basic dungeon room using placeholder assets
+- Add the player character and begin implementing movement
+- Decide what type of backgrounds and visual style we want
+- Find sprites/assets that match the pixel-art style
+- Find possible music and sound effects
+- Brainstorm enemy types and their attacks
+- Begin planning the health system and HUD
+
+**Goal:** Have a basic dungeon environment where the player character can appear and move.
+
+## **Week 5 – Player, Combat & Enemies**
+
+- Have the basic dungeon background implemented
+- Finish basic player movement
+- Add the first enemy type
+- Implement basic player attacks
+- Implement enemy movement and attacks
+- Add a player health system
+- Start creating the HUD with hearts for health
+- Implement player death
+- Begin implementing the system that sends the player back to the bottom after dying
+- Begin working on the one-action-per-turn system
+
+**Goal:** Have a basic combat encounter where the player and an enemy can attack each other and the player can die.
+
+## **Week 6 – Core Mechanics & Progression**
+
+- Finish the death/reset system
+- Make sure the player can move, attack, block, and heal
+- Finish the basic turn/action system
+- Work out the math for player and enemy stats:
+  - Health
+  - Damage
+  - Defense/blocking
+  - Healing
+  - Different attacks
+- Create multiple dungeon rooms
+- Allow the player to progress upward between rooms
+- Add the dungeon progress bar to the HUD
+- Add basic loot or rewards after defeating enemies
+- Make enemies stronger as the player progresses
+
+**Goal:** Have the main gameplay loop working:
+
+**Fight → Win → Get Reward → Move Up → Fight Stronger Enemy → Die → Restart**
+
+## **Week 7 – Additional Content & Visuals**
+
+- Make sure all core mechanics work correctly before adding more features
+- Fix problems with movement, combat, death, and room progression
+- Add additional enemy types
+- Add more player attacks/moves
+- Add different dungeon room layouts
+- Add weapons or upgrades
+- Add chests or other ways of receiving loot
+- Add a boss encounter if time allows
+- Begin replacing placeholder sprites with final character and enemy sprites
+- Improve the dungeon background and visual details
+- Add the Embassy/shop system if time allows
+
+**Goal:** Turn the basic gameplay loop into a more complete prototype with different enemies, rooms, attacks, and upgrades.
+
+## **Week 8 – Polish & Testing**
+
+- Playtest the entire prototype
+- Fix major bugs
+- Balance player and enemy health, damage, and attacks
+- Finish character and enemy visuals
+- Finish the HUD and progress bar
+- Add music and sound effects
+- Add screen shake when the player gets hit
+- Add attack and hit effects
+- Add room completion effects
+- Add unlock notifications if time allows
+- Improve menus and other UI elements
+- Make sure death and restarting work consistently
+- Make sure the player can progress from the bottom to the end of the prototype
+
+**Goal:** Have a finished and playable version of the prototype.
+
+## **Week 9 – Final Prototype**
+
+- Have a complete working prototype of *Only Way Out is Up*
+- Complete final playtesting
+- Fix any remaining major bugs
+- Make final balancing changes
+- Make sure the game can be played from beginning to end
+- Export the final build
+- Prepare the game for the final presentation/demo
+
+**Final Goal:** Have a playable prototype that demonstrates the game's combat, enemies, upgrades, dungeon progression, death/reset system, and core roguelike loop.
