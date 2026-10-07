@@ -12,7 +12,7 @@
 **Elevator Pitch:** 
 In this game you play as a villager who went exploring and ended up trapped in a dungeon with no way out even through death. You must fight, get stronger, and find your way out to get back to your dog at home.  
 
-**Target Audience: For Everyone** 
+**Target Audience: For Everyone, people who enjoy the rougue like genre as well as rpg's** 
 
 
 ---
@@ -72,7 +72,7 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **Art Style Reference (pixel art, 3D, realistic, low poly, etc.): pixel art**
 
-**Color Palette: dark shades**
+**Color Palette: dark shades, underground earthy tones to fit the trappend underground theme**
 
 **Music/Audio Resources (to complement the theme of your game): Older pixel game type**
 
@@ -80,13 +80,9 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 ## 7. User Interface (UI/UX)
 
-**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): **
+**HUD (Heads-Up Display) Elements (health, score, minimap, progress tracking, etc.): health similar to minecraft, currency, attacks available**
 
-- Health shown as Hearts
-- Progress tracking a bar on the side of the screen showing how close to the surface the player is
-- 
-
-**Menus (main, pause, inventory, etc.):**
+**Menus (main, pause, inventory, etc.):Pause menue will include a resume button as well as a stats button that would take a player to see their current run stats, and a help button that would show the controls and basic mechanics of the game**
 
 **Accessibility Features (if any):**
 
@@ -94,9 +90,9 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 ## 8. Technical Requirements
 
-**Engine:**
+**Engine: Godot**
 
-**Programming Language(s):**
+**Programming Language(s):GDScript**
 
 **Tools for Assets (art, sound, etc.):**
 
