@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu4l0dseyvaef"
-path="res://.godot/imported/ATTACK 1.png-a62497a43d84fb8de9fe1fb615c209a3.ctex"
+uid="uid://mhbvwsobx4ih"
+path="res://.godot/imported/GoblinArcher-Sheet.png-4157cfd0ac9370876a10f2ecae5ac0a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ATTACK 1.png"
-dest_files=["res://.godot/imported/ATTACK 1.png-a62497a43d84fb8de9fe1fb615c209a3.ctex"]
+source_file="res://Art/GoblinArcher/GoblinArcher-Sheet.png"
+dest_files=["res://.godot/imported/GoblinArcher-Sheet.png-4157cfd0ac9370876a10f2ecae5ac0a0.ctex"]
 
 [params]
 
