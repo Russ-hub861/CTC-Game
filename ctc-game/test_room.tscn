@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://djnybame5kce3"]
+
+[ext_resource type="Texture2D" uid="uid://cy4w2ltotql4m" path="res://icon.svg" id="1_aiegb"]
+[ext_resource type="PackedScene" uid="uid://bk02ljpvuy2dg" path="res://player.tscn" id="2_oqbmf"]
+[ext_resource type="PackedScene" uid="uid://63tkeyicccw4" path="res://enemy_1.tscn" id="3_arrdh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r0nh"]
+size = Vector2(1263, 125)
+
+[node name="TestRoom" type="Node2D" unique_id=1586891804]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1542730525]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=895319978]
+visible = false
+position = Vector2(574, 392)
+scale = Vector2(9.875, 1)
+texture = ExtResource("1_aiegb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1359528942]
+position = Vector2(574.5, 391.5)
+shape = SubResource("RectangleShape2D_4r0nh")
+
+[node name="Player" parent="." unique_id=2026327063 instance=ExtResource("2_oqbmf")]
+position = Vector2(184, 62)
+
+[node name="Enemy1" parent="." unique_id=299771691 instance=ExtResource("3_arrdh")]
+position = Vector2(-45, 31)
