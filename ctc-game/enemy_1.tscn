@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://63tkeyicccw4"]
+
+[ext_resource type="Texture2D" uid="uid://cy4w2ltotql4m" path="res://icon.svg" id="1_mbxyh"]
+[ext_resource type="Script" uid="uid://dr3da7xh4ac4w" path="res://enemy_1.gd" id="1_pjquw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r0nh"]
+size = Vector2(132, 222)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4r0nh"]
+font_color = Color(0.8804791, 0, 0.22001353, 1)
+
+[node name="Enemy1" type="CharacterBody2D" unique_id=299771691]
+script = ExtResource("1_pjquw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=567565682]
+position = Vector2(929, 182)
+scale = Vector2(1, 1.6953125)
+texture = ExtResource("1_mbxyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1760969322]
+position = Vector2(928, 182)
+shape = SubResource("RectangleShape2D_4r0nh")
+
+[node name="HP bar" type="ProgressBar" parent="." unique_id=1492191737]
+offset_left = 822.0
+offset_top = 20.0
+offset_right = 1031.0
+offset_bottom = 47.0
+max_value = 50.0
+value = 50.0
+show_percentage = false
+
+[node name="damage dealed" type="Label" parent="." unique_id=1503189393]
+offset_left = 660.0
+offset_top = 12.0
+offset_right = 802.0
+offset_bottom = 49.0
+label_settings = SubResource("LabelSettings_4r0nh")
