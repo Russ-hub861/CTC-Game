@@ -281,13 +281,22 @@ animations = [{
 "speed": 14.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
+size = Vector2(298, 334)
+
 [node name="Player" type="CharacterBody2D" unique_id=1718794831]
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37620258]
 texture_filter = 1
-position = Vector2(1070, 350)
+position = Vector2(0, -51)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Death"
-frame_progress = 0.6433532
+animation = &"Idle"
+frame_progress = 0.39388502
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_ayvh1")
 metadata/_edit_group_ = true
