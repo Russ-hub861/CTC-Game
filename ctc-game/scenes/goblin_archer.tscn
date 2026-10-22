@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5oiy6clrlpvk"]
 
-[ext_resource type="Texture2D" uid="uid://mhbvwsobx4ih" path="res://Art/GoblinArcher/GoblinArcher-Sheet.png" id="1_oeboj"]
+[ext_resource type="Texture2D" uid="uid://mhbvwsobx4ih" path="res://Art/GoblinArcher-Sheet.png" id="1_oeboj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17111"]
 atlas = ExtResource("1_oeboj")
