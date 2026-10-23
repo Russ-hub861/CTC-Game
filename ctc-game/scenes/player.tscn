@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p2dflpd0trvy"]
 
 [ext_resource type="Texture2D" uid="uid://b07k4mybyvd6q" path="res://Art/player/DEATH.png" id="1_qhqgy"]
-[ext_resource type="Script" uid="uid://dodlr65u4xf7k" path="res://scripts/player.gd" id="1_qlg0r"]
+[ext_resource type="Script" uid="uid://d15v787m4gkqy" path="res://scenes/testplayer.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dypyxn0a0qlbq" path="res://Art/player/IDLE.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ctty8q103kr5f" path="res://Art/player/ATTACK 1.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://ruywokori8bn" path="res://Art/player/ATTACK 2.png" id="5_tuyoq"]
@@ -364,10 +364,13 @@ position = Vector2(0, -51)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
 animation = &"basicAttack"
-frame_progress = 0.64347297
+autoplay = "basicAttack"
+frame_progress = 0.4434505
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_ayvh1")
 metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=10412908]

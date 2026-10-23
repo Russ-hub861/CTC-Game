@@ -242,10 +242,10 @@ size = Vector2(574, 459)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1200802839]
-position = Vector2(0, -20)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"BasicAttack"
-frame_progress = 0.40571553
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.19177775
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1635568363]

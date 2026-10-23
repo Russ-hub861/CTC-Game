@@ -2,10 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://u67jj7no1l3n" path="res://scenes/tile_map.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://b5oiy6clrlpvk" path="res://scenes/goblin_archer.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node2D" unique_id=211260388]
 
 [node name="Level1" parent="." unique_id=1964747053 instance=ExtResource("1_0wfyh")]
 
 [node name="Player" parent="." unique_id=1718794831 instance=ExtResource("2_sugp2")]
-position = Vector2(378, 848)
+position = Vector2(579, 848)
+
+[node name="GoblinArcher" parent="." unique_id=857540686 instance=ExtResource("3_sugp2")]
+position = Vector2(1481, 772)
