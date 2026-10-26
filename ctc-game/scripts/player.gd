@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -300.0
 
 @onready var attack_collision = $AttackArea/CollisionShape2D
 @onready var sprite = $Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var attack_texture = preload("res://Art/ATTACK 1.png") #effect:attack
 
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("attack"):
 		attack_collision.disabled = false
-		sprite.texture = attack_texture # change to attack 1 png.
+		animated_sprite_2d.animation = "basicAttack"
 		
 		await get_tree().create_timer(0.2).timeout
 		
