@@ -12,4 +12,4 @@
 position = Vector2(579, 848)
 
 [node name="GoblinArcher" parent="." unique_id=857540686 instance=ExtResource("3_sugp2")]
-position = Vector2(1481, 772)
+position = Vector2(1446, 897)

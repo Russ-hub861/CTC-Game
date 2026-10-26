@@ -352,7 +352,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
-size = Vector2(298, 334)
+size = Vector2(242, 211)
 
 [node name="Player" type="CharacterBody2D" unique_id=1718794831]
 script = ExtResource("1_qlg0r")
@@ -363,13 +363,13 @@ texture_filter = 1
 position = Vector2(0, -51)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"basicAttack"
-autoplay = "basicAttack"
-frame_progress = 0.4434505
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.22588491
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]
-position = Vector2(0, 3)
+position = Vector2(18, 64.5)
 shape = SubResource("RectangleShape2D_ayvh1")
 metadata/_edit_group_ = true
 

@@ -236,19 +236,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
-size = Vector2(574, 459)
+size = Vector2(229, 249)
 
 [node name="GoblinArcher" type="CharacterBody2D" unique_id=857540686]
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1200802839]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.19177775
+frame_progress = 0.35098752
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1635568363]
-position = Vector2(0, 11.5)
+position = Vector2(-0.5, 10.5)
 shape = SubResource("RectangleShape2D_ayvh1")
 metadata/_edit_group_ = true
