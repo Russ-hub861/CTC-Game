@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p2dflpd0trvy"]
 
 [ext_resource type="Texture2D" uid="uid://b07k4mybyvd6q" path="res://Art/player/DEATH.png" id="1_qhqgy"]
-[ext_resource type="Script" uid="uid://dodlr65u4xf7k" path="res://scripts/player.gd" id="1_qlg0r"]
+[ext_resource type="Script" uid="uid://cl86u63vrai2m" path="res://scenes/playertest.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dypyxn0a0qlbq" path="res://Art/player/IDLE.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ctty8q103kr5f" path="res://Art/player/ATTACK 1.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://g4cf512qt332" path="res://Art/player/WALK.png" id="5_fjrip"]
