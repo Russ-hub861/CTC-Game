@@ -268,10 +268,12 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925]
 sprite_frames = SubResource("SpriteFrames_ayvh1")
 animation = &"Idle"
-frame_progress = 0.9611358
+autoplay = "Idle"
+frame_progress = 0.098499894
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1435230788]
+texture_filter = 1
 position = Vector2(-3.8146973e-06, 58.57143)
 shape = SubResource("CapsuleShape2D_yesep")
 metadata/_edit_group_ = true

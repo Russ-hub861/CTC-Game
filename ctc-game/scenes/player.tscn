@@ -159,10 +159,6 @@ region = Rect2(1344, 0, 112, 96)
 atlas = ExtResource("2_dqkch")
 region = Rect2(1456, 0, 112, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sc3ue"]
-atlas = ExtResource("5_fjrip")
-region = Rect2(0, 0, 112, 96)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxlsd"]
 atlas = ExtResource("5_fjrip")
 region = Rect2(112, 0, 112, 96)
@@ -170,18 +166,6 @@ region = Rect2(112, 0, 112, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha2mi"]
 atlas = ExtResource("5_fjrip")
 region = Rect2(224, 0, 112, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_apa73"]
-atlas = ExtResource("5_fjrip")
-region = Rect2(336, 0, 112, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_74r1k"]
-atlas = ExtResource("5_fjrip")
-region = Rect2(448, 0, 112, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8svfe"]
-atlas = ExtResource("5_fjrip")
-region = Rect2(560, 0, 112, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2a3c5"]
 atlas = ExtResource("5_fjrip")
@@ -356,22 +340,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sc3ue")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_lxlsd")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ha2mi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_apa73")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_74r1k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8svfe")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2a3c5")
@@ -417,16 +389,19 @@ animations = [{
 size = Vector2(128, 211)
 
 [node name="Player" type="CharacterBody2D" unique_id=1718794831]
+texture_filter = 1
 script = ExtResource("1_qlg0r")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37620258]
 texture_filter = 1
-position = Vector2(0, -51)
-scale = Vector2(6, 6)
+position = Vector2(7.4999933, -19.499977)
+scale = Vector2(6.1339283, 5.34375)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Idle"
+animation = &"Move"
 autoplay = "Idle"
+frame = 3
+frame_progress = 0.4301116
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dtyunguvxjtsm"]
+
+[node name="Main_Menu" type="Node2D" unique_id=408215820]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=204958817]
+offset_right = 1931.0
+offset_bottom = 1078.0

@@ -16,6 +16,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("ui_up"):
+		_flip_facing()
+
 	if not is_busy:
 		var direction := _tapped_direction()
 		if direction != 0.0:
@@ -26,6 +29,11 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _flip_facing() -> void:
+	facing_left = not facing_left
+	animated_sprite.flip_h = facing_left
 
 
 func _tapped_direction() -> float:
@@ -39,7 +47,7 @@ func _tapped_direction() -> float:
 func _move_once(direction: float) -> void:
 	is_busy = true
 	facing_left = direction < 0.0
-	animated_sprite.flip_h = facing_left
+	#animated_sprite.flip_h = facing_left
 	animated_sprite.play(&"Move")
 	velocity.x = direction * SPEED
 	await _wait_for_animation(&"Move")
@@ -51,7 +59,7 @@ func _move_once(direction: float) -> void:
 func _play_attack() -> void:
 	is_busy = true
 	velocity.x = 0.0
-	animated_sprite.flip_h = facing_left
+	#animated_sprite.flip_h = facing_left
 	animated_sprite.play(&"basicAttack")
 	await _wait_for_animation(&"basicAttack")
 	_play_idle()
@@ -59,7 +67,7 @@ func _play_attack() -> void:
 
 
 func _play_idle() -> void:
-	animated_sprite.flip_h = facing_left
+	#animated_sprite.flip_h = facing_left
 	animated_sprite.play(&"Idle")
 
 
