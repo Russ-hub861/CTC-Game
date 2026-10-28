@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bgbrb6psfe874"]
+
+[ext_resource type="Texture2D" uid="uid://cc31m0nadrkyl" path="res://Art/hearts/FullHeart.png" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://ca1jpa2yh0pi4" path="res://Art/hearts/HalfHeart.png" id="2_5ysmq"]
+
+[node name="HUD" type="CanvasLayer" unique_id=2118713440]
+
+[node name="Control" type="Control" parent="." unique_id=1207818072]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FullHeart" type="TextureRect" parent="." unique_id=932168028]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -762.0
+offset_bottom = 829.0
+grow_horizontal = 0
+texture = ExtResource("1_oo0fn")
+
+[node name="HalfHeart" type="TextureRect" parent="." unique_id=978099740]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -241.0
+offset_top = 52.0
+offset_right = 354.0
+offset_bottom = 782.0
+grow_horizontal = 0
+texture = ExtResource("2_5ysmq")
+expand_mode = 4
+stretch_mode = 3
+
+[node name="QuartHeart" type="TextureRect" parent="." unique_id=1711603250]
+offset_right = 40.0
+offset_bottom = 40.0
