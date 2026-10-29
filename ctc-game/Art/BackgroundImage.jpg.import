@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxno4a6pwa66l"
-path="res://.godot/imported/Labrador.png-35256281fb8b6d44148c628209aa443f.ctex"
+uid="uid://c8fwpmv8p1i3f"
+path="res://.godot/imported/BackgroundImage.jpg-64a6a8477129c1e05dadd96bb1afaba2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Background/DogBundle/PNGs/Labrador.png"
-dest_files=["res://.godot/imported/Labrador.png-35256281fb8b6d44148c628209aa443f.ctex"]
+source_file="res://Art/BackgroundImage.jpg"
+dest_files=["res://.godot/imported/BackgroundImage.jpg-64a6a8477129c1e05dadd96bb1afaba2.ctex"]
 
 [params]
 

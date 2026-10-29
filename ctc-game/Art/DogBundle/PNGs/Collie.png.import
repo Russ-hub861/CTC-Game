@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://calf7wr2aby5f"
-path="res://.godot/imported/Delmatian.png-2da2405b1e0933f6757377125705422d.ctex"
+uid="uid://ba4afl74mdx7s"
+path="res://.godot/imported/Collie.png-79dc524f56d84d7c8c7596145be278c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Background/DogBundle/PNGs/Delmatian.png"
-dest_files=["res://.godot/imported/Delmatian.png-2da2405b1e0933f6757377125705422d.ctex"]
+source_file="res://Art/DogBundle/PNGs/Collie.png"
+dest_files=["res://.godot/imported/Collie.png-79dc524f56d84d7c8c7596145be278c1.ctex"]
 
 [params]
 

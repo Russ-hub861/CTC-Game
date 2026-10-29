@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba4afl74mdx7s"
-path="res://.godot/imported/Collie.png-29d92782768f8071fb78b1276defd1cc.ctex"
+uid="uid://b163gggybmce8"
+path="res://.godot/imported/0eaa18bc-9d1c-43da-80c8-521241540862.png-9d61d26f0922a3843b3792ac0ab305fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Background/DogBundle/PNGs/Collie.png"
-dest_files=["res://.godot/imported/Collie.png-29d92782768f8071fb78b1276defd1cc.ctex"]
+source_file="res://Art/0eaa18bc-9d1c-43da-80c8-521241540862.png"
+dest_files=["res://.godot/imported/0eaa18bc-9d1c-43da-80c8-521241540862.png-9d61d26f0922a3843b3792ac0ab305fb.ctex"]
 
 [params]
 

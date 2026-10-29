@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blc41m01vjlgl"
-path="res://.godot/imported/Corgi.png-9da0ed9592bf08d64706bd2cef52fca4.ctex"
+uid="uid://i6saf6ttjksu"
+path="res://.godot/imported/GoblinArcher-Sheet copy.png-3fe3af4ab0ada28897f17c0f68ace4aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Background/DogBundle/PNGs/Corgi.png"
-dest_files=["res://.godot/imported/Corgi.png-9da0ed9592bf08d64706bd2cef52fca4.ctex"]
+source_file="res://Art/GoblinArcher/GoblinArcher-Sheet copy.png"
+dest_files=["res://.godot/imported/GoblinArcher-Sheet copy.png-3fe3af4ab0ada28897f17c0f68ace4aa.ctex"]
 
 [params]
 

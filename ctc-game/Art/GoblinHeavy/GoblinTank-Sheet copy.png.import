@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mhbvwsobx4ih"
-path="res://.godot/imported/GoblinArcher-Sheet.png-5287878346a7d8d11998b7f5a51bfbe5.ctex"
+uid="uid://h1bgqapobdvk"
+path="res://.godot/imported/GoblinTank-Sheet copy.png-0e6c6b254dff1834a0eddacecff83c4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/GoblinArcher-Sheet.png"
-dest_files=["res://.godot/imported/GoblinArcher-Sheet.png-5287878346a7d8d11998b7f5a51bfbe5.ctex"]
+source_file="res://Art/GoblinHeavy/GoblinTank-Sheet copy.png"
+dest_files=["res://.godot/imported/GoblinTank-Sheet copy.png-0e6c6b254dff1834a0eddacecff83c4d.ctex"]
 
 [params]
 

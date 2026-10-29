@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdbgpg7ctb2u4"
-path="res://.godot/imported/GoblinTank-Sheet.png-e11dfe302262656c203004fdf03e2c39.ctex"
+uid="uid://34usb2ccvvl1"
+path="res://.godot/imported/tilesetgrass.png-10836773a554c45acdf833e93af4b102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/GoblinTank-Sheet.png"
-dest_files=["res://.godot/imported/GoblinTank-Sheet.png-e11dfe302262656c203004fdf03e2c39.ctex"]
+source_file="res://Art/Pixel Art Grassland Tileset 32x32/tilesetgrass.png"
+dest_files=["res://.godot/imported/tilesetgrass.png-10836773a554c45acdf833e93af4b102.ctex"]
 
 [params]
 
