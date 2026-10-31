@@ -260,20 +260,19 @@ animations = [{
 radius = 255.71426
 height = 802.8571
 
-[node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942]
-position = Vector2(0, -2.9999998)
+[node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942 groups=["Enemies"]]
 scale = Vector2(0.7, 0.7)
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925 groups=["Enemies"]]
+position = Vector2(3.4059798e-07, 0)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.098499894
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1435230788]
 texture_filter = 1
-position = Vector2(-3.8146973e-06, 58.57143)
+position = Vector2(6.1035156e-05, -2.7247825e-07)
 shape = SubResource("CapsuleShape2D_yesep")
-metadata/_edit_group_ = true

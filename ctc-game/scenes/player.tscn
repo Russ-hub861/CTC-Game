@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://g4cf512qt332" path="res://Art/player/WALK.png" id="5_fjrip"]
 [ext_resource type="Texture2D" uid="uid://ruywokori8bn" path="res://Art/player/ATTACK 2.png" id="5_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://bs3jjm3a6kl6e" path="res://Art/player/ATTACK 3.png" id="6_fjrip"]
+[ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scenes/attack_area.gd" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
 atlas = ExtResource("5_tuyoq")
@@ -471,6 +472,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
 size = Vector2(128, 211)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3j60"]
+size = Vector2(155.5, 142.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=1718794831]
 texture_filter = 1
 script = ExtResource("1_qlg0r")
@@ -481,12 +485,19 @@ texture_filter = 1
 position = Vector2(7.4999933, -19.499977)
 scale = Vector2(6.1339283, 5.34375)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Idle"
+animation = &"basicAttack"
 autoplay = "Idle"
-frame_progress = 0.97494745
+frame_progress = 0.1806885
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]
 position = Vector2(18, 64.5)
 shape = SubResource("RectangleShape2D_ayvh1")
 metadata/_edit_group_ = true
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1005858751]
+script = ExtResource("8_smehm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=707839307]
+position = Vector2(126.25, 86.75)
+shape = SubResource("RectangleShape2D_t3j60")
