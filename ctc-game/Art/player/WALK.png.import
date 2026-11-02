@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i6saf6ttjksu"
-path="res://.godot/imported/GoblinArcher-Sheet copy.png-3fe3af4ab0ada28897f17c0f68ace4aa.ctex"
+uid="uid://g4cf512qt332"
+path="res://.godot/imported/WALK.png-2fba9c0dc999571495f02224fa687520.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/GoblinArcher/GoblinArcher-Sheet copy.png"
-dest_files=["res://.godot/imported/GoblinArcher-Sheet copy.png-3fe3af4ab0ada28897f17c0f68ace4aa.ctex"]
+source_file="res://Art/player/WALK.png"
+dest_files=["res://.godot/imported/WALK.png-2fba9c0dc999571495f02224fa687520.ctex"]
 
 [params]
 

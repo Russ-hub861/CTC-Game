@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h1bgqapobdvk"
-path="res://.godot/imported/GoblinTank-Sheet copy.png-0e6c6b254dff1834a0eddacecff83c4d.ctex"
+uid="uid://r5eutejg4e56"
+path="res://.godot/imported/old room dungeon game concept.jpeg-3697c5e264fe25053ff926d796822199.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/GoblinHeavy/GoblinTank-Sheet copy.png"
-dest_files=["res://.godot/imported/GoblinTank-Sheet copy.png-0e6c6b254dff1834a0eddacecff83c4d.ctex"]
+source_file="res://Art/Backgrounds/old room dungeon game concept.jpeg"
+dest_files=["res://.godot/imported/old room dungeon game concept.jpeg-3697c5e264fe25053ff926d796822199.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://u67jj7no1l3n"]
 
-[ext_resource type="Texture2D" uid="uid://deqhx6esanlww" path="res://Art/Tilesetv3.png" id="1_7yhko"]
+[ext_resource type="Texture2D" uid="uid://deqhx6esanlww" path="res://Art/tileset/Tilesetv3.png" id="1_7yhko"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1n30v"]
 texture = ExtResource("1_7yhko")
@@ -691,6 +691,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1n30v")
 
 [node name="Level1" type="TileMap" unique_id=1964747053]
+texture_filter = 1
 scale = Vector2(6, 6.3)
 tile_set = SubResource("TileSet_ayvh1")
 format = 2

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gac36anssyni"]
 
 [ext_resource type="Texture2D" uid="uid://cvj7nq8wll02i" path="res://Art/GoblinHeavy/GoblinTank-Sheet.png" id="1_6xry1"]
+[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://enemy_group.gd" id="2_enemy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhvne"]
 atlas = ExtResource("1_6xry1")
@@ -257,19 +258,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yesep"]
-radius = 539.0
-height = 1078.0
+radius = 255.71426
+height = 802.8571
 
-[node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942]
+[node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942 groups=["Enemies"]]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("2_enemy")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925 groups=["Enemies"]]
+position = Vector2(3.4059798e-07, 0)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Attack"
-frame_progress = 0.32074338
-metadata/_edit_group_ = true
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.098499894
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1435230788]
-position = Vector2(0, 59)
+texture_filter = 1
+position = Vector2(6.1035156e-05, -2.7247825e-07)
 shape = SubResource("CapsuleShape2D_yesep")
-metadata/_edit_group_ = true
