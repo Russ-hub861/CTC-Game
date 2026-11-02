@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bj0tyxd84jjgt"]
 
-[ext_resource type="Texture2D" path="res://Art/DogBundle/PNGs/Labrador.png" id="1_ow34m"]
+[ext_resource type="Texture2D" uid="uid://bxno4a6pwa66l" path="res://Art/DogBundle/PNGs/Labrador.png" id="1_ow34m"]
 [ext_resource type="Texture2D" uid="uid://h1pkxwmreyrd" path="res://Art/Cloud Tileset.png" id="2_l72w3"]
 [ext_resource type="Texture2D" uid="uid://34usb2ccvvl1" path="res://Art/Pixel Art Grassland Tileset 32x32/tilesetgrass.png" id="3_826wr"]
 [ext_resource type="Texture2D" uid="uid://lg2tumbljq3" path="res://Art/Pixel Art Grassland Tileset 32x32/tree.png" id="4_ucygd"]
@@ -192,11 +192,11 @@ grow_vertical = 2
 color = Color(0.5423357, 0.7099084, 1, 1)
 
 [node name="Dog" type="AnimatedSprite2D" parent="." unique_id=2111292509]
-position = Vector2(246, 616)
+position = Vector2(460.00006, 622)
 scale = Vector2(9.687501, 8.9921875)
 sprite_frames = SubResource("SpriteFrames_rkllb")
 animation = &"Idle"
-frame_progress = 0.5326779
+frame_progress = 0.95049345
 
 [node name="Clouds" type="TileMapLayer" parent="." unique_id=1922975390]
 scale = Vector2(10, 10)
@@ -205,5 +205,29 @@ tile_set = SubResource("TileSet_k2t0f")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1572843324]
 scale = Vector2(8, 8)
-tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAAAAQAAAABAAEAAAABAAQAAAABAAEAAAACAAQAAAABAAEAAAADAAQAAAABAAEAAAAEAAQAAAABAAEAAAAFAAQAAAABAAEAAAAGAAQAAAABAAEAAAAHAAQAAAABAAEAAAADAAAAAQADAAAAAAADAAEAAQADAAEAAAADAAIAAQADAAIAAAAEAAAAAQAEAAAAAAAEAAEAAQAEAAEAAAAEAAIAAQAEAAIAAAAFAAEAAQAFAAEAAAAFAAIAAQAFAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAHAAMAAAABAAAAAAAAAAQAAAABAAEAAAABAAQAAAABAAEAAAACAAQAAAABAAEAAAADAAQAAAABAAEAAAAEAAQAAAABAAEAAAAFAAQAAAABAAEAAAAGAAQAAAABAAEAAAAHAAQAAAABAAEAAAADAAAAAQABAAAAAAAGAAMAAAABAAAAAAD//wAAAQADAAAAAAD//wEAAQADAAEAAAD//wIAAQADAAIAAAAAAAAAAQAEAAAAAAAAAAEAAQAEAAEAAAAAAAIAAQAEAAIAAAABAAEAAQAFAAEAAAABAAIAAQAFAAIAAAACAAAAAQAAAAAAAAACAAEAAQAAAAEAAAACAAIAAQAAAAIAAAADAAEAAQABAAEAAAADAAIAAQABAAIAAAAEAAAAAQACAAAAAAAEAAEAAQACAAEAAAAEAAIAAQACAAIAAAA=")
 tile_set = SubResource("TileSet_one6v")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=156280002]
+layout_mode = 0
+offset_left = 1418.0
+offset_top = 236.0
+offset_right = 2241.0
+offset_bottom = 1036.0
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=434270541]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -88.0
+offset_right = 226.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 90
+text = "Play"

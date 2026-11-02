@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxno4a6pwa66l"
-path="res://.godot/imported/Labrador.png-1273996c1cc07de14690ef62786af210.ctex"
+path="res://.godot/imported/Labrador.png-0a0c5ad79ef38389950857ed06b79ad7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Labrador.png"
-dest_files=["res://.godot/imported/Labrador.png-1273996c1cc07de14690ef62786af210.ctex"]
+source_file="res://Art/DogBundle/PNGs/Labrador.png"
+dest_files=["res://.godot/imported/Labrador.png-0a0c5ad79ef38389950857ed06b79ad7.ctex"]
 
 [params]
 
