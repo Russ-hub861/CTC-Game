@@ -435,7 +435,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fuw3a")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"SpecialAttack",
 "speed": 10.0
 }, {
@@ -485,9 +485,9 @@ texture_filter = 1
 position = Vector2(7.4999933, -19.499977)
 scale = Vector2(6.1339283, 5.34375)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"basicAttack"
+animation = &"SpecialAttack"
 autoplay = "Idle"
-frame_progress = 0.1806885
+frame_progress = 0.9906886
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]
