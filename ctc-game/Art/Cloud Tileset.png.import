@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdbgpg7ctb2u4"
-path="res://.godot/imported/GoblinTank-Sheet.png-e11dfe302262656c203004fdf03e2c39.ctex"
+uid="uid://h1pkxwmreyrd"
+path="res://.godot/imported/Cloud Tileset.png-2299efd3d7149638965167a4252b2e25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/GoblinTank-Sheet.png"
-dest_files=["res://.godot/imported/GoblinTank-Sheet.png-e11dfe302262656c203004fdf03e2c39.ctex"]
+source_file="res://Art/Cloud Tileset.png"
+dest_files=["res://.godot/imported/Cloud Tileset.png-2299efd3d7149638965167a4252b2e25.ctex"]
 
 [params]
 
