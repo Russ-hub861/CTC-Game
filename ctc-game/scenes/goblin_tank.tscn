@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://gac36anssyni"]
 
 [ext_resource type="Texture2D" uid="uid://cvj7nq8wll02i" path="res://Art/GoblinHeavy/GoblinTank-Sheet.png" id="1_6xry1"]
+[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://enemy_group.gd" id="2_enemy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhvne"]
 atlas = ExtResource("1_6xry1")
@@ -262,6 +263,7 @@ height = 802.8571
 
 [node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942 groups=["Enemies"]]
 scale = Vector2(0.7, 0.7)
+script = ExtResource("2_enemy")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925 groups=["Enemies"]]

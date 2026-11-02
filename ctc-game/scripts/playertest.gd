@@ -4,6 +4,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var attack_area: Area2D = $AttackArea
 
 var is_busy := false
 var facing_left := false
@@ -33,7 +34,7 @@ func _physics_process(delta: float) -> void:
 
 func _flip_facing() -> void:
 	facing_left = not facing_left
-	animated_sprite.flip_h = facing_left
+	_apply_facing()
 
 
 func _tapped_direction() -> float:
@@ -47,7 +48,7 @@ func _tapped_direction() -> float:
 func _move_once(direction: float) -> void:
 	is_busy = true
 	facing_left = direction < 0.0
-	#animated_sprite.flip_h = facing_left
+	_apply_facing()
 	animated_sprite.play(&"Move")
 	velocity.x = direction * SPEED
 	await _wait_for_animation(&"Move")
@@ -59,11 +60,19 @@ func _move_once(direction: float) -> void:
 func _play_attack() -> void:
 	is_busy = true
 	velocity.x = 0.0
-	#animated_sprite.flip_h = facing_left
+	_apply_facing()
 	animated_sprite.play(&"basicAttack")
+	attack_area.start_attack()
 	await _wait_for_animation(&"basicAttack")
+	attack_area.end_attack()
 	_play_idle()
 	is_busy = false
+
+
+func _apply_facing() -> void:
+	animated_sprite.flip_h = facing_left
+	# AttackArea's shape sits to the right of the player. Flip it with facing.
+	attack_area.scale.x = -1.0 if facing_left else 1.0
 
 
 func _play_idle() -> void:

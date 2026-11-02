@@ -239,7 +239,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
 size = Vector2(229, 249)
 
-[node name="GoblinArcher" type="CharacterBody2D" unique_id=857540686]
+[node name="GoblinArcher" type="CharacterBody2D" unique_id=857540686 groups=["Enemies"]]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_ose0q")
 metadata/_edit_group_ = true
