@@ -469,6 +469,7 @@ animations = [{
 "speed": 14.0
 }]
 
+<<<<<<< Updated upstream
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
 size = Vector2(128, 211)
 
@@ -477,6 +478,17 @@ size = Vector2(155.5, 142.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1718794831]
 texture_filter = 1
+=======
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4kjh"]
+radius = 82.5
+height = 265.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3j60"]
+size = Vector2(20, 94)
+
+[node name="Player" type="CharacterBody2D" unique_id=1718794831]
+position = Vector2(0, -1)
+>>>>>>> Stashed changes
 script = ExtResource("1_qlg0r")
 metadata/_edit_group_ = true
 
@@ -491,6 +503,7 @@ frame_progress = 0.9906886
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]
+<<<<<<< Updated upstream
 position = Vector2(18, 64.5)
 shape = SubResource("RectangleShape2D_ayvh1")
 metadata/_edit_group_ = true
@@ -500,4 +513,13 @@ script = ExtResource("8_smehm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=707839307]
 position = Vector2(126.25, 86.75)
+=======
+position = Vector2(-13.5, 31.5)
+shape = SubResource("CapsuleShape2D_p4kjh")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1640670190]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=503142072]
+position = Vector2(300, -37)
+>>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_t3j60")
