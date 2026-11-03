@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bj0tyxd84jjgt"]
 
+[ext_resource type="Script" uid="uid://cvfvpe12nqkgd" path="res://scenes/main_menu.gd" id="1_l72w3"]
 [ext_resource type="Texture2D" uid="uid://bxno4a6pwa66l" path="res://Art/DogBundle/PNGs/Labrador.png" id="1_ow34m"]
 [ext_resource type="Texture2D" uid="uid://h1pkxwmreyrd" path="res://Art/Cloud Tileset.png" id="2_l72w3"]
 [ext_resource type="Texture2D" uid="uid://34usb2ccvvl1" path="res://Art/Pixel Art Grassland Tileset 32x32/tilesetgrass.png" id="3_826wr"]
@@ -181,6 +182,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l72w3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1145610333]
 layout_mode = 1
