@@ -1,11 +1,18 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var max_health: int = 5
+@export var SPEED: float = 100.0
+@export var attack_range: float = 250.0
+var health: int 
+var is_dead: bool = false
+
+#const SPEED = 300.0
+#const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = $AttackArea
 
+var _hit_serial := 0
 var is_busy := false
 var facing_left := false
 
@@ -18,8 +25,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("ui_up"):
 		_flip_facing()
@@ -57,6 +64,39 @@ func _move_once(direction: float) -> void:
 	velocity.x = 0.0
 	_play_idle()
 	is_busy = false
+	
+func take_damage(amount: int) -> void:
+	if is_dead:
+		return
+		
+	health -= amount
+	
+	print("Player health: ", health)
+	
+	if health <= 0:
+		is_dead = true
+		player_death()
+		
+func player_death() -> void:
+	print("Player has died!")
+	
+	if health <= 0:
+		is_dead = true
+		_hit_serial += 1
+		animated_sprite.play(&"Death")
+		await animated_sprite.animation_finished
+		queue_free()
+		return
+
+	_hit_serial += 1
+	var serial := _hit_serial
+	animated_sprite.play(&"Hit")
+	animated_sprite.frame = 0
+	animated_sprite.frame_progress = 0.0
+	await animated_sprite.animation_finished
+
+	if not is_dead and serial == _hit_serial:
+		animated_sprite.play(&"Idle")
 
 
 func _play_attack() -> void:

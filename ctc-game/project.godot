@@ -29,6 +29,7 @@ project/assembly_name="CTC Game"
 [global_group]
 
 Enemies=""
+Players=""
 
 [input]
 
