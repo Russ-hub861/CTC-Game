@@ -10,6 +10,10 @@ var is_busy := false
 var facing_left := false
 
 
+func _ready() -> void:
+	add_to_group("Player")
+
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -47,8 +51,6 @@ func _tapped_direction() -> float:
 
 func _move_once(direction: float) -> void:
 	is_busy = true
-	facing_left = direction < 0.0
-	_apply_facing()
 	animated_sprite.play(&"Move")
 	velocity.x = direction * SPEED
 	await _wait_for_animation(&"Move")
