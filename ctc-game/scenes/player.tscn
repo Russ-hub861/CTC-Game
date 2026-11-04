@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://g4cf512qt332" path="res://Art/player/WALK.png" id="5_fjrip"]
 [ext_resource type="Texture2D" uid="uid://ruywokori8bn" path="res://Art/player/ATTACK 2.png" id="5_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://bs3jjm3a6kl6e" path="res://Art/player/ATTACK 3.png" id="6_fjrip"]
-[ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scenes/attack_area.gd" id="8_smehm"]
+[ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scripts/attack_area.gd" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
 atlas = ExtResource("5_tuyoq")

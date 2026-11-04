@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://gac36anssyni"]
 
 [ext_resource type="Texture2D" uid="uid://cvj7nq8wll02i" path="res://Art/GoblinHeavy/GoblinTank-Sheet.png" id="1_6xry1"]
-[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://enemy_group.gd" id="2_enemy"]
+[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://scripts/enemy_group.gd" id="2_enemy"]
+[ext_resource type="Script" uid="uid://dgnaqlpyrr63i" path="res://scripts/enemy_attack_area.gd" id="3_wxnhu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhvne"]
 atlas = ExtResource("1_6xry1")
@@ -283,6 +284,7 @@ scale = Vector2(0.99999964, 0.99999964)
 shape = SubResource("RectangleShape2D_t3j60")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1060861174]
+script = ExtResource("3_wxnhu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1210849336]
 position = Vector2(287.857, 130.71426)

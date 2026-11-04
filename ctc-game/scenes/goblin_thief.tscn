@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2d4t8t51km7g"]
 
 [ext_resource type="Texture2D" uid="uid://lmgvdn72d2ut" path="res://Art/GolbinThief/GoblinScout-Sheet.png" id="1_kkduu"]
-[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://enemy_group.gd" id="2_enemy"]
+[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://scripts/enemy_group.gd" id="2_enemy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxwnm"]
 atlas = ExtResource("1_kkduu")

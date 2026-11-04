@@ -19,6 +19,7 @@ var facing_left := false
 
 func _ready() -> void:
 	add_to_group("Player")
+	health = max_health
 
 
 func _physics_process(delta: float) -> void:
@@ -76,9 +77,6 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		is_dead = true
 		player_death()
-		
-func player_death() -> void:
-	print("Player has died!")
 	
 	if health <= 0:
 		is_dead = true
@@ -97,6 +95,9 @@ func player_death() -> void:
 
 	if not is_dead and serial == _hit_serial:
 		animated_sprite.play(&"Idle")
+		
+func player_death() -> void:
+	print("Player has died!")
 
 
 func _play_attack() -> void:
