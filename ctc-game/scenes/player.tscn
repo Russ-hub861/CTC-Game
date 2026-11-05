@@ -4,10 +4,11 @@
 [ext_resource type="Script" uid="uid://cl86u63vrai2m" path="res://scripts/playertest.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dypyxn0a0qlbq" path="res://Art/player/IDLE.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ctty8q103kr5f" path="res://Art/player/ATTACK 1.png" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cntv3a1d7vtww" path="res://Art/player/HURT.png" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://g4cf512qt332" path="res://Art/player/WALK.png" id="5_fjrip"]
 [ext_resource type="Texture2D" uid="uid://ruywokori8bn" path="res://Art/player/ATTACK 2.png" id="5_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://bs3jjm3a6kl6e" path="res://Art/player/ATTACK 3.png" id="6_fjrip"]
-[ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scenes/attack_area.gd" id="8_smehm"]
+[ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scripts/attack_area.gd" id="8_smehm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
 atlas = ExtResource("5_tuyoq")
@@ -104,6 +105,38 @@ region = Rect2(1456, 0, 112, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
 atlas = ExtResource("1_qhqgy")
 region = Rect2(1568, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8txt3"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(0, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w11d"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(112, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_770dr"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(224, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f1cb"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(336, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdulj"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(448, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vau08"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(560, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsb7e"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(672, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjsmb"]
+atlas = ExtResource("4_ur7pv")
+region = Rect2(784, 0, 112, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
 atlas = ExtResource("2_dqkch")
@@ -339,6 +372,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8txt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w11d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_770dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f1cb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdulj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vau08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsb7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjsmb")
+}],
+"loop": 1,
+"name": &"Hit",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i4ail")
 }, {
 "duration": 1.0,
@@ -476,7 +538,7 @@ size = Vector2(128, 211)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3j60"]
 size = Vector2(155.5, 142.5)
 
-[node name="Player" type="CharacterBody2D" unique_id=1718794831]
+[node name="Player" type="CharacterBody2D" unique_id=1718794831 groups=["Players"]]
 texture_filter = 1
 =======
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4kjh"]
@@ -490,6 +552,7 @@ size = Vector2(20, 94)
 position = Vector2(0, -1)
 >>>>>>> Stashed changes
 script = ExtResource("1_qlg0r")
+max_health = 10
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37620258]
@@ -497,9 +560,9 @@ texture_filter = 1
 position = Vector2(7.4999933, -19.499977)
 scale = Vector2(6.1339283, 5.34375)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"SpecialAttack"
+animation = &"Hit"
 autoplay = "Idle"
-frame_progress = 0.9906886
+frame_progress = 0.06885304
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]

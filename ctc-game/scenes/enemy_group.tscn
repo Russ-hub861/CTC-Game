@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://daitdad7dcilt"]
 
-[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://enemy_group.gd" id="1_i5m1a"]
+[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://scripts/enemy_group.gd" id="1_i5m1a"]
 [ext_resource type="PackedScene" uid="uid://gac36anssyni" path="res://scenes/goblin_tank.tscn" id="2_w1oj2"]
 [ext_resource type="PackedScene" uid="uid://b5oiy6clrlpvk" path="res://scenes/goblin_archer.tscn" id="3_pqsow"]
 [ext_resource type="PackedScene" uid="uid://d2d4t8t51km7g" path="res://scenes/goblin_thief.tscn" id="4_rag7w"]

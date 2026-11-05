@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://gac36anssyni"]
 
 [ext_resource type="Texture2D" uid="uid://cvj7nq8wll02i" path="res://Art/GoblinHeavy/GoblinTank-Sheet.png" id="1_6xry1"]
-[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://enemy_group.gd" id="2_enemy"]
+[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://scripts/enemy_group.gd" id="2_enemy"]
+[ext_resource type="Script" uid="uid://dgnaqlpyrr63i" path="res://scripts/enemy_attack_area.gd" id="3_wxnhu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhvne"]
 atlas = ExtResource("1_6xry1")
@@ -174,7 +175,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d7o0e")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack",
 "speed": 8.0
 }, {
@@ -257,9 +258,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yesep"]
-radius = 255.71426
-height = 802.8571
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3j60"]
+size = Vector2(312.85718, 385.7143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
+size = Vector2(350.00006, 390.00018)
 
 [node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942 groups=["Enemies"]]
 scale = Vector2(0.7, 0.7)
@@ -270,11 +273,20 @@ metadata/_edit_group_ = true
 position = Vector2(3.4059798e-07, 0)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Idle"
+animation = &"Attack"
 autoplay = "Idle"
-frame_progress = 0.098499894
+frame_progress = 0.70830786
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1435230788]
 texture_filter = 1
-position = Vector2(6.1035156e-05, -2.7247825e-07)
-shape = SubResource("CapsuleShape2D_yesep")
+position = Vector2(-44.999996, 142.85709)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_t3j60")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1060861174]
+script = ExtResource("3_wxnhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1210849336]
+position = Vector2(287.857, 130.71426)
+scale = Vector2(0.9999994, 0.9999994)
+shape = SubResource("RectangleShape2D_ayvh1")

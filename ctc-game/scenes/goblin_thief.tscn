@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://d2d4t8t51km7g"]
 
 [ext_resource type="Texture2D" uid="uid://lmgvdn72d2ut" path="res://Art/GolbinThief/GoblinScout-Sheet.png" id="1_kkduu"]
-<<<<<<< Updated upstream
-[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://enemy_group.gd" id="2_enemy"]
-=======
->>>>>>> Stashed changes
+[ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://scripts/enemy_group.gd" id="2_enemy"]
+[ext_resource type="Script" uid="uid://dgnaqlpyrr63i" path="res://scripts/enemy_attack_area.gd" id="3_attack"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxwnm"]
 atlas = ExtResource("1_kkduu")
@@ -223,6 +221,9 @@ animations = [{
 radius = 201.66666
 height = 656.6666
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
+size = Vector2(148.3333, 126.66666)
+
 [node name="Goblin_Thief" type="CharacterBody2D" unique_id=1552054683 groups=["Enemies"]]
 scale = Vector2(0.6, 0.6)
 script = ExtResource("2_enemy")
@@ -235,10 +236,15 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_ayvh1")
 animation = &"Attack"
 autoplay = "Idle"
-frame_progress = 0.66419935
-<<<<<<< Updated upstream
+frame_progress = 0.3629029
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313860714]
 shape = SubResource("CapsuleShape2D_ayvh1")
-=======
->>>>>>> Stashed changes
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=251062316]
+script = ExtResource("3_attack")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2045660962]
+position = Vector2(192.50002, 88.33333)
+shape = SubResource("RectangleShape2D_ayvh1")

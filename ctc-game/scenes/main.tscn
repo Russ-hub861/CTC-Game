@@ -3,14 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://cl6qnygcn4sd8" path="res://level_1_fr.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b5oiy6clrlpvk" path="res://scenes/goblin_archer.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://gac36anssyni" path="res://scenes/goblin_tank.tscn" id="4_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=211260388]
 
 [node name="Level_1_fr" parent="." unique_id=1364531263 instance=ExtResource("1_sugp2")]
 
 [node name="GoblinArcher" parent="." unique_id=857540686 instance=ExtResource("3_sugp2")]
-position = Vector2(1214, 879.00006)
-max_health = 7
+position = Vector2(1394, 848.00006)
 
 [node name="Player" parent="." unique_id=1718794831 instance=ExtResource("2_sugp2")]
-position = Vector2(579, 848)
+position = Vector2(831, 848)
+SPEED = 300.0
+
+[node name="Goblin_Tank" parent="." unique_id=1318433942 instance=ExtResource("4_jyhfs")]
+position = Vector2(317, 784)
