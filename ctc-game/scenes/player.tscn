@@ -540,6 +540,7 @@ size = Vector2(155.5, 142.5)
 [node name="Player" type="CharacterBody2D" unique_id=1718794831 groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_qlg0r")
+max_health = 10
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37620258]
