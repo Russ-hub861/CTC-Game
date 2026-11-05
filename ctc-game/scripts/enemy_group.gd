@@ -8,6 +8,7 @@ var health: int
 var is_dead: bool = false
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var attack_area: Area2D = $AttackArea
 
 var _hit_serial := 0
 
@@ -18,6 +19,9 @@ func _ready() -> void:
 		return
 	_set_animation_loop(&"Hit", false)
 	_set_animation_loop(&"Death", false)
+	# A looping attack never finishes, so the swing below would only start once.
+	_set_animation_loop(&"Attack", false)
+	_set_animation_loop(&"BasicAttack", false)
 	sprite.play(&"Idle")
 
 func take_damage(amount: int) -> void:
@@ -57,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	# Stay still while hurt, dead, or if this node has no sprite.
 	if is_dead or sprite == null or sprite.animation == &"Hit" or sprite.animation == &"Death":
 		velocity.x = 0
+		_end_attack()
 		move_and_slide()
 		return
 
@@ -68,12 +73,16 @@ func _physics_process(delta: float) -> void:
 
 	# Face the player and walk toward them until we are close enough to attack.
 	var player_position: Vector2 = player.global_position
-	sprite.flip_h = player_position.x < global_position.x
+	var facing_left := player_position.x < global_position.x
+	sprite.flip_h = facing_left
+	# flip_h only affects sprites. Mirroring the area's scale turns the hitbox too.
+	attack_area.scale.x = -1.0 if facing_left else 1.0
 
 	if global_position.distance_to(player_position) > attack_range:
 		var direction: float = sign(player_position.x - global_position.x)
 		velocity.x = direction * speed
 		if sprite.animation != &"Idle":
+			_end_attack()
 			sprite.play(&"Idle")
 	else:
 		velocity.x = 0
@@ -81,9 +90,18 @@ func _physics_process(delta: float) -> void:
 		if not sprite.sprite_frames.has_animation(attack_name):
 			attack_name = &"BasicAttack"
 		if sprite.animation != attack_name:
+			attack_area.start_attack()
 			sprite.play(attack_name)
+		elif not sprite.is_playing():
+			# The swing finished. Turn the box off so the next one can hit again.
+			_end_attack()
+			sprite.play(&"Idle")
 
 	move_and_slide()
+
+func _end_attack() -> void:
+	if attack_area and attack_area.has_method("end_attack"):
+		attack_area.end_attack()
 
 func _set_animation_loop(anim_name: StringName, should_loop: bool) -> void:
 	if sprite.sprite_frames and sprite.sprite_frames.has_animation(anim_name):

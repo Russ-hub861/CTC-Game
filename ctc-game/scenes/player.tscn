@@ -537,7 +537,7 @@ size = Vector2(128, 211)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3j60"]
 size = Vector2(155.5, 142.5)
 
-[node name="Player" type="CharacterBody2D" unique_id=1718794831]
+[node name="Player" type="CharacterBody2D" unique_id=1718794831 groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_qlg0r")
 metadata/_edit_group_ = true
@@ -557,7 +557,7 @@ position = Vector2(18, 64.5)
 shape = SubResource("RectangleShape2D_ayvh1")
 metadata/_edit_group_ = true
 
-[node name="AttackArea" type="Area2D" parent="." unique_id=1005858751 groups=["Players"]]
+[node name="AttackArea" type="Area2D" parent="." unique_id=1005858751]
 script = ExtResource("8_smehm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=707839307]

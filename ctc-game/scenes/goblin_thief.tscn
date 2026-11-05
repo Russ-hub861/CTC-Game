@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://lmgvdn72d2ut" path="res://Art/GolbinThief/GoblinScout-Sheet.png" id="1_kkduu"]
 [ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://scripts/enemy_group.gd" id="2_enemy"]
+[ext_resource type="Script" uid="uid://dgnaqlpyrr63i" path="res://scripts/enemy_attack_area.gd" id="3_attack"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxwnm"]
 atlas = ExtResource("1_kkduu")
@@ -237,6 +238,7 @@ frame_progress = 0.3629029
 shape = SubResource("CapsuleShape2D_ayvh1")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=251062316]
+script = ExtResource("3_attack")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2045660962]

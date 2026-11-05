@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _try_damage(body: Node) -> void:
 	if body in _already_hit:
 		return
-	if not body.is_in_group("Players"):
+	if not body.is_in_group("Player"):
 		return
 	if not body.has_method("take_damage"):
 		return

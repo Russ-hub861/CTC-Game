@@ -154,7 +154,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bdcn3")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"BasicAttack",
 "speed": 8.0
 }, {
@@ -262,6 +262,7 @@ shape = SubResource("RectangleShape2D_ayvh1")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=536415646]
 script = ExtResource("3_5tu54")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1770655775]
 position = Vector2(280.8333, 0)
