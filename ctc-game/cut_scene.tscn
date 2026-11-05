@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c7jj8p5vy5h46"]
+
+[node name="CutScene" type="Control" unique_id=1450604686]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2097536318]
