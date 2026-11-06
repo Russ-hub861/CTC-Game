@@ -1,0 +1,22 @@
+[gd_scene format=4 uid="uid://c0feqypysgdmb"]
+
+[ext_resource type="PackedScene" uid="uid://cglr03uyon7g1" path="res://level_2_background.tscn" id="1_nmjpi"]
+[ext_resource type="TileSet" uid="uid://cee2exu8iwpnf" path="res://dungeon_set.tres" id="2_xdadj"]
+
+[node name="Node2D" type="Node2D" unique_id=181979494]
+texture_filter = 1
+
+[node name="level_2_background" parent="." unique_id=50476868 instance=ExtResource("1_nmjpi")]
+texture_filter = 1
+scale = Vector2(6, 6)
+
+[node name="floor" type="TileMapLayer" parent="." unique_id=1810197276]
+texture_filter = 1
+scale = Vector2(6, 6)
+tile_map_data = PackedByteArray("AAAAAAsAAAAAAAIAAAADAAsAAAABAAIAAAAEAAsAAAABAAIAAAAFAAsAAAABAAIAAAAGAAsAAAABAAIAAAAHAAsAAAABAAIAAAAIAAsAAAABAAIAAAAJAAsAAAABAAIAAAAKAAsAAAABAAIAAAALAAsAAAABAAIAAAAMAAsAAAABAAIAAAANAAsAAAABAAIAAAAOAAsAAAABAAIAAAAPAAsAAAABAAIAAAAQAAsAAAABAAIAAAARAAsAAAABAAIAAAASAAsAAAABAAIAAAATAAsAAAABAAIAAAACAAsAAAABAAIAAAABAAsAAAABAAIAAAA=")
+tile_set = ExtResource("2_xdadj")
+
+[node name="decoration" type="TileMapLayer" parent="." unique_id=1013691553]
+scale = Vector2(6, 6)
+tile_map_data = PackedByteArray("AAAJAAkAAAANACQAAAAFAAkAAAALABkAAAANAAkAAAANABkAAAA=")
+tile_set = ExtResource("2_xdadj")

@@ -246,6 +246,7 @@ size = Vector2(581.6666, 20)
 [node name="GoblinArcher" type="CharacterBody2D" unique_id=857540686 groups=["Enemies"]]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_ose0q")
+attack_range = 400.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1200802839 groups=["Enemies"]]
@@ -254,6 +255,7 @@ sprite_frames = SubResource("SpriteFrames_ayvh1")
 animation = &"BasicAttack"
 autoplay = "Idle"
 frame_progress = 0.9295185
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1635568363]
 texture_filter = 1
