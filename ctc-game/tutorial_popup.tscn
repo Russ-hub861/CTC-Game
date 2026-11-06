@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bnxlkheb83cya"]
+
+[ext_resource type="Script" uid="uid://c2t5fwhghtxyu" path="res://tutorial_popup.gd" id="1_6aqww"]
+[ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="1_l5emp"]
+
+[node name="TutorialPopup" type="Control" unique_id=1487695775]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6aqww")
+
+[node name="Label" type="Label" parent="." unique_id=1462111535]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.5
+offset_top = -37.0
+offset_right = 146.5
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l5emp")
+theme_override_font_sizes/font_size = 64
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1673155086]
+wait_time = 4.0
+one_shot = true
+
+[node name="Delaytimer" type="Timer" parent="." unique_id=436052980]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Delaytimer" to="." method="_on_delaytimer_timeout"]
