@@ -4,7 +4,8 @@ var messages = [
 	"Use the arrow keys to move!",
 	"Use the space bar to attack!",
 	"Your health is located in the top left corner", 
-	"once its depleated your run will be over."
+	"once its depleated your run will be over.",
+	"Press 'esc' to pause, quit, or to look at the controls"
 ]
 var current_message = 0
 

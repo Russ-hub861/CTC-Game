@@ -1159,3 +1159,5 @@ theme_override_fonts/font = ExtResource("6_826wr")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_fmgda")
 text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

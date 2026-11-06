@@ -23,7 +23,7 @@ corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 corner_detail = 20
 
-[node name="SettingsMenu" type="Control" unique_id=366174712]
+[node name="PauseMenu" type="Control" unique_id=366174712]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,3 +74,6 @@ theme_override_fonts/font = ExtResource("1_ufg0w")
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_7la6k")
 text = "Help"
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

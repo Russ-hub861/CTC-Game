@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://binksing7twbi"]
+
+[node name="HelpMenu" type="Control" unique_id=2032393007]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://3hki16l8oedm" path="res://scenes/main.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b5oiy6clrlpvk" path="res://scenes/goblin_archer.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://bj0tyxd84jjgt" path="res://scenes/MainMenu.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://tutorial_popup.tscn" id="7_o6xl0"]
 
@@ -19,10 +18,6 @@ max_health = 7
 
 [node name="Player" parent="." unique_id=1718794831 instance=ExtResource("2_sugp2")]
 position = Vector2(579, 848)
-
-[node name="MainMenu" parent="." unique_id=1881971039 instance=ExtResource("4_jyhfs")]
-visible = false
-size_flags_vertical = 4
 
 [node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("6_o6xl0")]
 
