@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dq1mltat1s0nb"]
+
+[ext_resource type="FontFile" uid="uid://cikr44jitu7bi" path="res://fonts/m5x7.ttf" id="1_0h2ac"]
+[ext_resource type="Script" uid="uid://bd08q6ans1xc7" path="res://damege_popup.gd" id="1_3ql7o"]
+
+[node name="DamegePopup" type="Label" unique_id=742401486]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.7166642, 0, 0.06913202, 1)
+theme_override_colors/font_shadow_color = Color(0.15199637, 0.15199634, 0.15199634, 0)
+theme_override_colors/font_outline_color = Color(0.8776157, 0.8776158, 0.8776157, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_0h2ac")
+theme_override_font_sizes/font_size = 108
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_3ql7o")
