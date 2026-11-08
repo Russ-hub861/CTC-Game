@@ -26,6 +26,7 @@ position = Vector2(579, 848)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stageboader" unique_id=887453324]
 position = Vector2(-48, 532)
 shape = SubResource("RectangleShape2D_4r0nh")
+
 [node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("6_o6xl0")]
 
 [node name="TutorialPopup" parent="." unique_id=1487695775 instance=ExtResource("7_o6xl0")]
