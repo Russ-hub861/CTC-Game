@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var attack_range: float = 250.0
 var health: int 
 var is_dead: bool = false
+signal died
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
@@ -133,7 +134,7 @@ func take_damage(amount: int) -> void:
 		animated_sprite.play(&"Idle")
 		
 func player_death() -> void:
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	died.emit()
 
 
 func _play_attack() -> void:

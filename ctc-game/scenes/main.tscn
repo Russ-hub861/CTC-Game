@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://gac36anssyni" path="res://scenes/goblin_tank.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://tutorial_popup.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://d2d4t8t51km7g" path="res://scenes/goblin_thief.tscn" id="8_tipki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4r0nh"]
 size = Vector2(76, 1084)
@@ -44,3 +45,6 @@ offset_top = 175.0
 offset_right = 927.0
 offset_bottom = 175.0
 grow_vertical = 1
+
+[node name="Goblin_Thief" parent="." unique_id=1552054683 instance=ExtResource("8_tipki")]
+position = Vector2(676, 844)
