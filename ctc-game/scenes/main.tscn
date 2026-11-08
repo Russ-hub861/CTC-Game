@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://wmlhyldrwt0d"]
 
 [ext_resource type="PackedScene" uid="uid://cl6qnygcn4sd8" path="res://level_1_fr.tscn" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://3hki16l8oedm" path="res://scenes/main.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b5oiy6clrlpvk" path="res://scenes/goblin_archer.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://gac36anssyni" path="res://scenes/goblin_tank.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://tutorial_popup.tscn" id="7_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=211260388]
+script = ExtResource("1_tefeu")
 
 [node name="Level_1_fr" parent="." unique_id=1364531263 instance=ExtResource("1_sugp2")]
 
@@ -18,3 +22,16 @@ SPEED = 300.0
 
 [node name="Goblin_Tank" parent="." unique_id=1318433942 instance=ExtResource("4_jyhfs")]
 position = Vector2(967, 789)
+
+[node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("6_o6xl0")]
+
+[node name="TutorialPopup" parent="." unique_id=1487695775 instance=ExtResource("7_o6xl0")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 927.0
+offset_top = 175.0
+offset_right = 927.0
+offset_bottom = 175.0
+grow_vertical = 1
