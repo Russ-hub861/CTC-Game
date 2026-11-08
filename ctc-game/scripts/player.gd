@@ -5,7 +5,7 @@ var move_cooldown = 0.0
 
 @onready var attack_collision = $AttackArea/CollisionShape2D
 @onready var sprite = $Sprite2D
-var attack_texture = preload("res://Art/ATTACK 1.png")
+#var attack_texture = preload("res://Art/ATTACK 1.png")
 var default_texture 
 
 func _ready():
@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	# attack
 	if Input.is_action_just_pressed("attack"):
 		attack_collision.disabled = false
-		sprite.texture = attack_texture
+		#sprite.texture = attack_texture
 		await get_tree().create_timer(0.2).timeout
 		attack_collision.disabled = true
 		sprite.texture = default_texture
