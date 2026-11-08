@@ -1379,6 +1379,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1llwh")
 
 [node name="Level_1_fr" type="Node2D" unique_id=1364531263]
+texture_filter = 1
 
 [node name="Layer#0" type="TileMapLayer" parent="." unique_id=1848468823]
 use_parent_material = true

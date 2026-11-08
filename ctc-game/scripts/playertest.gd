@@ -76,14 +76,11 @@ func take_damage(amount: int) -> void:
 	
 	if health <= 0:
 		is_dead = true
-		player_death()
-	
-	if health <= 0:
-		is_dead = true
-		_hit_serial += 1
+		is_busy = true
+		velocity = Vector2.ZERO
 		animated_sprite.play(&"Death")
 		await animated_sprite.animation_finished
-		queue_free()
+		player_death()
 		return
 
 	_hit_serial += 1
@@ -97,7 +94,7 @@ func take_damage(amount: int) -> void:
 		animated_sprite.play(&"Idle")
 		
 func player_death() -> void:
-	print("Player has died!")
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 
 
 func _play_attack() -> void:
