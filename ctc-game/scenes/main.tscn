@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://tutorial_popup.tscn" id="7_o6xl0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r0nh"]
+size = Vector2(76, 1084)
+
 [node name="Main" type="Node2D" unique_id=211260388]
 script = ExtResource("1_tefeu")
 
@@ -22,6 +25,12 @@ SPEED = 300.0
 
 [node name="Goblin_Tank" parent="." unique_id=1318433942 instance=ExtResource("4_jyhfs")]
 position = Vector2(967, 789)
+
+[node name="stageboader" type="StaticBody2D" parent="." unique_id=679259878]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stageboader" unique_id=887453324]
+position = Vector2(-48, 532)
+shape = SubResource("RectangleShape2D_4r0nh")
 
 [node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("6_o6xl0")]
 

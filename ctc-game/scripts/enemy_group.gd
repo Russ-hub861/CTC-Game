@@ -6,6 +6,9 @@ class_name EnemyGroup
 @export var attack_range: float = 250.0
 var health: int 
 var is_dead: bool = false
+var is_invincible: bool = false
+
+const DAMAGE_POPUP_SCENE = preload("res://damege_popup.tscn")
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = $AttackArea
@@ -25,10 +28,17 @@ func _ready() -> void:
 	sprite.play(&"Idle")
 
 func take_damage(amount: int) -> void:
-	if is_dead:
+	if is_dead or is_invincible:
 		return
 
+	is_invincible = true
+	_reset_invincibility()
+
 	health -= amount
+
+	var popup = DAMAGE_POPUP_SCENE.instantiate()
+	get_tree().current_scene.add_child(popup)
+	popup.show_damage(amount, global_position + Vector2(70, -55))
 
 	if sprite == null:
 		if health <= 0:
@@ -98,6 +108,10 @@ func _physics_process(delta: float) -> void:
 			sprite.play(&"Idle")
 
 	move_and_slide()
+
+func _reset_invincibility() -> void:
+	await get_tree().create_timer(0.2).timeout
+	is_invincible = false
 
 func _end_attack() -> void:
 	if attack_area and attack_area.has_method("end_attack"):
