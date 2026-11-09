@@ -63,52 +63,89 @@ func take_damage(amount: int) -> void:
 
 	if not is_dead and serial == _hit_serial:
 		sprite.play(&"Idle")
-
+		
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	# ... gravity, chase, and attack...
+	move_and_slide() 
 
-	# Stay still while hurt, dead, or if this node has no sprite.
-	if is_dead or sprite == null or sprite.animation == &"Hit" or sprite.animation == &"Death":
-		velocity.x = 0
-		_end_attack()
-		move_and_slide()
+#func _physics_process(delta: float) -> void:
+	#if not is_on_floor():
+		#velocity += get_gravity() * delta
+#
+	## Stay still while hurt, dead, or if this node has no sprite.
+	#if is_dead or sprite == null or sprite.animation == &"Hit" or sprite.animation == &"Death":
+		#velocity.x = 0
+		#_end_attack()
+		#move_and_slide()
+		#return
+#
+	#var player = get_tree().get_first_node_in_group("Player")
+	#if player == null:
+		#velocity.x = 0
+		#move_and_slide()
+		#return
+#
+	## Face the player and walk toward them until we are close enough to attack.
+	#var player_position: Vector2 = player.global_position
+	#var facing_left := player_position.x < global_position.x
+	#sprite.flip_h = facing_left
+	## flip_h only affects sprites. Mirroring the area's scale turns the hitbox too.
+	#attack_area.scale.x = -1.0 if facing_left else 1.0
+#
+	#if global_position.distance_to(player_position) > attack_range:
+		#var direction: float = sign(player_position.x - global_position.x)
+		#velocity.x = direction * speed
+		#if sprite.animation != &"Idle":
+			#_end_attack()
+			#sprite.play(&"Idle")
+	#else:
+		#velocity.x = 0
+		#var attack_name := &"Attack"
+		#if not sprite.sprite_frames.has_animation(attack_name):
+			#attack_name = &"BasicAttack"
+		#if sprite.animation != attack_name:
+			#attack_area.start_attack()
+			#sprite.play(attack_name)
+		#elif not sprite.is_playing():
+			## The swing finished. Turn the box off so the next one can hit again.
+			#_end_attack()
+			#sprite.play(&"Idle")
+#
+	#move_and_slide()
+func _move_once(direction: float):
+	sprite.flip_h = direction < 0
+	attack_area.scale.x = -1 if direction < 0 else 1
+	#starts the step
+	velocity.x = direction * speed
+	sprite.play(&"Idle")
+	await get_tree().create_timer(0.4).timeout
+	velocity.x = 0
+	
+func _play_attack() -> void:
+	var attack_name := &"Attack"
+	if not sprite.sprite_frames.has_animation(attack_name):
+		attack_name = &"BasicAttack"
+	velocity.x = 0
+	attack_area.start_attack()
+	sprite.play(attack_name)
+	await sprite.animation_finished
+	attack_area.end_attack()
+	sprite.play(&"Idle")
+
+func take_turn() -> void:
+	if is_dead:
 		return
-
 	var player = get_tree().get_first_node_in_group("Player")
-	if player == null:
-		velocity.x = 0
-		move_and_slide()
+	if player == null or player.is_dead:
 		return
-
-	# Face the player and walk toward them until we are close enough to attack.
+		
 	var player_position: Vector2 = player.global_position
-	var facing_left := player_position.x < global_position.x
-	sprite.flip_h = facing_left
-	# flip_h only affects sprites. Mirroring the area's scale turns the hitbox too.
-	attack_area.scale.x = -1.0 if facing_left else 1.0
-
+	var direction: float = sign(player_position.x - global_position.x)
 	if global_position.distance_to(player_position) > attack_range:
-		var direction: float = sign(player_position.x - global_position.x)
-		velocity.x = direction * speed
-		if sprite.animation != &"Idle":
-			_end_attack()
-			sprite.play(&"Idle")
+		await _move_once(direction)
 	else:
-		velocity.x = 0
-		var attack_name := &"Attack"
-		if not sprite.sprite_frames.has_animation(attack_name):
-			attack_name = &"BasicAttack"
-		if sprite.animation != attack_name:
-			attack_area.start_attack()
-			sprite.play(attack_name)
-		elif not sprite.is_playing():
-			# The swing finished. Turn the box off so the next one can hit again.
-			_end_attack()
-			sprite.play(&"Idle")
-
-	move_and_slide()
-
+		await _play_attack()
+	
 func _reset_invincibility() -> void:
 	await get_tree().create_timer(0.2).timeout
 	is_invincible = false
