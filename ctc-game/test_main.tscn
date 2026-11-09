@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://c1jqkk6kqbd6g"]
 
+[ext_resource type="Script" uid="uid://dym2wxm06qij" path="res://test_main.gd" id="1_2n3av"]
+[ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="1_tcanr"]
+[ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="2_2n3av"]
+
 [node name="TestMain" type="Node2D" unique_id=1237283290]
+script = ExtResource("1_2n3av")
+
+[node name="LevelContainer" type="Node2D" parent="." unique_id=1515450271]
+
+[node name="Player" parent="." unique_id=1718794831 instance=ExtResource("1_tcanr")]
+
+[node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("2_2n3av")]

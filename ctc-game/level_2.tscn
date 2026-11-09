@@ -20,3 +20,9 @@ tile_set = ExtResource("2_xdadj")
 scale = Vector2(6, 6)
 tile_map_data = PackedByteArray("AAAJAAkAAAANACQAAAAFAAkAAAALABkAAAANAAkAAAANABkAAAA=")
 tile_set = ExtResource("2_xdadj")
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=321890019]
+position = Vector2(916, 887)
+
+[node name="EnemySpawn1" type="Marker2D" parent="." unique_id=1308621764]
+position = Vector2(1672, 903)
