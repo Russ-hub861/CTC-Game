@@ -550,7 +550,8 @@ scale = Vector2(6.1339283, 5.34375)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
 animation = &"Death"
 autoplay = "Idle"
-frame_progress = 0.9622964
+frame = 14
+frame_progress = 1.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1055821689]
