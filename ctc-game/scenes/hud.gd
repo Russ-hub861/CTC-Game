@@ -1,6 +1,8 @@
 extends CanvasLayer
 
-var health = 3
+
+
+@onready var half_heart = preload("res://Art/hearts/HalfHeart.png")
 
 @onready var hearts = [
 	$HeartContainer/Heart1,
@@ -17,8 +19,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func take_damage():
-	if health > 0:
-		health -= 1
-		if health >= 0:
-			hearts[health].hide()
+func update_hearts(new_health):
+	if new_health == 4:
+		$HBoxContainer/Heart3.hide()
+	elif new_health == 2:
+		$HBoxContainer/Heart2.hide()
+	elif new_health == 0:
+		$HBoxContainer/Heart.hide()
+		

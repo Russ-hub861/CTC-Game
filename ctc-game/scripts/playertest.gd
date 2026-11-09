@@ -6,6 +6,7 @@ extends CharacterBody2D
 var health: int 
 var is_dead: bool = false
 signal died
+signal health_changed(new_health)
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
@@ -111,7 +112,7 @@ func take_damage(amount: int) -> void:
 		return
 		
 	health -= amount
-	
+	health_changed.emit(health)
 	print("Player health: ", health)
 	
 	if health <= 0:
