@@ -269,7 +269,7 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("2_enemy")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925 groups=["Enemies"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925]
 position = Vector2(3.4059798e-07, 0)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_ayvh1")

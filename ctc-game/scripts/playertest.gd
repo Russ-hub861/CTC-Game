@@ -7,6 +7,7 @@ var health: int
 var is_dead: bool = false
 signal died
 signal health_changed(new_health)
+signal turn_finished
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
@@ -41,7 +42,7 @@ func start_entrance_walk(spawn_x: float, target_x: float) -> void:
 	var entrance_speed_scale: float = 0.65
 	
 	while position.x < target_x - 40.0:
-		await _move_once(1.0, entrance_speed_scale)
+		await _move_once(1.0, entrance_speed_scale, false)
 	
 	position.x = target_x
 	_play_idle()
@@ -89,7 +90,7 @@ func _tapped_direction() -> float:
 
 
 # ignore the value when default movement
-func _move_once(direction: float, speed_multiplier: float = 1.0) -> void:
+func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool = true) -> void:
 	is_busy = true
 	facing_left = direction < 0.0
 	_apply_facing()
@@ -106,6 +107,8 @@ func _move_once(direction: float, speed_multiplier: float = 1.0) -> void:
 	animated_sprite.speed_scale = 1.0
 	_play_idle()
 	is_busy = false
+	if ends_turn:
+		turn_finished.emit()
 	
 func take_damage(amount: int) -> void:
 	if is_dead:
@@ -148,6 +151,7 @@ func _play_attack() -> void:
 	attack_area.end_attack()
 	_play_idle()
 	is_busy = false
+	turn_finished.emit()
 
 
 func _apply_facing() -> void:
