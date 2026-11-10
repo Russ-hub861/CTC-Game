@@ -6,15 +6,27 @@ var current_level
 var level_1_waves = [
 	{
 		"enemies": 2,
-		"spawn_delay": 2.0
+		"spawn_delay": 2.0,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":70},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":30}
+		]
 	},
 	{
 		"enemies": 3,
-		"spawn_delay": 1.5
+		"spawn_delay": 1.5,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":60},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":40}
+		]
 	},
 	{
 		"enemies": 4,
-		"spawn_delay": 1.0
+		"spawn_delay": 1.0,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":50},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":50}
+		]
 	}
 ]
 
@@ -33,6 +45,8 @@ func _ready() -> void:
 	load_level(preload("res://level_2.tscn"))
 	$WaveManager.start_level(current_level,level_1_waves)
 	
+<<<<<<< HEAD
+=======
 func _on_player_died() -> void:
 	get_tree().change_scene_to_file("res://death_screen.tscn")
 	
@@ -46,3 +60,4 @@ func _on_player_turn_finished() -> void:
 		await enemy.take_turn()
 	player.can_control = true
 	
+>>>>>>> ad19a61810c47abeded80258126c16acf23cadd6
