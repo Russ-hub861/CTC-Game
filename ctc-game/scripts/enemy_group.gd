@@ -118,7 +118,7 @@ func _move_once(direction: float):
 	attack_area.scale.x = -1 if direction < 0 else 1
 	#starts the step
 	velocity.x = direction * speed
-	sprite.play(&"Idle")
+	sprite.play(&"Move")
 	await get_tree().create_timer(0.4).timeout
 	velocity.x = 0
 	
@@ -134,6 +134,8 @@ func _play_attack() -> void:
 	sprite.play(&"Idle")
 
 func take_turn() -> void:
+	if sprite.animation == &"Hit":
+		await sprite.animation_finished
 	if is_dead:
 		return
 	var player = get_tree().get_first_node_in_group("Player")
