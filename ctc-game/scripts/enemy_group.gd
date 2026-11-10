@@ -7,7 +7,7 @@ class_name EnemyGroup
 var health: int 
 var is_dead: bool = false
 var is_invincible: bool = false
-
+signal died
 const DAMAGE_POPUP_SCENE = preload("res://damege_popup.tscn")
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -50,6 +50,7 @@ func take_damage(amount: int) -> void:
 		is_dead = true
 		_hit_serial += 1
 		sprite.play(&"Death")
+		died.emit()
 		await sprite.animation_finished
 		queue_free()
 		return
