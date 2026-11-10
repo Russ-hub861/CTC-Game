@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="." unique_id=709897064]
+[node name="wavemessage" type="Label" parent="." unique_id=709897064]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

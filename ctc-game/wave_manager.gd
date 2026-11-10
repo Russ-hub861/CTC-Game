@@ -20,6 +20,7 @@ func spawn_enemy():
 	enemy.died.connect(_on_enemy_died)
 
 func start_level(level: Node2D, level_waves: Array):
+	$WaveMessages.hide()
 	current_level = level
 	waves = level_waves
 	current_wave = 0
@@ -55,8 +56,13 @@ func check_wave_completion():
 
 func wave_completed():
 	wave_transitioning = true
+	$WaveMessages/wavemessage.text = "Wave "+str(current_wave+1)+" complete!"
+	$WaveMessages.show()
 	await get_tree().create_timer(2.0).timeout
 	current_wave += 1
+	$WaveMessages/wavemessage.text = "Starting wave "+str(current_wave+1)
+	await get_tree().create_timer(1.0).timeout
+	$WaveMessages.hide()
 	start_wave()
 
 # Called when the node enters the scene tree for the first time.
