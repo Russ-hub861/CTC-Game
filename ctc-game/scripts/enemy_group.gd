@@ -118,7 +118,7 @@ func _move_once(direction: float):
 	attack_area.scale.x = -1 if direction < 0 else 1
 	#starts the step
 	velocity.x = direction * speed
-	sprite.play(&"Idle")
+	sprite.play(&"Move")
 	await get_tree().create_timer(0.4).timeout
 	velocity.x = 0
 	

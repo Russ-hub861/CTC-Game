@@ -112,6 +112,30 @@ region = Rect2(3600, 0, 600, 500)
 atlas = ExtResource("1_kkduu")
 region = Rect2(4200, 0, 600, 500)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5ui3"]
+atlas = ExtResource("1_kkduu")
+region = Rect2(0, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24ftc"]
+atlas = ExtResource("1_kkduu")
+region = Rect2(600, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n6k1"]
+atlas = ExtResource("1_kkduu")
+region = Rect2(1200, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scsfv"]
+atlas = ExtResource("1_kkduu")
+region = Rect2(1800, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_672gy"]
+atlas = ExtResource("1_kkduu")
+region = Rect2(2400, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ch2m"]
+atlas = ExtResource("1_kkduu")
+region = Rect2(3000, 1500, 600, 500)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ayvh1"]
 animations = [{
 "frames": [{
@@ -214,6 +238,29 @@ animations = [{
 "loop": 1,
 "name": &"Idle",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5ui3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24ftc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n6k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scsfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_672gy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ch2m")
+}],
+"loop": 0,
+"name": &"Move",
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ayvh1"]
@@ -231,8 +278,10 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1450599730]
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Hit"
+animation = &"Move"
 autoplay = "Idle"
+frame = 5
+frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313860714]

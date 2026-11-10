@@ -124,6 +124,30 @@ region = Rect2(3600, 0, 600, 500)
 atlas = ExtResource("1_oeboj")
 region = Rect2(4200, 0, 600, 500)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tu54"]
+atlas = ExtResource("1_oeboj")
+region = Rect2(0, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avoeb"]
+atlas = ExtResource("1_oeboj")
+region = Rect2(600, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv2pg"]
+atlas = ExtResource("1_oeboj")
+region = Rect2(1200, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyqfl"]
+atlas = ExtResource("1_oeboj")
+region = Rect2(1800, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3rmc"]
+atlas = ExtResource("1_oeboj")
+region = Rect2(2400, 1500, 600, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06uis"]
+atlas = ExtResource("1_oeboj")
+region = Rect2(3000, 1500, 600, 500)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ayvh1"]
 animations = [{
 "frames": [{
@@ -235,6 +259,29 @@ animations = [{
 "loop": 1,
 "name": &"Idle",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tu54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avoeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv2pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyqfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3rmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06uis")
+}],
+"loop": 0,
+"name": &"Move",
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
@@ -253,7 +300,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1200802839]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Idle"
+animation = &"Move"
 autoplay = "Idle"
 flip_h = true
 

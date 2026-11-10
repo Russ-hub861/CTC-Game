@@ -548,7 +548,7 @@ texture_filter = 1
 position = Vector2(7.4999933, -19.499977)
 scale = Vector2(6.1339283, 5.34375)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"BackSlash"
+animation = &"Move"
 autoplay = "Idle"
 metadata/_edit_group_ = true
 
