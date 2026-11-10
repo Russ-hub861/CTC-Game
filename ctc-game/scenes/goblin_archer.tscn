@@ -186,7 +186,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m3ulv")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Death",
 "speed": 8.0
 }, {
@@ -203,7 +203,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j4c6a")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Hit",
 "speed": 8.0
 }, {
@@ -246,13 +246,14 @@ size = Vector2(581.6666, 20)
 [node name="GoblinArcher" type="CharacterBody2D" unique_id=857540686 groups=["Enemies"]]
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_ose0q")
+speed = 300.0
 attack_range = 400.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1200802839]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Attack"
+animation = &"Idle"
 autoplay = "Idle"
 flip_h = true
 

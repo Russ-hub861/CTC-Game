@@ -12,6 +12,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4r0nh"]
 size = Vector2(76, 1084)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
+size = Vector2(66, 1087)
+
 [node name="Main" type="Node2D" unique_id=211260388]
 script = ExtResource("1_tefeu")
 
@@ -32,6 +35,10 @@ position = Vector2(1074, 792.99994)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stageboader" unique_id=887453324]
 position = Vector2(-48, 532)
 shape = SubResource("RectangleShape2D_4r0nh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="stageboader" unique_id=942319821]
+position = Vector2(2055, 533.5)
+shape = SubResource("RectangleShape2D_ayvh1")
 
 [node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("6_o6xl0")]
 

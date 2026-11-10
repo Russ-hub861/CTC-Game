@@ -134,6 +134,8 @@ func _play_attack() -> void:
 	sprite.play(&"Idle")
 
 func take_turn() -> void:
+	if sprite.animation == &"Hit":
+		await sprite.animation_finished
 	if is_dead:
 		return
 	var player = get_tree().get_first_node_in_group("Player")

@@ -133,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1f80t")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Attack",
 "speed": 8.0
 }, {
@@ -165,7 +165,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vv1vo")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Death",
 "speed": 10.0
 }, {
@@ -182,7 +182,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_etpeq")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Hit",
 "speed": 8.0
 }, {
@@ -226,13 +226,13 @@ size = Vector2(148.3333, 126.66666)
 [node name="Goblin_Thief" type="CharacterBody2D" unique_id=1552054683 groups=["Enemies"]]
 scale = Vector2(0.6, 0.6)
 script = ExtResource("2_enemy")
+speed = 300.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1450599730]
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"Attack"
+animation = &"Hit"
 autoplay = "Idle"
-frame_progress = 0.7404179
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313860714]
