@@ -68,6 +68,14 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_8a8k8")
 text = "Quit"
 
+[node name="FullscreenToggle" type="Button" parent="VBoxContainer" unique_id=222472006]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ufg0w")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_8a8k8")
+toggle_mode = true
+text = "Full screen"
+
 [node name="HelpButton" type="Button" parent="VBoxContainer" unique_id=1611535680]
 visible = false
 layout_mode = 2

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://lg2tumbljq3" path="res://Art/Pixel Art Grassland Tileset 32x32/tree.png" id="4_ucygd"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="6_826wr"]
 [ext_resource type="Texture2D" uid="uid://deqhx6esanlww" path="res://Art/tileset/Tilesetv3.png" id="6_ucygd"]
+[ext_resource type="PackedScene" uid="uid://b4hofpq18cmqf" path="res://settings_menu.tscn" id="8_mipys"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mipys"]
 atlas = ExtResource("1_ow34m")
@@ -1160,5 +1161,13 @@ theme_override_fonts/font = ExtResource("6_826wr")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_fmgda")
 text = "Start"
+
+[node name="PauseMenu" parent="." unique_id=366174712 instance=ExtResource("8_mipys")]
+visible = false
+layout_mode = 1
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 4.0
+offset_bottom = 12.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
