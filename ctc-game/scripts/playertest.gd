@@ -171,3 +171,6 @@ func _wait_for_animation(anim_name: StringName) -> void:
 	if speed <= 0.0:
 		return
 	await get_tree().create_timer(frames.get_frame_count(anim_name) / speed).timeout
+
+func _play_move():
+	animated_sprite.play(&"Move")
