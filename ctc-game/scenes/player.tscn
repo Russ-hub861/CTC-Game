@@ -539,6 +539,7 @@ size = Vector2(155.5, 142.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1718794831 groups=["Players"]]
 texture_filter = 1
+position = Vector2(18, 26)
 script = ExtResource("1_qlg0r")
 max_health = 10
 metadata/_edit_group_ = true
@@ -563,3 +564,6 @@ script = ExtResource("8_smehm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=707839307]
 position = Vector2(126.25, 86.75)
 shape = SubResource("RectangleShape2D_t3j60")
+
+[node name="GroundMarker" type="Marker2D" parent="." unique_id=1046456164]
+position = Vector2(-39, 173)

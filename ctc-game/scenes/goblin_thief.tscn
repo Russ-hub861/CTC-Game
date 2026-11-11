@@ -271,6 +271,7 @@ height = 656.6666
 size = Vector2(148.3333, 126.66666)
 
 [node name="Goblin_Thief" type="CharacterBody2D" unique_id=1552054683 groups=["Enemies"]]
+position = Vector2(88, 50)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("2_enemy")
 speed = 300.0
@@ -294,3 +295,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2045660962]
 position = Vector2(192.50002, 88.33333)
 shape = SubResource("RectangleShape2D_ayvh1")
+
+[node name="GroundPoint" type="Marker2D" parent="." unique_id=1221506787]
+position = Vector2(113.33334, 246.6666)

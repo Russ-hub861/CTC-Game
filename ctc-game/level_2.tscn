@@ -25,4 +25,7 @@ tile_set = ExtResource("2_xdadj")
 position = Vector2(916, 887)
 
 [node name="EnemySpawn1" type="Marker2D" parent="." unique_id=1308621764]
-position = Vector2(1672, 910)
+position = Vector2(1672, 1061)
+
+[node name="EnemySpawn2" type="Marker2D" parent="." unique_id=220017718]
+position = Vector2(231, 1061)

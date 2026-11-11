@@ -13,4 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://tutorial_level.tscn")
+	

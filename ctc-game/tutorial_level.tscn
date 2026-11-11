@@ -1,9 +1,20 @@
 [gd_scene format=4 uid="uid://ce2bemjov8r5l"]
 
+[ext_resource type="Script" uid="uid://fy47i8m6hhgf" path="res://tutorial_level.gd" id="1_2dagw"]
 [ext_resource type="TileSet" uid="uid://cee2exu8iwpnf" path="res://dungeon_set.tres" id="1_sp2du"]
 [ext_resource type="PackedScene" uid="uid://d24r8xh3mas4f" path="res://torch.tscn" id="2_tfbhh"]
+[ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://tutorial_popup.tscn" id="3_3hotv"]
+[ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="5_7w0ls"]
+[ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="6_a5404"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohhhg"]
+bg_color = Color(1, 1, 1, 0.45490196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkllb"]
+bg_color = Color(0.8884254, 0.88842535, 0.88842535, 0.45882353)
 
 [node name="tutorial_level" type="Node2D" unique_id=1257329200]
+script = ExtResource("1_2dagw")
 
 [node name="background" type="TileMapLayer" parent="." unique_id=2014223605]
 texture_filter = 1
@@ -44,3 +55,53 @@ scale = Vector2(4, 4)
 [node name="torch4" parent="." unique_id=2122732361 instance=ExtResource("2_tfbhh")]
 position = Vector2(1894, 864)
 scale = Vector2(4, 4)
+
+[node name="TutorialPopup" parent="." unique_id=1487695775 instance=ExtResource("3_3hotv")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = 932.2967
+offset_top = 161.87708
+offset_right = 932.2967
+offset_bottom = 161.87708
+grow_vertical = 1
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=818460201]
+position = Vector2(152, 965)
+
+[node name="Player" parent="." unique_id=1718794831 instance=ExtResource("5_7w0ls")]
+SPEED = 300.0
+
+[node name="SkipButton" type="Button" parent="." unique_id=1454102936]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 674.0
+offset_top = 993.0
+offset_right = 1181.0
+offset_bottom = 1085.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("6_a5404")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ohhhg")
+text = "Skip Tutorial"
+
+[node name="ContinueButton" type="Button" parent="." unique_id=1222425286]
+visible = false
+offset_left = 804.0
+offset_top = 550.0
+offset_right = 1064.0
+offset_bottom = 652.0
+theme_override_fonts/font = ExtResource("6_a5404")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_rkllb")
+text = "Next Level"
+
+[connection signal="tutorial_completed" from="TutorialPopup" to="." method="_on_tutorial_popup_tutorial_completed"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]

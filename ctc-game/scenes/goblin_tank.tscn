@@ -312,6 +312,7 @@ size = Vector2(312.85718, 385.7143)
 size = Vector2(350.00006, 390.00018)
 
 [node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942 groups=["Enemies"]]
+position = Vector2(84.000015, 40)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("2_enemy")
 speed = 250.0
@@ -340,3 +341,7 @@ script = ExtResource("3_wxnhu")
 position = Vector2(287.857, 130.71426)
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_ayvh1")
+
+[node name="GroundPoint" type="Marker2D" parent="." unique_id=1270239898]
+position = Vector2(120.000015, 327.14285)
+scale = Vector2(0.99999976, 0.99999976)

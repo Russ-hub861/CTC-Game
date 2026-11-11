@@ -8,6 +8,8 @@ var current_level: Node2D
 var waves: Array = []
 var enemy_scene = preload("res://scenes/goblin_thief.tscn")
 var enemy_scenetwo = preload("res://scenes/goblin_tank.tscn")
+signal level_done
+
 
 func _on_enemy_died():
 	enemies_alive -=1
@@ -26,13 +28,20 @@ func choose_enemy(enemy_pool: Array) -> PackedScene:
 
 
 func spawn_enemy():
+	var spawn_points = [
+	current_level.get_node("EnemySpawn1"),
+	current_level.get_node("EnemySpawn2")
+]
 	var wave = waves[current_wave]
 	var enemy_pool = wave["enemy_pool"]
 	var selected_scene = choose_enemy(enemy_pool)
 	var enemy = selected_scene.instantiate()
 	current_level.add_child(enemy)
-	var spawn_point = current_level.get_node("EnemySpawn1")
+	var spawn_point = spawn_points.pick_random()
 	enemy.global_position = spawn_point.global_position
+	var ground_point = enemy.get_node("GroundPoint")
+	enemy.global_position.y += spawn_point.global_position.y - ground_point.global_position.y
+
 	enemy.died.connect(_on_enemy_died)
 	enemies_alive += 1
 
@@ -47,6 +56,8 @@ func start_level(level: Node2D, level_waves: Array):
 func start_wave():
 	if current_wave >= waves.size():
 		#level_completed()
+		$WaveMessages/wavemessage.text = "Level complete!"
+		level_done.emit()
 		return
 	$WaveMessages/wavemessage.text = "Starting wave "+str(current_wave+1)
 	await get_tree().create_timer(1.0).timeout

@@ -1,14 +1,23 @@
 extends Control
 
 var messages = [
-	"Use the arrow keys to move!",
-	"Use the space bar to attack!",
-	"Your health is located in the top left corner", 
-	"once its depleated your run will be over.",
-	"Press 'esc' to pause, quit, and to look at the controls"
+	"You hear an eerie voice \nfrom the statue",
+	"If you ever want to see your dog agian \n
+	You must listen to what I say very carefully...",
+	"Use the arrow keys or wasd to move",
+	"Use the space bar to attack enemies",
+	"Your health is located in the top left corner \n
+	once its depleated you will die.",
+	"Press 'esc' to pause, quit, \nand to look at the controls",
+	"Remember that enemies will only move once you do",
+	"Defeat waves of enemies during \neach level in order to escape",
+	"When you are ready to attempt your escape \n click the button above my head",
+	"Good luck!"
 ]
 var current_message = 0
-
+var tutorial_active = false
+var tutorial_finished = false
+signal tutorial_completed
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
@@ -17,6 +26,9 @@ func display_message():
 	#print("Showing message: ", messages[current_message])
 	if current_message >= messages.size():
 		visible = false
+		tutorial_finished = true
+		tutorial_active = false
+		tutorial_completed.emit()
 		return
 	$Label.text = messages[current_message]
 	visible = true
@@ -24,7 +36,16 @@ func display_message():
 	
 func start_tutorial():
 	current_message = 0
+	var tutorial_active = true
+	var tutorial_finished = false
 	display_message()
+
+func skip_tutorial():
+	$Timer.stop()
+	$Delaytimer.stop()
+	visible = false
+	tutorial_active = false
+	tutorial_finished = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

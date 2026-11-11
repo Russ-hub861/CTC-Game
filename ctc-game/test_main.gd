@@ -1,7 +1,7 @@
 extends Node2D
 var current_level
 @onready var player = $Player
-
+@onready var hud = $HUD
 
 var level_1_waves = [
 	{
@@ -44,9 +44,23 @@ func load_level(level_scene):
 func _ready() -> void:
 	load_level(preload("res://level_2.tscn"))
 	$WaveManager.start_level(current_level,level_1_waves)
+	player.health_changed.connect(hud.update_hearts)
+	hud.update_hearts(player.health)
+
+func _on_resume_button_pressed():
+	get_tree().paused = false
+	hide()
+
+func _on_quit_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+
+func _process(_delta):
+	if Input.is_action_pressed("pause"):
+		$PauseMenu.visible = !$PauseMenu.visible
+		get_tree().paused = $PauseMenu.visible
 	
-<<<<<<< HEAD
-=======
+		
+
 func _on_player_died() -> void:
 	get_tree().change_scene_to_file("res://death_screen.tscn")
 	
@@ -60,4 +74,7 @@ func _on_player_turn_finished() -> void:
 		await enemy.take_turn()
 	player.can_control = true
 	
->>>>>>> ad19a61810c47abeded80258126c16acf23cadd6
+
+
+func _on_wave_manager_level_done() -> void:
+	$NextButton.show()

@@ -29,6 +29,7 @@ SPEED = 300.0
 
 [node name="Goblin_Tank" parent="." unique_id=1318433942 instance=ExtResource("4_jyhfs")]
 position = Vector2(1074, 792.99994)
+speed = 100.0
 
 [node name="stageboader" type="StaticBody2D" parent="." unique_id=679259878]
 
@@ -55,3 +56,4 @@ grow_vertical = 1
 
 [node name="Goblin_Thief" parent="." unique_id=1552054683 instance=ExtResource("8_tipki")]
 position = Vector2(724, 874)
+speed = 100.0
