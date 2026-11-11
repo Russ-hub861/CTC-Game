@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cglr03uyon7g1" path="res://level_2_background.tscn" id="1_nmjpi"]
 [ext_resource type="TileSet" uid="uid://cee2exu8iwpnf" path="res://dungeon_set.tres" id="2_xdadj"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkllb"]
+size = Vector2(140, 1252)
+
 [node name="Node2D" type="Node2D" unique_id=181979494]
 texture_filter = 1
 
@@ -22,10 +25,20 @@ tile_map_data = PackedByteArray("AAAJAAkAAAANACQAAAAFAAkAAAALABkAAAANAAkAAAANABk
 tile_set = ExtResource("2_xdadj")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=321890019]
-position = Vector2(916, 887)
+position = Vector2(916, 1060)
 
 [node name="EnemySpawn1" type="Marker2D" parent="." unique_id=1308621764]
 position = Vector2(1672, 1061)
 
 [node name="EnemySpawn2" type="Marker2D" parent="." unique_id=220017718]
 position = Vector2(231, 1061)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2053713296]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2097130020]
+position = Vector2(2000, 612)
+shape = SubResource("RectangleShape2D_rkllb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=399313206]
+position = Vector2(-75, 614)
+shape = SubResource("RectangleShape2D_rkllb")

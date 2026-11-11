@@ -57,6 +57,8 @@ func start_wave():
 	if current_wave >= waves.size():
 		#level_completed()
 		$WaveMessages/wavemessage.text = "Level complete!"
+		await get_tree().create_timer(1.0).timeout
+		$WaveMessages.hide()
 		level_done.emit()
 		return
 	$WaveMessages/wavemessage.text = "Starting wave "+str(current_wave+1)

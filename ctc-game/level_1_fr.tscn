@@ -1378,6 +1378,9 @@ texture = ExtResource("1_kekbi")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1llwh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkllb"]
+size = Vector2(170, 1099)
+
 [node name="Level_1_fr" type="Node2D" unique_id=1364531263]
 texture_filter = 1
 
@@ -1394,7 +1397,20 @@ tile_map_data = PackedByteArray("AAAEAAAAAAAFAAMAAAAPAAAAAAAFAAMAAAAEAAEAAAAFAAQ
 tile_set = SubResource("TileSet_ixp1w")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=20257391]
+position = Vector2(152, 1013)
 
 [node name="EnemySpawn1" type="Marker2D" parent="." unique_id=298667512]
+position = Vector2(1761, 1013)
 
 [node name="EnemySpawn2" type="Marker2D" parent="." unique_id=1094859344]
+position = Vector2(1003, 1013)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1300460448]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1247912571]
+position = Vector2(2009, 549)
+shape = SubResource("RectangleShape2D_rkllb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1873490313]
+position = Vector2(-85, 545)
+shape = SubResource("RectangleShape2D_rkllb")
