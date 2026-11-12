@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bxno4a6pwa66l" path="res://Art/DogBundle/PNGs/Labrador.png" id="5_03584"]
 [ext_resource type="Script" uid="uid://cc2jikroem53d" path="res://dog.gd" id="6_boq4u"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="7_irkw0"]
+[ext_resource type="Texture2D" uid="uid://byms4qo102fhf" path="res://Art/Tears.png" id="9_gdyj6"]
+[ext_resource type="Script" uid="uid://d2ugm2cybnjlw" path="res://tears.gd" id="10_daeyy"]
 
 [sub_resource type="Animation" id="Animation_fynoa"]
 length = 0.001
@@ -35,10 +37,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(96, 651)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tears:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1409, 630)]
+}
 
 [sub_resource type="Animation" id="Animation_36pq8"]
 resource_name = "opening"
-length = 4.5666666
+length = 6.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,6 +109,35 @@ tracks/3/keys = {
 }, {
 "args": [],
 "method": &"_play_sit"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("tears:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4.52, 5.6666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1345, 598), Vector2(1345, 758)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("tears")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.03333333, 4.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"hide"
+}, {
+"args": [],
+"method": &"show"
 }]
 }
 
@@ -1315,6 +1358,16 @@ scale = Vector2(10, 10)
 tile_map_data = PackedByteArray("AAAJAAAAAAACAAAAAAAKAAAAAAADAAAAAAALAAAAAAAEAAAAAAAFAAEAAAAAAAEAAAAGAAEAAAABAAEAAAAHAAEAAAACAAEAAAABAAAAAAABAAIAAAACAAAAAAACAAIAAAADAAAAAAADAAIAAAAEAAAAAAAEAAIAAAA=")
 tile_set = SubResource("TileSet_0lcmu")
 
+[node name="tears" type="TextureRect" parent="." unique_id=1462562974]
+layout_mode = 0
+offset_left = 1409.0
+offset_top = 630.0
+offset_right = 1478.0
+offset_bottom = 717.0
+texture = ExtResource("9_gdyj6")
+expand_mode = 1
+script = ExtResource("10_daeyy")
+
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1777745242]
 position = Vector2(-1, -6)
 scale = Vector2(8, 8)
@@ -1335,4 +1388,6 @@ position = Vector2(96, 651)
 scale = Vector2(6.7773447, 6.9990244)
 sprite_frames = SubResource("SpriteFrames_7v5iq")
 animation = &"sit"
+frame = 5
+frame_progress = 1.0
 script = ExtResource("6_boq4u")
