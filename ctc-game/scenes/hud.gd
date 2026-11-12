@@ -21,9 +21,9 @@ func _process(delta: float) -> void:
 
 func update_hearts(new_health):
 	if new_health == 4:
-		$HBoxContainer/Heart3.hide()
+		hearts[2].hide()
 	elif new_health == 2:
-		$HBoxContainer/Heart2.hide()
+		hearts[1].hide()
 	elif new_health == 0:
-		$HBoxContainer/Heart.hide()
+		hearts[0].hide()
 		

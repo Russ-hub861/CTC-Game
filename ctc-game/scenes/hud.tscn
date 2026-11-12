@@ -6,28 +6,32 @@
 [node name="HUD" type="CanvasLayer" unique_id=2118713440]
 script = ExtResource("1_5ysmq")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=301436251]
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=301436251]
 offset_top = -71.0
 offset_right = 548.0
 offset_bottom = 231.0
+mouse_filter = 2
 
-[node name="Heart" type="TextureRect" parent="HBoxContainer" unique_id=932168028]
+[node name="Heart1" type="TextureRect" parent="HeartContainer" unique_id=932168028]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart2" type="TextureRect" parent="HBoxContainer" unique_id=141468278]
+[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=141468278]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart3" type="TextureRect" parent="HBoxContainer" unique_id=2109454409]
+[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=2109454409]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
