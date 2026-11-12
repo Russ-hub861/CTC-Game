@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bt85wqr68jdjl" path="res://scenes/hud.gd" id="1_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://cc31m0nadrkyl" path="res://Art/hearts/FullHeart.png" id="1_oo0fn"]
+[ext_resource type="FontFile" uid="uid://cikr44jitu7bi" path="res://fonts/m5x7.ttf" id="3_5ysmq"]
 
 [node name="HUD" type="CanvasLayer" unique_id=2118713440]
 script = ExtResource("1_5ysmq")
@@ -35,3 +36,20 @@ mouse_filter = 2
 texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="ExpBar" type="ProgressBar" parent="." unique_id=113600371]
+offset_left = 12.0
+offset_top = 186.0
+offset_right = 566.0
+offset_bottom = 213.0
+mouse_filter = 2
+show_percentage = false
+
+[node name="LevelLabel" type="Label" parent="." unique_id=952179184]
+offset_left = 10.0
+offset_top = 142.0
+offset_right = 79.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 50
+text = "Lv.1"
