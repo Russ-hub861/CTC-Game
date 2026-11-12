@@ -1,14 +1,16 @@
 [gd_scene format=4 uid="uid://c7jj8p5vy5h46"]
 
+[ext_resource type="Script" uid="uid://d1tlvcqwfvcuf" path="res://cut_scene.gd" id="1_jbfw6"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="1_li4wx"]
 [ext_resource type="Texture2D" uid="uid://bxno4a6pwa66l" path="res://Art/DogBundle/PNGs/Labrador.png" id="2_jbfw6"]
 [ext_resource type="Texture2D" uid="uid://h1pkxwmreyrd" path="res://Art/Cloud Tileset.png" id="3_38t87"]
 [ext_resource type="Texture2D" uid="uid://34usb2ccvvl1" path="res://Art/Pixel Art Grassland Tileset 32x32/tilesetgrass.png" id="4_hnyv4"]
 [ext_resource type="Texture2D" uid="uid://lg2tumbljq3" path="res://Art/Pixel Art Grassland Tileset 32x32/tree.png" id="5_sko4d"]
 [ext_resource type="Texture2D" uid="uid://deqhx6esanlww" path="res://Art/tileset/Tilesetv3.png" id="6_8xgrg"]
+[ext_resource type="Script" uid="uid://cc2jikroem53d" path="res://dog.gd" id="7_38t87"]
 
 [sub_resource type="Animation" id="Animation_li4wx"]
-length = 2.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +18,10 @@ tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 4.9333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(367, 592), Vector2(1128, 592)]
+"values": [Vector2(189, 592), Vector2(1128, 592)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -28,39 +30,122 @@ tracks/1/path = NodePath("Player")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null],
+"method": &"_play_move"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dog:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.95),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1921, 649), Vector2(1378.0002, 651.00006)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dog")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_walk"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jbfw6"]
+resource_name = "cut scene"
+length = 3.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(189, 592), Vector2(1150, 592)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_play_move"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_jbfw6"]
-resource_name = "cut scene"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Dog:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(367, 592), Vector2(1150, 592)]
+"values": [Vector2(1950.0002, 651.00006), Vector2(1423, 650)]
 }
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dog")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_walk"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dog")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_sit"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_idle"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_38t87"]
@@ -381,38 +466,6 @@ sources/0 = SubResource("TileSetAtlasSource_uff8h")
 sources/1 = SubResource("TileSetAtlasSource_jmewg")
 sources/3 = SubResource("TileSetAtlasSource_bsras")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mipys"]
-atlas = ExtResource("2_jbfw6")
-region = Rect2(0, 76, 64, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8a8k8"]
-atlas = ExtResource("2_jbfw6")
-region = Rect2(64, 76, 64, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7la6k"]
-atlas = ExtResource("2_jbfw6")
-region = Rect2(128, 76, 64, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2nypq"]
-atlas = ExtResource("2_jbfw6")
-region = Rect2(192, 76, 64, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bky6r"]
-atlas = ExtResource("2_jbfw6")
-region = Rect2(256, 76, 64, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l4mxc"]
-atlas = ExtResource("2_jbfw6")
-region = Rect2(320, 76, 64, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5faoh"]
-atlas = ExtResource("2_jbfw6")
-region = Rect2(384, 76, 64, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ptake"]
-atlas = ExtResource("2_jbfw6")
-region = Rect2(448, 76, 64, 38)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_li4wx"]
 atlas = ExtResource("2_jbfw6")
 region = Rect2(0, 0, 64, 64)
@@ -445,37 +498,64 @@ region = Rect2(384, 0, 64, 64)
 atlas = ExtResource("2_jbfw6")
 region = Rect2(448, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjx66"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uff8h"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmewg"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsras"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi5u6"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_livu3"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2g7w"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0igg"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb7l7"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt5hi"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkwse"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlcy7"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flpat"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4up3"]
+atlas = ExtResource("2_jbfw6")
+region = Rect2(320, 128, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wwagk"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mipys")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8a8k8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7la6k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2nypq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bky6r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l4mxc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5faoh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ptake")
-}],
-"loop": 1,
-"name": &"Idle",
-"speed": 12.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_li4wx")
@@ -504,6 +584,58 @@ animations = [{
 "loop": 1,
 "name": &"ani",
 "speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjx66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uff8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmewg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsras")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi5u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_livu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2g7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0igg")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb7l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt5hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkwse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlcy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flpat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4up3")
+}],
+"loop": 0,
+"name": &"sit",
+"speed": 5.0
 }]
 
 [node name="CutScene" type="Control" unique_id=1450604686]
@@ -517,6 +649,7 @@ offset_right = 10.0
 offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jbfw6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1752870926]
 layout_mode = 1
@@ -527,8 +660,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5423357, 0.7099084, 1, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2097536318]
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=2097536318]
 libraries/ = SubResource("AnimationLibrary_38t87")
+autoplay = &"cut scene"
 
 [node name="Clouds" type="TileMapLayer" parent="." unique_id=811779557]
 scale = Vector2(10, 10)
@@ -542,12 +676,15 @@ tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAA
 tile_set = SubResource("TileSet_qi5u6")
 
 [node name="Dog" type="AnimatedSprite2D" parent="." unique_id=855517687]
-position = Vector2(1765.0001, 641)
+position = Vector2(1921, 649)
 scale = Vector2(6.7773447, 6.9990244)
 sprite_frames = SubResource("SpriteFrames_wwagk")
-animation = &"Idle"
-frame_progress = 0.69213206
+animation = &"sit"
+frame = 5
+frame_progress = 1.0
 flip_h = true
+script = ExtResource("7_38t87")
 
 [node name="Player" parent="." unique_id=1718794831 instance=ExtResource("1_li4wx")]
-position = Vector2(367, 592)
+position = Vector2(189, 592)
+SPEED = 0.0

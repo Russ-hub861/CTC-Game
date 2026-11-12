@@ -173,4 +173,5 @@ func _wait_for_animation(anim_name: StringName) -> void:
 	await get_tree().create_timer(frames.get_frame_count(anim_name) / speed).timeout
 
 func _play_move():
-	animated_sprite.play(&"Move")
+	$AnimatedSprite2D.sprite_frames.set_animation_loop("Move",true)
+	$AnimatedSprite2D.play("Move")
