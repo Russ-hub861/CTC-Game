@@ -28,7 +28,7 @@ func _ready() -> void:
 	var spawn_x = 190.0
 	var target_x = position.x # 579.0 will be auto filled
 	
-	start_entrance_walk(spawn_x, target_x)
+	#start_entrance_walk(spawn_x, target_x)
 
 func start_entrance_walk(spawn_x: float, target_x: float) -> void:
 	can_control = false
@@ -173,4 +173,8 @@ func _wait_for_animation(anim_name: StringName) -> void:
 	await get_tree().create_timer(frames.get_frame_count(anim_name) / speed).timeout
 
 func _play_move():
-	animated_sprite.play(&"Move")
+	$AnimatedSprite2D.sprite_frames.set_animation_loop("Move",true)
+	$AnimatedSprite2D.play("Move")
+
+func _stop_animation():
+	$AnimatedSprite2D.stop()

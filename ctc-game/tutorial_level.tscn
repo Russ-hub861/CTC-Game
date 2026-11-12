@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://tutorial_popup.tscn" id="3_3hotv"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="5_7w0ls"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="6_a5404"]
+[ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="7_ohhhg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohhhg"]
 bg_color = Color(1, 1, 1, 0.45490196)
@@ -101,6 +102,8 @@ theme_override_fonts/font = ExtResource("6_a5404")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_rkllb")
 text = "Next Level"
+
+[node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("7_ohhhg")]
 
 [connection signal="tutorial_completed" from="TutorialPopup" to="." method="_on_tutorial_popup_tutorial_completed"]
 [connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
