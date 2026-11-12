@@ -72,6 +72,8 @@ func _ready() -> void:
 	$WaveManager.start_level(current_level,level_1_waves)
 	player.health_changed.connect(hud.update_hearts)
 	hud.update_hearts(player.health)
+	player.exp_changed.connect(hud.update_exp)
+	hud.update_exp(player.current_exp, player.exp_to_next_level, player.level)
 
 func _on_resume_button_pressed():
 	get_tree().paused = false

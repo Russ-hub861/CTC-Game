@@ -9,6 +9,14 @@ signal died
 signal health_changed(new_health)
 signal turn_finished
 
+#exp point
+signal exp_changed(current_exp, max_exp, level)
+signal leveled_up(new_level)
+
+var level: int = 1
+var current_exp: int = 0
+var exp_to_next_level: int = 100
+
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
 
@@ -166,3 +174,42 @@ func _play_move():
 
 func _stop_animation():
 	$AnimatedSprite2D.stop()
+	
+#exp 	
+func gain_exp(amount: int) -> void:
+	current_exp += amount
+	_spawn_exp_popup(amount)
+	
+	while current_exp >= exp_to_next_level:
+		current_exp -= exp_to_next_level
+		level += 1
+		exp_to_next_level = int(exp_to_next_level * 1.5)
+		_on_level_up()
+	
+	exp_changed.emit(current_exp, exp_to_next_level, level)
+
+func _on_level_up() -> void:
+	# for level up
+	health = max_health
+	health_changed.emit(health)
+	leveled_up.emit(level)
+	print("LEVEL UP! Now Level: ", level)
+
+func _spawn_exp_popup(amount: int) -> void:
+	var label := Label.new()
+	label.text = "+" + str(amount) + " xp"
+	label.add_theme_font_override("font", load("res://fonts/m5x7.ttf"))
+	label.add_theme_font_size_override("font_size", 24)
+	label.add_theme_color_override("font_color", Color(0.3, 1.0, 0.4))
+	label.add_theme_color_override("font_outline_color", Color.BLACK)
+	label.add_theme_constant_override("outline_size", 4)
+	
+	# show on left side
+	label.position = global_position + Vector2(-70, -70)
+	get_tree().current_scene.add_child(label)
+	
+	var tween := create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label, "position:y", label.position.y - 40.0, 0.8)
+	tween.tween_property(label, "modulate:a", 0.0, 0.8)
+	tween.chain().tween_callback(label.queue_free)

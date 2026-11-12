@@ -4,6 +4,9 @@ class_name EnemyGroup
 @export var max_health: int = 5
 @export var speed: float = 100.0
 @export var attack_range: float = 250.0
+
+@export var exp_reward: int = 50
+
 var health: int 
 var is_dead: bool = false
 var is_invincible: bool = false
@@ -49,6 +52,9 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		is_dead = true
 		_hit_serial += 1
+		var player = get_tree().get_first_node_in_group("Player")
+		if player and player.has_method("gain_exp"):
+			player.gain_exp(exp_reward)
 		sprite.play(&"Death")
 		died.emit()
 		await sprite.animation_finished

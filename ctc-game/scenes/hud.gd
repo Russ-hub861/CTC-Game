@@ -10,9 +10,13 @@ extends CanvasLayer
 	$HeartContainer/Heart3
 ]
 
+@onready var exp_bar: ProgressBar = $ExpBar
+@onready var level_label: Label = $LevelLabel
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,4 +30,11 @@ func update_hearts(new_health):
 		hearts[1].hide()
 	elif new_health == 0:
 		hearts[0].hide()
+
+
+func update_exp(current_exp: int, max_exp: int, level: int) -> void:
+	exp_bar.max_value = max_exp
+	exp_bar.value = current_exp
+	level_label.text = "Lv." + str(level)
+
 		
