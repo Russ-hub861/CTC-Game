@@ -29,7 +29,32 @@ var level_1_waves = [
 		]
 	}
 ]
-
+var level_2_waves = [
+	{
+		"enemies": 1,
+		"spawn_delay": 2.0,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":70},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":30}
+		]
+	},
+	{
+		"enemies": 1,
+		"spawn_delay": 1.5,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":60},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":40}
+		]
+	},
+	{
+		"enemies": 1,
+		"spawn_delay": 1.0,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":50},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":50}
+		]
+	}
+]
 
 func load_level(level_scene):
 	if current_level:
@@ -88,6 +113,6 @@ func _on_wave_manager_level_done() -> void:
 func _on_next_button_pressed() -> void:
 	load_level(preload("res://level_1_fr.tscn"))
 	$NextButton.hide()
-	$WaveManager.start_level(current_level,level_1_waves)
+	$WaveManager.start_level(current_level,level_2_waves)
 	player.health_changed.connect(hud.update_hearts)
 	hud.update_hearts(player.health)
