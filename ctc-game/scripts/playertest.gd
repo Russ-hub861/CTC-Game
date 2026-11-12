@@ -18,48 +18,20 @@ signal turn_finished
 var _hit_serial := 0
 var is_busy := false
 var facing_left := false
-
-var can_control: bool = false
+var can_control: bool = true
 
 func _ready() -> void:
 	add_to_group("Player")
 	health = max_health
-	# appear from the middle of the gate
-	var spawn_x = 190.0
-	var target_x = position.x # 579.0 will be auto filled
-	
-	#start_entrance_walk(spawn_x, target_x)
-
-func start_entrance_walk(spawn_x: float, target_x: float) -> void:
-	can_control = false
-	position.x = spawn_x
-	modulate.a = 0.0
-	
-	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 1.0, 0.2)
-	
-	# *0.65
-	var entrance_speed_scale: float = 0.65
-	
-	while position.x < target_x - 40.0:
-		await _move_once(1.0, entrance_speed_scale, false)
-	
-	position.x = target_x
-	_play_idle()
-	can_control = true
 
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	# Block input and custom movement during the entrance cutscene
 	if not can_control:
 		move_and_slide()
 		return
-
-	#if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("ui_up"):
 		_flip_facing()
@@ -74,6 +46,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
 
 
 func _flip_facing() -> void:
