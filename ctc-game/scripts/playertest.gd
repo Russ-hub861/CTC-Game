@@ -97,7 +97,10 @@ func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool
 		turn_finished.emit()
 	
 func take_damage(amount: int) -> void:
-	if is_dead or is_blocking:
+	if is_dead:
+		return
+	elif is_blocking:
+		animated_sprite.play(&"Block")
 		return
 		
 	health -= amount
