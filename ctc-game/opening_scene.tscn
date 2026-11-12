@@ -38,7 +38,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_36pq8"]
 resource_name = "opening"
-length = 3.0000000000000004
+length = 4.5666666
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -46,10 +46,10 @@ tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 3, 4.49),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(422, 592), Vector2(1651, 592)]
+"values": [Vector2(422, 592), Vector2(1651, 560), Vector2(1657, 806)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -70,11 +70,14 @@ tracks/2/path = NodePath("Player")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"_play_move"
+}, {
+"args": [],
+"method": &"_stop_animation"
 }]
 }
 tracks/3/type = "method"
@@ -84,11 +87,14 @@ tracks/3/path = NodePath("Dog")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3.0333333),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"_play_walk"
+}, {
+"args": [],
+"method": &"_play_sit"
 }]
 }
 
