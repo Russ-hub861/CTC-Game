@@ -18,6 +18,7 @@ signal turn_finished
 var _hit_serial := 0
 var is_busy := false
 var facing_left := false
+var is_blocking := false
 
 var can_control: bool = false
 
@@ -71,6 +72,8 @@ func _physics_process(delta: float) -> void:
 			_move_once(direction)
 		elif Input.is_action_just_pressed("attack"):
 			_play_attack()
+		elif Input.is_action_just_pressed("block"):
+			_play_block()
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -112,7 +115,7 @@ func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool
 		turn_finished.emit()
 	
 func take_damage(amount: int) -> void:
-	if is_dead:
+	if is_dead or is_blocking:
 		return
 		
 	health -= amount
@@ -152,6 +155,16 @@ func _play_attack() -> void:
 	attack_area.end_attack()
 	_play_idle()
 	is_busy = false
+	turn_finished.emit()
+
+func _play_block() -> void:
+	is_busy = true
+	is_blocking = true
+	velocity.x = 0.0
+	_apply_facing()
+	_play_idle()
+	is_busy = false
+	print("Player blocked the Attack")
 	turn_finished.emit()
 
 

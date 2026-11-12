@@ -312,10 +312,8 @@ size = Vector2(312.85718, 385.7143)
 size = Vector2(350.00006, 390.00018)
 
 [node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942 groups=["Enemies"]]
-position = Vector2(84.000015, 40)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("2_enemy")
-speed = 250.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925]

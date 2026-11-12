@@ -56,5 +56,7 @@ func _on_player_turn_finished() -> void:
 		if not is_instance_valid(enemy):
 			continue
 		await enemy.take_turn()
+	player.is_blcoking = false
+	print("Player is done blocking")
 	player.can_control = true
 	
