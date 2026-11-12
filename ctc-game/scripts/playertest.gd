@@ -24,6 +24,7 @@ var can_control: bool = false
 func _ready() -> void:
 	add_to_group("Player")
 	health = max_health
+	can_control = true
 	# appear from the middle of the gate
 	var spawn_x = 190.0
 	var target_x = position.x # 579.0 will be auto filled
