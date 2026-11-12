@@ -20,7 +20,7 @@ var is_busy := false
 var facing_left := false
 var is_blocking := false
 
-var can_control: bool = false
+var can_control: bool = true
 
 func _ready() -> void:
 	add_to_group("Player")
