@@ -194,6 +194,7 @@ func gain_exp(amount: int) -> void:
 func _on_level_up() -> void:
 	# for level up
 	health = max_health
+	attack_area.damage_amount += 1
 	health_changed.emit(health)
 	leveled_up.emit(level)
 	print("LEVEL UP! Now Level: ", level)

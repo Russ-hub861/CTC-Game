@@ -5,7 +5,7 @@ var current_level
 
 var level_1_waves = [
 	{
-		"enemies": 1,
+		"enemies": 2,
 		"spawn_delay": 2.0,
 		"enemy_pool": [
 			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":70},
@@ -13,15 +13,15 @@ var level_1_waves = [
 		]
 	},
 	{
-		"enemies": 1,
-		"spawn_delay": 1.5,
+		"enemies": 3,
+		"spawn_delay": 3.0,
 		"enemy_pool": [
 			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":60},
 			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":40}
 		]
 	},
 	{
-		"enemies": 1,
+		"enemies": 2,
 		"spawn_delay": 1.0,
 		"enemy_pool": [
 			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":50},
@@ -31,7 +31,7 @@ var level_1_waves = [
 ]
 var level_2_waves = [
 	{
-		"enemies": 1,
+		"enemies": 3,
 		"spawn_delay": 2.0,
 		"enemy_pool": [
 			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":70},
@@ -39,7 +39,7 @@ var level_2_waves = [
 		]
 	},
 	{
-		"enemies": 1,
+		"enemies": 2,
 		"spawn_delay": 1.5,
 		"enemy_pool": [
 			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":60},
@@ -47,7 +47,7 @@ var level_2_waves = [
 		]
 	},
 	{
-		"enemies": 1,
+		"enemies": 2,
 		"spawn_delay": 1.0,
 		"enemy_pool": [
 			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":50},

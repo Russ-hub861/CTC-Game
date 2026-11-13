@@ -3,6 +3,7 @@ extends Area2D
 @onready var hitbox = $CollisionShape2D
 
 var _already_hit: Array[Node] = []
+var damage_amount: int = 2
 
 func _ready() -> void:
 	monitoring = false
@@ -37,4 +38,4 @@ func _try_damage(body: Node) -> void:
 	if not body.has_method("take_damage"):
 		return
 	_already_hit.append(body)
-	body.take_damage(2)
+	body.take_damage(damage_amount)
