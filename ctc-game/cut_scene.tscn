@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://lg2tumbljq3" path="res://Art/Pixel Art Grassland Tileset 32x32/tree.png" id="5_sko4d"]
 [ext_resource type="Texture2D" uid="uid://deqhx6esanlww" path="res://Art/tileset/Tilesetv3.png" id="6_8xgrg"]
 [ext_resource type="Script" uid="uid://cc2jikroem53d" path="res://dog.gd" id="7_38t87"]
+[ext_resource type="Texture2D" uid="uid://cup0k4yatsre5" path="res://Art/new_hearts/heart_spritesheet_32x32.png" id="9_sko4d"]
+[ext_resource type="Script" uid="uid://bm3addpxnumym" path="res://love_heart.gd" id="10_8xgrg"]
+[ext_resource type="Script" uid="uid://crbfie3to44lq" path="res://love_heart_2.gd" id="11_8xgrg"]
+[ext_resource type="Script" uid="uid://bduk756m7ompp" path="res://love_heart_3.gd" id="12_wwagk"]
+[ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="13_sog3x"]
 
 [sub_resource type="Animation" id="Animation_li4wx"]
 length = 5.0
@@ -63,10 +68,46 @@ tracks/3/keys = {
 "method": &"_play_walk"
 }]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("loveHeart:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1297, 461.00003)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("loveHeart2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1234.0001, 558)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("loveHeart3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1379, 539)]
+}
 
 [sub_resource type="Animation" id="Animation_jbfw6"]
 resource_name = "cut scene"
-length = 3.6
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -145,6 +186,102 @@ tracks/5/keys = {
 "values": [{
 "args": [],
 "method": &"_play_idle"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("loveHeart:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.03),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1297, 461.00003)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("loveHeart2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.03),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1234.0001, 558)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("loveHeart3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(3.03),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1379, 539)]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("loveHeart")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.7666667, 3.4666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"hide"
+}, {
+"args": [],
+"method": &"_jump"
+}, {
+"args": [],
+"method": &"show"
+}]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("loveHeart2")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 2.7666667, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"hide"
+}, {
+"args": [],
+"method": &"_jump"
+}, {
+"args": [],
+"method": &"show"
+}]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("loveHeart3")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2.4, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"hide"
+}, {
+"args": [],
+"method": &"_jump"
+}, {
+"args": [],
+"method": &"show"
 }]
 }
 
@@ -638,6 +775,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh1ei"]
+atlas = ExtResource("9_sko4d")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejq3d"]
+atlas = ExtResource("9_sko4d")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_513jc"]
+atlas = ExtResource("9_sko4d")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkllb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh1ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejq3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_513jc")
+}],
+"loop": 1,
+"name": &"love",
+"speed": 5.0
+}]
+
 [node name="CutScene" type="Control" unique_id=1450604686]
 layout_mode = 3
 anchors_preset = 15
@@ -688,3 +854,39 @@ script = ExtResource("7_38t87")
 [node name="Player" parent="." unique_id=1718794831 instance=ExtResource("1_li4wx")]
 position = Vector2(189, 592)
 SPEED = 0.0
+
+[node name="loveHeart" type="AnimatedSprite2D" parent="." unique_id=1437505133]
+position = Vector2(1297, 461.00003)
+scale = Vector2(4.4326744, 5.621777)
+sprite_frames = SubResource("SpriteFrames_rkllb")
+animation = &"love"
+frame_progress = 0.043458614
+script = ExtResource("10_8xgrg")
+
+[node name="loveHeart2" type="AnimatedSprite2D" parent="." unique_id=166195342]
+position = Vector2(1234.0001, 558)
+scale = Vector2(2.4349043, 3.1517572)
+sprite_frames = SubResource("SpriteFrames_rkllb")
+animation = &"love"
+frame_progress = 0.043458614
+script = ExtResource("11_8xgrg")
+
+[node name="loveHeart3" type="AnimatedSprite2D" parent="." unique_id=2057860156]
+position = Vector2(1379, 539)
+scale = Vector2(2.758, 3.152)
+sprite_frames = SubResource("SpriteFrames_rkllb")
+animation = &"love"
+frame_progress = 0.043458614
+script = ExtResource("12_wwagk")
+
+[node name="Label" type="Label" parent="." unique_id=961702275]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 187.0
+offset_right = 1314.0
+offset_bottom = 261.0
+scale = Vector2(1.1184416, 1.7065445)
+theme_override_colors/font_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("13_sog3x")
+theme_override_font_sizes/font_size = 64
+text = "Thank you for playing!"
