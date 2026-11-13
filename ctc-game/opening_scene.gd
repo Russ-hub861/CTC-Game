@@ -14,4 +14,4 @@ func _process(delta: float) -> void:
 
 func _on_opening_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "opening":
-		get_tree().change_scene_to_file("res://cut_scene.tscn")
+		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

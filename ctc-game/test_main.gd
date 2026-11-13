@@ -2,7 +2,7 @@ extends Node2D
 var current_level
 @onready var player = $Player
 @onready var hud = $HUD
-
+var is_level2 = false
 var level_1_waves = [
 	{
 		"enemies": 2,
@@ -113,8 +113,13 @@ func _on_wave_manager_level_done() -> void:
 
 
 func _on_next_button_pressed() -> void:
-	load_level(preload("res://level_1_fr.tscn"))
-	$NextButton.hide()
-	$WaveManager.start_level(current_level,level_2_waves)
-	player.health_changed.connect(hud.update_hearts)
-	hud.update_hearts(player.health)
+	if is_level2:
+		get_tree().change_scene_to_file("res://cut_scene.tscn")
+	else:
+		load_level(preload("res://level_1_fr.tscn"))
+		$NextButton.hide()
+		$NextButton.text = "Escape the dungeon"
+		$WaveManager.start_level(current_level,level_2_waves)
+		player.health_changed.connect(hud.update_hearts)
+		hud.update_hearts(player.health)
+		is_level2 = true

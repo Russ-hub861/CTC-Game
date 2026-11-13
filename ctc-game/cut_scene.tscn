@@ -860,7 +860,7 @@ position = Vector2(1297, 461.00003)
 scale = Vector2(4.4326744, 5.621777)
 sprite_frames = SubResource("SpriteFrames_rkllb")
 animation = &"love"
-frame_progress = 0.043458614
+frame_progress = 0.28605932
 script = ExtResource("10_8xgrg")
 
 [node name="loveHeart2" type="AnimatedSprite2D" parent="." unique_id=166195342]
@@ -868,7 +868,7 @@ position = Vector2(1234.0001, 558)
 scale = Vector2(2.4349043, 3.1517572)
 sprite_frames = SubResource("SpriteFrames_rkllb")
 animation = &"love"
-frame_progress = 0.043458614
+frame_progress = 0.28605932
 script = ExtResource("11_8xgrg")
 
 [node name="loveHeart3" type="AnimatedSprite2D" parent="." unique_id=2057860156]
@@ -876,7 +876,7 @@ position = Vector2(1379, 539)
 scale = Vector2(2.758, 3.152)
 sprite_frames = SubResource("SpriteFrames_rkllb")
 animation = &"love"
-frame_progress = 0.043458614
+frame_progress = 0.28605932
 script = ExtResource("12_wwagk")
 
 [node name="Label" type="Label" parent="." unique_id=961702275]
