@@ -4,6 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://cc31m0nadrkyl" path="res://Art/hearts/FullHeart.png" id="1_oo0fn"]
 [ext_resource type="FontFile" uid="uid://cikr44jitu7bi" path="res://fonts/m5x7.ttf" id="3_5ysmq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loaub"]
+bg_color = Color(0.18932778, 0.1893278, 0.18932769, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfg1p"]
+bg_color = Color(0.09134271, 0.739791, 0.35421926, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 1
+anti_aliasing = false
+
 [node name="HUD" type="CanvasLayer" unique_id=2118713440]
 script = ExtResource("1_5ysmq")
 
@@ -43,6 +61,8 @@ offset_top = 186.0
 offset_right = 566.0
 offset_bottom = 213.0
 mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_loaub")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dfg1p")
 show_percentage = false
 
 [node name="LevelLabel" type="Label" parent="." unique_id=952179184]
