@@ -57,6 +57,8 @@ scale = Vector2(4, 4)
 position = Vector2(1894, 864)
 scale = Vector2(4, 4)
 
+[node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("7_ohhhg")]
+
 [node name="TutorialPopup" parent="." unique_id=1487695775 instance=ExtResource("3_3hotv")]
 anchors_preset = 5
 anchor_left = 0.5
@@ -102,8 +104,6 @@ theme_override_fonts/font = ExtResource("6_a5404")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_rkllb")
 text = "Next Level"
-
-[node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("7_ohhhg")]
 
 [connection signal="tutorial_completed" from="TutorialPopup" to="." method="_on_tutorial_popup_tutorial_completed"]
 [connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

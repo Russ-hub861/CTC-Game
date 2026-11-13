@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c4krov5vellbd"]
+
+[ext_resource type="Script" uid="uid://ch8h5j78mqokf" path="res://animation_manager.gd" id="1_e6k3i"]
+[ext_resource type="PackedScene" uid="uid://c7jj8p5vy5h46" path="res://cut_scene.tscn" id="2_18w38"]
+[ext_resource type="PackedScene" uid="uid://cuiiof1cje36v" path="res://opening_scene.tscn" id="3_iwtsc"]
+
+[node name="AnimationManager" type="Control" unique_id=865325085]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e6k3i")
+
+[node name="CutScene" parent="." unique_id=1450604686 instance=ExtResource("2_18w38")]
+visible = false
+layout_mode = 1
+
+[node name="OpeningScene" parent="." unique_id=484148700 instance=ExtResource("3_iwtsc")]
+layout_mode = 1

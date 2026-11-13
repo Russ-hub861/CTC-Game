@@ -20,7 +20,7 @@ var tutorial_finished = false
 signal tutorial_completed
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	visible = false
+	visible = true
 
 func display_message():
 	#print("Showing message: ", messages[current_message])
@@ -32,7 +32,7 @@ func display_message():
 		return
 	$Label.text = messages[current_message]
 	visible = true
-	$Timer.start()
+#
 	
 func start_tutorial():
 	current_message = 0
@@ -41,8 +41,7 @@ func start_tutorial():
 	display_message()
 
 func skip_tutorial():
-	$Timer.stop()
-	$Delaytimer.stop()
+	#
 	visible = false
 	tutorial_active = false
 	tutorial_finished = true
@@ -52,12 +51,14 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_timer_timeout():
-	#print("Display timer finished")
-	visible = false
-	$Delaytimer.start()
+#
 
 
-func _on_delaytimer_timeout() -> void:
+#
+
+
+
+func _on_button_pressed() -> void:
 	current_message += 1
 	display_message()
+	

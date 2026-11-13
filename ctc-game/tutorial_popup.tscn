@@ -3,6 +3,17 @@
 [ext_resource type="Script" uid="uid://c2t5fwhghtxyu" path="res://tutorial_popup.gd" id="1_6aqww"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="1_l5emp"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkllb"]
+bg_color = Color(0.25021353, 0.25021344, 0.25021338, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="TutorialPopup" type="Control" unique_id=1487695775]
 layout_mode = 3
 anchors_preset = 15
@@ -38,5 +49,24 @@ one_shot = true
 [node name="Delaytimer" type="Timer" parent="." unique_id=436052980]
 one_shot = true
 
+[node name="Button" type="Button" parent="." unique_id=420199738]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.5
+offset_top = 119.5
+offset_right = 232.5
+offset_bottom = 204.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_l5emp")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rkllb")
+text = " Next Message"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Delaytimer" to="." method="_on_delaytimer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
