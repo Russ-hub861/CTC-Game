@@ -7,6 +7,9 @@ class_name EnemyGroup
 
 @export var exp_reward: int = 50
 
+@export var block_chance: float = 0.3
+var is_blocking := false
+
 var health: int 
 var is_dead: bool = false
 var is_invincible: bool = false
@@ -31,7 +34,7 @@ func _ready() -> void:
 	sprite.play(&"Idle")
 
 func take_damage(amount: int) -> void:
-	if is_dead or is_invincible:
+	if is_dead or is_invincible or is_blocking:
 		return
 
 	is_invincible = true
@@ -138,8 +141,16 @@ func _play_attack() -> void:
 	await sprite.animation_finished
 	attack_area.end_attack()
 	sprite.play(&"Idle")
+	
+func _play_block() -> void: 
+	is_blocking = true
+	velocity.x = 0.0
+	print("Enemy puts block up")
+	sprite.play(&"Idle")
+	await get_tree().create_timer(0.4).timeout
 
 func take_turn() -> void:
+	is_blocking = false
 	if sprite.animation == &"Hit":
 		await sprite.animation_finished
 	if is_dead:
@@ -152,6 +163,8 @@ func take_turn() -> void:
 	var direction: float = sign(player_position.x - global_position.x)
 	if global_position.distance_to(player_position) > attack_range:
 		await _move_once(direction)
+	elif randf() < block_chance:
+		await _play_block()
 	else:
 		await _play_attack()
 	
