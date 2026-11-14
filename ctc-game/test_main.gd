@@ -93,7 +93,7 @@ func _process(_delta):
 
 func _on_player_died() -> void:
 	get_tree().change_scene_to_file("res://death_screen.tscn")
-	
+	$levelMusic.stop()
 func _on_player_turn_finished() -> void:
 	player.can_control = false
 	for enemy in get_tree().get_nodes_in_group("Enemies"):

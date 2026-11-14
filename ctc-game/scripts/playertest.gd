@@ -130,9 +130,10 @@ func take_damage(amount: int) -> void:
 		await animated_sprite.animation_finished
 		player_death()
 		return
-
+	
 	_hit_serial += 1
 	var serial := _hit_serial
+	$HitSound.play()
 	animated_sprite.play(&"Hit")
 	animated_sprite.frame = 0
 	animated_sprite.frame_progress = 0.0
