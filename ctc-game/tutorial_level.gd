@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$HUD.hide()
 	$TutorialPopup.start_tutorial()
 	$Player.global_position = get_node("PlayerSpawn").global_position
 	$Player.global_position.y += get_node("PlayerSpawn").global_position.y - get_node("Player/GroundMarker").global_position.y

@@ -842,6 +842,7 @@ tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAA
 tile_set = SubResource("TileSet_qi5u6")
 
 [node name="Dog" type="AnimatedSprite2D" parent="." unique_id=855517687]
+texture_filter = 1
 position = Vector2(1921, 649)
 scale = Vector2(6.7773447, 6.9990244)
 sprite_frames = SubResource("SpriteFrames_wwagk")

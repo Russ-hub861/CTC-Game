@@ -6,7 +6,7 @@ extends CharacterBody2D
 var health: int 
 var is_dead: bool = false
 signal died
-signal health_changed(new_health)
+signal health_changed(health)
 signal turn_finished
 
 #exp point
@@ -121,6 +121,7 @@ func take_damage(amount: int) -> void:
 	health_changed.emit(health)
 	print("Player health: ", health)
 	
+	
 	if health <= 0:
 		is_dead = true
 		is_busy = true
@@ -233,3 +234,6 @@ func _spawn_exp_popup(amount: int) -> void:
 	tween.tween_property(label, "position:y", label.position.y - 40.0, 0.8)
 	tween.tween_property(label, "modulate:a", 0.0, 0.8)
 	tween.chain().tween_callback(label.queue_free)
+	
+func _play_fall():
+	$AnimatedSprite2D.play("Fall")

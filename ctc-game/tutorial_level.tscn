@@ -58,6 +58,7 @@ position = Vector2(1894, 864)
 scale = Vector2(4, 4)
 
 [node name="HUD" parent="." unique_id=2118713440 instance=ExtResource("7_ohhhg")]
+visible = false
 
 [node name="TutorialPopup" parent="." unique_id=1487695775 instance=ExtResource("3_3hotv")]
 anchors_preset = 5
