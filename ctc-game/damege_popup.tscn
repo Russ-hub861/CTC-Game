@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq1mltat1s0nb"]
 
 [ext_resource type="FontFile" uid="uid://cikr44jitu7bi" path="res://fonts/m5x7.ttf" id="1_0h2ac"]
-[ext_resource type="Script" uid="uid://bd08q6ans1xc7" path="res://damege_popup.gd" id="1_3ql7o"]
+[ext_resource type="Script" uid="uid://bd08q6ans1xc7" path="res://scripts/damege_popup.gd" id="1_3ql7o"]
 
 [node name="DamegePopup" type="Label" unique_id=742401486]
 offset_right = 40.0

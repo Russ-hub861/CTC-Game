@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://p2dflpd0trvy"]
 
-[ext_resource type="Shader" uid="uid://cc67van8yyvv1" path="res://scenes/outline.gdshader" id="1_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://b07k4mybyvd6q" path="res://Art/player/DEATH.png" id="1_qhqgy"]
 [ext_resource type="Script" uid="uid://cl86u63vrai2m" path="res://scripts/playertest.gd" id="1_qlg0r"]
+[ext_resource type="Material" uid="uid://bowbxa06dr3xe" path="res://player_shader.tres" id="1_yamdl"]
 [ext_resource type="Texture2D" uid="uid://dypyxn0a0qlbq" path="res://Art/player/IDLE.png" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bqpg44h1e4qby" path="res://Art/player/Standard Sword/BLOCK.png" id="3_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://ctty8q103kr5f" path="res://Art/player/ATTACK 1.png" id="3_qlg0r"]
@@ -13,11 +13,8 @@
 [ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scripts/attack_area.gd" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://de73w5yku5gja" path="res://Art/player/Buffed Sword/glow/THRUST ATTACK.png" id="9_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://dn5qrp42rhnkf" path="res://Music/chisper-8-bit-hurt-634753.mp3" id="13_jej6c"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayvh1"]
-shader = ExtResource("1_3v2ag")
-shader_parameter/outline_color = Color(1, 0, 0, 1)
-shader_parameter/outline_width = 0.0
+[ext_resource type="AudioStream" uid="uid://c602mnhm24bw3" path="res://Sounds/SoundEffects/dragon-studio-sword-slice-393847.mp3" id="14_uheil"]
+[ext_resource type="AudioStream" uid="uid://61f4hxac7yf3" path="res://Sounds/SoundEffects/sectionsound-shield-block-shortsword-143940.mp3" id="15_yamdl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
 atlas = ExtResource("5_tuyoq")
@@ -640,14 +637,17 @@ size = Vector2(155.5, 142.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1718794831 groups=["Players"]]
 texture_filter = 1
-material = SubResource("ShaderMaterial_ayvh1")
+material = ExtResource("1_yamdl")
 position = Vector2(18, 26)
 script = ExtResource("1_qlg0r")
 max_health = 10
+SPEED = null
+attack_range = null
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37620258]
 texture_filter = 1
+material = ExtResource("1_yamdl")
 position = Vector2(7.4999933, -19.499977)
 scale = Vector2(6.1339283, 5.34375)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
@@ -674,3 +674,9 @@ position = Vector2(-39, 173)
 
 [node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=1638618347]
 stream = ExtResource("13_jej6c")
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="." unique_id=630312916]
+stream = ExtResource("14_uheil")
+
+[node name="BlockSound" type="AudioStreamPlayer" parent="." unique_id=430536818]
+stream = ExtResource("15_yamdl")

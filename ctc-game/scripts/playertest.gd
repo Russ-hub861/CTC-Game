@@ -115,6 +115,7 @@ func take_damage(amount: int) -> void:
 	if is_dead:
 		return
 	elif is_blocking:
+		$BlockSound.play()
 		animated_sprite.play(&"Block")
 		return
 		
@@ -151,6 +152,7 @@ func _play_attack() -> void:
 	is_busy = true
 	velocity.x = 0.0
 	_apply_facing()
+	$AttackSound.play()
 	_set_outline(animated_sprite, true)
 	animated_sprite.play(&"basicAttack")
 	attack_area.start_attack()
