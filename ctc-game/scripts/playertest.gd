@@ -43,9 +43,10 @@ func _setup_outline(sprite: AnimatedSprite2D) -> void:
 	mat.set_shader_parameter("outline_width", 0.0)
 	sprite.material = mat
 	
-func _set_outline(sprite: AnimatedSprite2D, enabled: bool) -> void:
+func _set_outline(sprite: AnimatedSprite2D, enabled: bool, color: Color = Color(1, 0, 0)) -> void:
 	var mat := sprite.material as ShaderMaterial
 	if mat:
+			mat.set_shader_parameter("outline_color", color)
 			mat.set_shader_parameter("outline_width", 1.0 if enabled else 0.0)
 
 
@@ -165,6 +166,7 @@ func _play_block() -> void:
 	is_blocking = true
 	velocity.x = 0.0
 	_apply_facing()
+	_set_outline(animated_sprite, true, Color(0.2, 0.55, 1.0))
 	_play_idle()
 	is_busy = false
 	print("Player blocked the Attack")

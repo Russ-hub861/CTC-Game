@@ -103,7 +103,8 @@ func _on_player_turn_finished() -> void:
 			continue
 		await enemy.take_turn()
 	player.is_blocking = false
-	print("Player has stopped blocking")
+	player._set_outline(player.animated_sprite, false)
+	#print("Player has stopped blocking")
 	player.can_control = true
 	
 

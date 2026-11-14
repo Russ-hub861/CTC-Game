@@ -43,9 +43,10 @@ func _setup_outline(sprite) -> void:
 	mat.set_shader_parameter("outline_width", 0.0)
 	sprite.material = mat
 	
-func _set_outline(sprite, enabled: bool) -> void:
+func _set_outline(sprite, enabled: bool, color: Color = Color(1, 0, 0)) -> void:
 	var mat := sprite.material as ShaderMaterial
 	if mat:
+			mat.set_shader_parameter("outline_color", color)
 			mat.set_shader_parameter("outline_width", 2.0 if enabled else 0.0)
 
 
@@ -164,10 +165,12 @@ func _play_block() -> void:
 	is_blocking = true
 	velocity.x = 0.0
 	print("Enemy puts block up")
+	_set_outline(sprite, true, Color(0.2, 0.55, 1.0))
 	sprite.play(&"Idle")
 	await get_tree().create_timer(0.4).timeout
 
 func take_turn() -> void:
+	_set_outline(sprite, false)
 	is_blocking = false
 	if sprite.animation == &"Hit":
 		await sprite.animation_finished

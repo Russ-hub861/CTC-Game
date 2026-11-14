@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xksqoo00acx0" path="res://InputRemapButton.gd" id="1_5c7sd"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="1_8voi1"]
+[ext_resource type="Script" uid="uid://bj3y4gnewchfu" path="res://scenes/control_remap.gd" id="1_m5rdw"]
 [ext_resource type="StyleBox" uid="uid://18se0xgcpws0" path="res://text_box_norm.tres" id="2_jpyak"]
 
 [node name="Control" type="Control" unique_id=1022934269]
@@ -13,6 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_m5rdw")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1546227678]
 layout_mode = 0
@@ -141,7 +143,7 @@ text = "input"
 script = ExtResource("1_5c7sd")
 action_name = "right"
 
-[node name="Button" type="Button" parent="." unique_id=1831640196]
+[node name="SaveChanges" type="Button" parent="." unique_id=1831640196]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -157,3 +159,5 @@ theme_override_fonts/font = ExtResource("1_8voi1")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = ExtResource("2_jpyak")
 text = "Save Changes"
+
+[connection signal="pressed" from="SaveChanges" to="." method="_on_save_changes_pressed"]
