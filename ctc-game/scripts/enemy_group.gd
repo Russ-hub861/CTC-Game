@@ -21,17 +21,33 @@ const DAMAGE_POPUP_SCENE = preload("res://damege_popup.tscn")
 
 var _hit_serial := 0
 
+const OUTLINE_SHADER := preload("res://scenes/outline.gdshader")
+
 func _ready() -> void:
 	add_to_group("Enemies")
 	health = max_health
 	if sprite == null:
 		return
+	_setup_outline(sprite)
 	_set_animation_loop(&"Hit", false)
 	_set_animation_loop(&"Death", false)
 	# A looping attack never finishes, so the swing below would only start once.
 	_set_animation_loop(&"Attack", false)
 	_set_animation_loop(&"BasicAttack", false)
 	sprite.play(&"Idle")
+	
+# 
+func _setup_outline(sprite) -> void:
+	var mat := ShaderMaterial.new()
+	mat.shader = OUTLINE_SHADER
+	mat.set_shader_parameter("outline_width", 0.0)
+	sprite.material = mat
+	
+func _set_outline(sprite, enabled: bool) -> void:
+	var mat := sprite.material as ShaderMaterial
+	if mat:
+			mat.set_shader_parameter("outline_width", 2.0 if enabled else 0.0)
+
 
 func take_damage(amount: int) -> void:
 	if is_dead or is_invincible or is_blocking:
@@ -136,10 +152,12 @@ func _play_attack() -> void:
 	if not sprite.sprite_frames.has_animation(attack_name):
 		attack_name = &"BasicAttack"
 	velocity.x = 0
+	_set_outline(sprite, true)
 	attack_area.start_attack()
 	sprite.play(attack_name)
 	await sprite.animation_finished
 	attack_area.end_attack()
+	_set_outline(sprite, false)
 	sprite.play(&"Idle")
 	
 func _play_block() -> void: 

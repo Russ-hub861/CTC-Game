@@ -30,9 +30,23 @@ var is_blocking := false
 
 var can_control: bool = true
 
+const OUTLINE_SHADER := preload("res://scenes/outline.gdshader")
+
 func _ready() -> void:
 	add_to_group("Player")
 	health = max_health
+	_setup_outline(animated_sprite)
+
+func _setup_outline(sprite: AnimatedSprite2D) -> void:
+	var mat := ShaderMaterial.new()
+	mat.shader = OUTLINE_SHADER
+	mat.set_shader_parameter("outline_width", 0.0)
+	sprite.material = mat
+	
+func _set_outline(sprite: AnimatedSprite2D, enabled: bool) -> void:
+	var mat := sprite.material as ShaderMaterial
+	if mat:
+			mat.set_shader_parameter("outline_width", 1.0 if enabled else 0.0)
 
 
 func _physics_process(delta: float) -> void:
@@ -135,10 +149,12 @@ func _play_attack() -> void:
 	is_busy = true
 	velocity.x = 0.0
 	_apply_facing()
+	_set_outline(animated_sprite, true)
 	animated_sprite.play(&"basicAttack")
 	attack_area.start_attack()
 	await _wait_for_animation(&"basicAttack")
 	attack_area.end_attack()
+	_set_outline(animated_sprite, false)
 	_play_idle()
 	is_busy = false
 	turn_finished.emit()
