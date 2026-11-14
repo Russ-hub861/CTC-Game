@@ -1,35 +1,34 @@
 extends CanvasLayer
 
 
-
-@onready var half_heart = preload("res://Art/hearts/HalfHeart.png")
-
-@onready var hearts = [
-	$HeartContainer/Heart1,
-	$HeartContainer/Heart2,
-	$HeartContainer/Heart3
-]
+var max_health = 20
+var current_health = 20
 
 @onready var exp_bar: ProgressBar = $ExpBar
 @onready var level_label: Label = $LevelLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-	
+	#update_health(new_health)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func update_hearts(new_health):
-	if new_health == 4:
-		hearts[2].hide()
-	elif new_health == 2:
-		hearts[1].hide()
-	elif new_health == 0:
-		hearts[0].hide()
+
+func update_health(new_health: int):
+	#current_health = new_health
+	var hearts = $VBoxContainer.get_children()
+
+	for row in hearts:
+		for heart in row.get_children():
+			var index = hearts.find(row) * 10 + row.get_children().find(heart)
+			if index < new_health:
+				heart.show()
+			else:
+				heart.hide()
 
 
 func update_exp(current_exp: int, max_exp: int, level: int) -> void:

@@ -70,8 +70,8 @@ func load_level(level_scene):
 func _ready() -> void:
 	load_level(preload("res://level_2.tscn"))
 	$WaveManager.start_level(current_level,level_1_waves)
-	player.health_changed.connect(hud.update_hearts)
-	hud.update_hearts(player.health)
+	player.health_changed.connect(hud.update_health)
+	hud.update_health(player.health)
 	player.exp_changed.connect(hud.update_exp)
 	hud.update_exp(player.current_exp, player.exp_to_next_level, player.level)
 

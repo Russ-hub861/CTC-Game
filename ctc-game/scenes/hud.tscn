@@ -25,14 +25,16 @@ anti_aliasing = false
 [node name="HUD" type="CanvasLayer" unique_id=2118713440]
 script = ExtResource("1_5ysmq")
 
-[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=301436251]
-offset_top = -60.0
-offset_right = 1836.0
-offset_bottom = 242.0
-scale = Vector2(0.41976786, 0.62307817)
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1536159615]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.34941047, 0.3813491)
+
+[node name="HeartContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=301436251]
+layout_mode = 2
 mouse_filter = 2
 
-[node name="Heart1" type="TextureRect" parent="HeartContainer" unique_id=932168028]
+[node name="Heart1" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=932168028]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -40,7 +42,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=141468278]
+[node name="Heart2" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=141468278]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -48,7 +50,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=2109454409]
+[node name="Heart3" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=2109454409]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -56,7 +58,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart4" type="TextureRect" parent="HeartContainer" unique_id=1226512745]
+[node name="Heart4" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=1226512745]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -64,7 +66,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=89762149]
+[node name="Heart5" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=89762149]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -72,7 +74,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart6" type="TextureRect" parent="HeartContainer" unique_id=551914140]
+[node name="Heart6" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=551914140]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -80,7 +82,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart7" type="TextureRect" parent="HeartContainer" unique_id=1692343097]
+[node name="Heart7" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=1692343097]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -88,7 +90,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart8" type="TextureRect" parent="HeartContainer" unique_id=1267711342]
+[node name="Heart8" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=1267711342]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -96,7 +98,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart9" type="TextureRect" parent="HeartContainer" unique_id=1035044333]
+[node name="Heart9" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=1035044333]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -104,7 +106,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart10" type="TextureRect" parent="HeartContainer" unique_id=1884392002]
+[node name="Heart10" type="TextureRect" parent="VBoxContainer/HeartContainer" unique_id=1884392002]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -112,14 +114,11 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="HeartContainer2" type="HBoxContainer" parent="." unique_id=1378761139]
-offset_top = 21.0
-offset_right = 1836.0
-offset_bottom = 323.0
-scale = Vector2(0.41976786, 0.62307817)
+[node name="HeartContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1378761139]
+layout_mode = 2
 mouse_filter = 2
 
-[node name="Heart1" type="TextureRect" parent="HeartContainer2" unique_id=582970633]
+[node name="Heart1" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=582970633]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -127,7 +126,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart2" type="TextureRect" parent="HeartContainer2" unique_id=777515870]
+[node name="Heart2" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=777515870]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -135,7 +134,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart3" type="TextureRect" parent="HeartContainer2" unique_id=73994368]
+[node name="Heart3" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=73994368]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -143,7 +142,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart4" type="TextureRect" parent="HeartContainer2" unique_id=174589165]
+[node name="Heart4" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=174589165]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -151,7 +150,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart5" type="TextureRect" parent="HeartContainer2" unique_id=1392379832]
+[node name="Heart5" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=1392379832]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -159,7 +158,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart6" type="TextureRect" parent="HeartContainer2" unique_id=1499718109]
+[node name="Heart6" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=1499718109]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -167,7 +166,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart7" type="TextureRect" parent="HeartContainer2" unique_id=168623208]
+[node name="Heart7" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=168623208]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -175,7 +174,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart8" type="TextureRect" parent="HeartContainer2" unique_id=1648410348]
+[node name="Heart8" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=1648410348]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -183,7 +182,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart9" type="TextureRect" parent="HeartContainer2" unique_id=65125391]
+[node name="Heart9" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=65125391]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2
@@ -191,7 +190,7 @@ texture = ExtResource("1_oo0fn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Heart10" type="TextureRect" parent="HeartContainer2" unique_id=254212899]
+[node name="Heart10" type="TextureRect" parent="VBoxContainer/HeartContainer2" unique_id=254212899]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 mouse_filter = 2

@@ -1114,6 +1114,7 @@ grow_vertical = 2
 color = Color(0.5423357, 0.7099084, 1, 1)
 
 [node name="Dog" type="AnimatedSprite2D" parent="." unique_id=2111292509]
+texture_filter = 1
 position = Vector2(460.00006, 622)
 scale = Vector2(9.687501, 8.9921875)
 sprite_frames = SubResource("SpriteFrames_rkllb")

@@ -109,14 +109,17 @@ tracks/2/path = NodePath("Player")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 3, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"_play_move"
 }, {
 "args": [],
 "method": &"_stop_animation"
+}, {
+"args": [],
+"method": &"_play_fall"
 }]
 }
 tracks/3/type = "method"
@@ -1620,6 +1623,7 @@ tile_set = SubResource("TileSet_36pq8")
 position = Vector2(422, 592)
 
 [node name="Dog" type="AnimatedSprite2D" parent="." unique_id=511746633]
+texture_filter = 1
 position = Vector2(96, 651)
 scale = Vector2(6.7773447, 6.9990244)
 sprite_frames = SubResource("SpriteFrames_7v5iq")

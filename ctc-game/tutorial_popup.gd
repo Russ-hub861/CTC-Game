@@ -4,12 +4,14 @@ var messages = [
 	"You hear an eerie voice \nfrom the statue",
 	"If you ever want to see your dog agian \n
 	You must listen to what I say very carefully...",
-	"Use the arrow keys or wasd to move",
+	"Use the arrow keys or a and d to move",
+	"use the s key to block enemy attacks or skip your turn",
 	"Use the space bar to attack enemies",
 	"Your health is located in the top left corner \n
 	once its depleated you will die.",
 	"Press 'esc' to pause, quit, \nand to look at the controls",
-	"Remember that enemies will only move once you do",
+	"Every time you complete an action such as\n blocking, attacking or moving
+	each of your enemies will get a chance to do something before you",
 	"Defeat waves of enemies during \neach level in order to escape",
 	"When you are ready to attempt your escape \n click the button above my head",
 	"Good luck!"
