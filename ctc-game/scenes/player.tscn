@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://p2dflpd0trvy"]
 
+[ext_resource type="Shader" uid="uid://cc67van8yyvv1" path="res://scenes/outline.gdshader" id="1_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://b07k4mybyvd6q" path="res://Art/player/DEATH.png" id="1_qhqgy"]
 [ext_resource type="Script" uid="uid://cl86u63vrai2m" path="res://scripts/playertest.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dypyxn0a0qlbq" path="res://Art/player/IDLE.png" id="2_dqkch"]
@@ -11,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://ruywokori8bn" path="res://Art/player/ATTACK 2.png" id="5_tuyoq"]
 [ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scripts/attack_area.gd" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://de73w5yku5gja" path="res://Art/player/Buffed Sword/glow/THRUST ATTACK.png" id="9_d2wvv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ayvh1"]
+shader = ExtResource("1_3v2ag")
+shader_parameter/outline_color = Color(1, 0, 0, 1)
+shader_parameter/outline_width = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
 atlas = ExtResource("5_tuyoq")
@@ -633,6 +639,7 @@ size = Vector2(155.5, 142.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1718794831 groups=["Players"]]
 texture_filter = 1
+material = SubResource("ShaderMaterial_ayvh1")
 position = Vector2(18, 26)
 script = ExtResource("1_qlg0r")
 max_health = 10
