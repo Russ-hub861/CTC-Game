@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ruywokori8bn" path="res://Art/player/ATTACK 2.png" id="5_tuyoq"]
 [ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scripts/attack_area.gd" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://de73w5yku5gja" path="res://Art/player/Buffed Sword/glow/THRUST ATTACK.png" id="9_d2wvv"]
+[ext_resource type="AudioStream" uid="uid://dn5qrp42rhnkf" path="res://Music/chisper-8-bit-hurt-634753.mp3" id="13_jej6c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ayvh1"]
 shader = ExtResource("1_3v2ag")
@@ -670,3 +671,6 @@ shape = SubResource("RectangleShape2D_t3j60")
 
 [node name="GroundMarker" type="Marker2D" parent="." unique_id=1046456164]
 position = Vector2(-39, 173)
+
+[node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=1638618347]
+stream = ExtResource("13_jej6c")
