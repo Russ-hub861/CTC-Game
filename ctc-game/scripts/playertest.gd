@@ -6,7 +6,7 @@ extends CharacterBody2D
 var health: int 
 var is_dead: bool = false
 signal died
-signal health_changed(new_health)
+signal health_changed(health)
 signal turn_finished
 
 #exp point
@@ -36,9 +36,24 @@ var is_blocking := false
 
 var can_control: bool = true
 
+const OUTLINE_SHADER := preload("res://scenes/outline.gdshader")
+
 func _ready() -> void:
 	add_to_group("Player")
 	health = max_health
+	_setup_outline(animated_sprite)
+
+func _setup_outline(sprite: AnimatedSprite2D) -> void:
+	var mat := ShaderMaterial.new()
+	mat.shader = OUTLINE_SHADER
+	mat.set_shader_parameter("outline_width", 0.0)
+	sprite.material = mat
+	
+func _set_outline(sprite: AnimatedSprite2D, enabled: bool, color: Color = Color(1, 0, 0)) -> void:
+	var mat := sprite.material as ShaderMaterial
+	if mat:
+			mat.set_shader_parameter("outline_color", color)
+			mat.set_shader_parameter("outline_width", 1.0 if enabled else 0.0)
 
 
 func _physics_process(delta: float) -> void:
@@ -106,12 +121,14 @@ func take_damage(amount: int) -> void:
 	if is_dead:
 		return
 	elif is_blocking:
+		$BlockSound.play()
 		animated_sprite.play(&"Block")
 		return
 		
 	health -= amount
 	health_changed.emit(health)
 	print("Player health: ", health)
+	
 	
 	if health <= 0:
 		is_dead = true
@@ -121,9 +138,10 @@ func take_damage(amount: int) -> void:
 		await animated_sprite.animation_finished
 		player_death()
 		return
-
+	
 	_hit_serial += 1
 	var serial := _hit_serial
+	$HitSound.play()
 	animated_sprite.play(&"Hit")
 	animated_sprite.frame = 0
 	animated_sprite.frame_progress = 0.0
@@ -140,10 +158,13 @@ func _play_attack() -> void:
 	is_busy = true
 	velocity.x = 0.0
 	_apply_facing()
+	$AttackSound.play()
+	_set_outline(animated_sprite, true)
 	animated_sprite.play(&"basicAttack")
 	attack_area.start_attack()
 	await _wait_for_animation(&"basicAttack")
 	attack_area.end_attack()
+	_set_outline(animated_sprite, false)
 	_play_idle()
 	is_busy = false
 	turn_finished.emit()
@@ -153,6 +174,7 @@ func _play_block() -> void:
 	is_blocking = true
 	velocity.x = 0.0
 	_apply_facing()
+	_set_outline(animated_sprite, true, Color(0.2, 0.55, 1.0))
 	_play_idle()
 	is_busy = false
 	print("Player blocked the Attack")
@@ -225,3 +247,6 @@ func _spawn_exp_popup(amount: int) -> void:
 	tween.tween_property(label, "position:y", label.position.y - 40.0, 0.8)
 	tween.tween_property(label, "modulate:a", 0.0, 0.8)
 	tween.chain().tween_callback(label.queue_free)
+	
+func _play_fall():
+	$AnimatedSprite2D.play("Fall")

@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://c2r431f2w83la"]
+
+[ext_resource type="Script" uid="uid://bj3y4gnewchfu" path="res://scenes/control_remap.gd" id="1_x0egx"]
+[ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="2_askmm"]
+[ext_resource type="StyleBox" uid="uid://18se0xgcpws0" path="res://text_box_norm.tres" id="3_4315t"]
+[ext_resource type="Script" uid="uid://xksqoo00acx0" path="res://InputRemapButton.gd" id="4_2owgf"]
+
+[node name="Control" type="Control" unique_id=1022934269]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_x0egx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1546227678]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1108699440]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -566.0
+offset_right = 566.0
+offset_bottom = 710.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1167082855]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1802174377]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 2
+
+[node name="Label" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1157765366]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "Attack"
+
+[node name="Label3" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1547618065]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "Block"
+
+[node name="Label4" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1429351276]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "Special Attack"
+
+[node name="Label5" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=438271593]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "Turn Around"
+
+[node name="Label6" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=953420862]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "Move Left"
+
+[node name="Label7" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=2142783853]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "Move Right"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1950107248]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 2
+
+[node name="Attack_Input" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=1589152246]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "input"
+script = ExtResource("4_2owgf")
+action_name = "attack"
+
+[node name="Block_Input" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=1562341233]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "input"
+script = ExtResource("4_2owgf")
+action_name = "block"
+
+[node name="Special_Input" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=1586285400]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "input"
+script = ExtResource("4_2owgf")
+action_name = "Special_Attack"
+
+[node name="Turn_Input" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=719468018]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "input"
+script = ExtResource("4_2owgf")
+action_name = "up"
+
+[node name="MLeft_Input" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=1874759991]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "input"
+script = ExtResource("4_2owgf")
+action_name = "left"
+
+[node name="MRight_Input" type="Button" parent="PanelContainer/HBoxContainer/VBoxContainer2" unique_id=1378793726]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "input"
+script = ExtResource("4_2owgf")
+action_name = "right"
+
+[node name="SaveChanges" type="Button" parent="." unique_id=1831640196]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -325.5
+offset_top = -92.0
+offset_right = 325.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_askmm")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = ExtResource("3_4315t")
+text = "Save Changes"
+
+[connection signal="pressed" from="SaveChanges" to="." method="_on_save_changes_pressed"]

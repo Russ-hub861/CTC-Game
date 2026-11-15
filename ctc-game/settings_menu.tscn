@@ -2,19 +2,13 @@
 
 [ext_resource type="Script" uid="uid://myv4g0k0k3yw" path="res://settings_menu.gd" id="1_0cmel"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="1_ufg0w"]
+[ext_resource type="StyleBox" uid="uid://18se0xgcpws0" path="res://text_box_norm.tres" id="3_mlw3h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucygd"]
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8a8k8"]
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
-corner_detail = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7la6k"]
 corner_radius_top_left = 25
@@ -65,14 +59,14 @@ text = "Resume"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ufg0w")
 theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_8a8k8")
+theme_override_styles/normal = ExtResource("3_mlw3h")
 text = "Quit"
 
 [node name="FullscreenToggle" type="Button" parent="VBoxContainer" unique_id=222472006]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ufg0w")
 theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_8a8k8")
+theme_override_styles/normal = ExtResource("3_mlw3h")
 toggle_mode = true
 text = "Full screen"
 
@@ -84,5 +78,13 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_7la6k")
 text = "Help"
 
+[node name="ControlsButton" type="Button" parent="VBoxContainer" unique_id=290665179]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ufg0w")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = ExtResource("3_mlw3h")
+text = "Controls"
+
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ControlsButton" to="." method="_on_controls_button_pressed"]

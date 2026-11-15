@@ -70,8 +70,8 @@ func load_level(level_scene):
 func _ready() -> void:
 	load_level(preload("res://level_2.tscn"))
 	$WaveManager.start_level(current_level,level_1_waves)
-	player.health_changed.connect(hud.update_hearts)
-	hud.update_hearts(player.health)
+	player.health_changed.connect(hud.update_health)
+	hud.update_health(player.health)
 	player.exp_changed.connect(hud.update_exp)
 	hud.update_exp(player.current_exp, player.exp_to_next_level, player.level)
 
@@ -93,7 +93,7 @@ func _process(_delta):
 
 func _on_player_died() -> void:
 	get_tree().change_scene_to_file("res://death_screen.tscn")
-	
+	$levelMusic.stop()
 func _on_player_turn_finished() -> void:
 	player.can_control = false
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
@@ -103,7 +103,8 @@ func _on_player_turn_finished() -> void:
 			continue
 		await enemy.take_turn()
 	player.is_blocking = false
-	print("Player has stopped blocking")
+	player._set_outline(player.animated_sprite, false)
+	#print("Player has stopped blocking")
 	player.can_control = true
 	
 

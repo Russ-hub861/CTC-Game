@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c7jj8p5vy5h46"]
 
-[ext_resource type="Script" uid="uid://d1tlvcqwfvcuf" path="res://cut_scene.gd" id="1_jbfw6"]
+[ext_resource type="Script" uid="uid://d1tlvcqwfvcuf" path="res://scripts/cut_scene.gd" id="1_jbfw6"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="1_li4wx"]
 [ext_resource type="Texture2D" uid="uid://bxno4a6pwa66l" path="res://Art/DogBundle/PNGs/Labrador.png" id="2_jbfw6"]
 [ext_resource type="Texture2D" uid="uid://h1pkxwmreyrd" path="res://Art/Cloud Tileset.png" id="3_38t87"]
@@ -842,6 +842,7 @@ tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAA
 tile_set = SubResource("TileSet_qi5u6")
 
 [node name="Dog" type="AnimatedSprite2D" parent="." unique_id=855517687]
+texture_filter = 1
 position = Vector2(1921, 649)
 scale = Vector2(6.7773447, 6.9990244)
 sprite_frames = SubResource("SpriteFrames_wwagk")

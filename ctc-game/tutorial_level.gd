@@ -3,16 +3,20 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$HUD.hide()
 	$TutorialPopup.start_tutorial()
 	$Player.global_position = get_node("PlayerSpawn").global_position
 	$Player.global_position.y += get_node("PlayerSpawn").global_position.y - get_node("Player/GroundMarker").global_position.y
-
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
+	if Input.is_action_pressed("pause"):
+		_toggle_settings()
+	if !$PauseMenu.visible == true:
+		$TutorialMusic.stream_paused = false
+	
 
 
 func _on_skip_button_pressed() -> void:
@@ -27,3 +31,9 @@ func _on_continue_button_pressed() -> void:
 
 func _on_tutorial_popup_tutorial_completed() -> void:
 	$ContinueButton.show()
+
+func _toggle_settings():
+	$TutorialMusic.stream_paused = true
+	$PauseMenu.visible = !$PauseMenu.visible
+	get_tree().paused = $PauseMenu.visible
+	
