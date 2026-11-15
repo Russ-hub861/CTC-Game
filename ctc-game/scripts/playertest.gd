@@ -39,6 +39,7 @@ var facing_left := false
 var is_blocking := false
 var thrust_cooldown := 0
 var aoe_cooldown := 0
+var heal_cooldown := 0
 
 var can_control: bool = true
 
@@ -91,6 +92,11 @@ func _physics_process(delta: float) -> void:
 				$SkillOnCooldown.play()
 		elif Input.is_action_just_pressed("block"):
 			_play_block()
+		elif Input.is_action_just_pressed("heal") and unlocked_heal:
+			if heal_cooldown == 0:
+				_play_heal()
+			else:
+				$SkillOnCooldown.play()
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -135,6 +141,8 @@ func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool
 			thrust_cooldown -= 1
 		if aoe_cooldown >0:
 			aoe_cooldown -= 1
+		if heal_cooldown > 0:
+			heal_cooldown -= 1
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
@@ -192,6 +200,8 @@ func _play_attack() -> void:
 		thrust_cooldown -= 1
 	if aoe_cooldown >0:
 		aoe_cooldown -= 1
+	if heal_cooldown > 0:
+			heal_cooldown -= 1
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
@@ -215,6 +225,8 @@ func _play_aoe_attack() -> void:
 	is_busy = false
 	if thrust_cooldown > 0:
 		thrust_cooldown -= 1
+	if heal_cooldown > 0:
+		heal_cooldown -= 1
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
@@ -242,10 +254,31 @@ func _play_thrust() -> void:
 	is_busy = false
 	if aoe_cooldown > 0:
 		aoe_cooldown -= 1
-		
+	if heal_cooldown > 0:
+			heal_cooldown -= 1
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
+func _play_heal() -> void:
+	heal_cooldown = 10
+	is_busy = true
+	velocity.x = 0.0
+	_apply_facing()
+	animated_sprite.play(&"Heal")
+	await _wait_for_animation(&"Heal")
+	
+	var heal_amount := int(max_health * 0.2)
+	health = mini(health + heal_amount, max_health)
+	health_changed.emit(health)
+	
+	_play_idle()
+	is_busy = false
+	if thrust_cooldown > 0:
+		thrust_cooldown -= 1
+	if aoe_cooldown > 0:
+		aoe_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	turn_finished.emit()
 
 func _play_block() -> void:
 	is_busy = true
