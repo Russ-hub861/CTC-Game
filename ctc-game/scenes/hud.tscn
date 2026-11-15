@@ -216,3 +216,27 @@ offset_bottom = 180.0
 theme_override_fonts/font = ExtResource("3_5ysmq")
 theme_override_font_sizes/font_size = 50
 text = "Lv.1"
+
+[node name="SkillSection" type="VBoxContainer" parent="." unique_id=1053614092]
+offset_left = 1434.0
+offset_top = 21.0
+offset_right = 1901.0
+offset_bottom = 223.0
+
+[node name="Skill1Label" type="Label" parent="SkillSection" unique_id=162133493]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 55
+
+[node name="Skill2Label" type="Label" parent="SkillSection" unique_id=1882142684]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 55
+
+[node name="Skill3Label" type="Label" parent="SkillSection" unique_id=556831681]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5ysmq")
+theme_override_font_sizes/font_size = 55

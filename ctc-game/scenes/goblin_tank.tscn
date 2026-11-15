@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://gac36anssyni"]
 
 [ext_resource type="Texture2D" uid="uid://cvj7nq8wll02i" path="res://Art/GoblinHeavy/GoblinTank-Sheet.png" id="1_6xry1"]
+[ext_resource type="AudioStream" uid="uid://djvwo38ewp1k" path="res://Sounds/SoundEffects/daviddumaisaudio-small-monster-attack-195712.mp3" id="2_31l1h"]
 [ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://scripts/enemy_group.gd" id="2_enemy"]
+[ext_resource type="AudioStream" uid="uid://dgup347k3rqyi" path="res://Sounds/SoundEffects/dragon-studio-sword-clashhit-393837.mp3" id="3_l5gir"]
 [ext_resource type="Script" uid="uid://dgnaqlpyrr63i" path="res://scripts/enemy_attack_area.gd" id="3_wxnhu"]
+[ext_resource type="AudioStream" uid="uid://cknckdj1t1csn" path="res://Sounds/SoundEffects/homemade_sfx-little-creature-hurt-sound-295405.mp3" id="4_ji7iq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhvne"]
 atlas = ExtResource("1_6xry1")
@@ -314,6 +317,9 @@ size = Vector2(350.00006, 390.00018)
 [node name="Goblin_Tank" type="CharacterBody2D" unique_id=1318433942 groups=["Enemies"]]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("2_enemy")
+attack_stream = ExtResource("2_31l1h")
+block_stream = ExtResource("3_l5gir")
+hit_stream = ExtResource("4_ji7iq")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2084659925]

@@ -5,10 +5,20 @@ class_name EnemyGroup
 @export var speed: float = 100.0
 @export var attack_range: float = 250.0
 
+@export var attack_stream: AudioStreamMP3
+
+@export var block_stream: AudioStreamMP3
+
+@export var hit_stream: AudioStreamMP3
+
 @export var exp_reward: int = 50
 
 @export var block_chance: float = 0.3
 var is_blocking := false
+
+var _attack_sound: AudioStreamPlayer
+var _block_sound: AudioStreamPlayer
+var _hit_sound: AudioStreamPlayer
 
 var health: int 
 var is_dead: bool = false
@@ -36,6 +46,17 @@ func _ready() -> void:
 	_set_animation_loop(&"BasicAttack", false)
 	sprite.play(&"Idle")
 	
+	_attack_sound = _add_sound(attack_stream)
+	_block_sound = _add_sound(block_stream)
+	_hit_sound = _add_sound(hit_stream)
+
+
+func _add_sound(stream: AudioStream) -> AudioStreamPlayer:
+	var player := AudioStreamPlayer.new()
+	player.stream = stream
+	add_child(player)
+	return player
+	
 # 
 func _setup_outline(sprite) -> void:
 	var mat := ShaderMaterial.new()
@@ -43,25 +64,29 @@ func _setup_outline(sprite) -> void:
 	mat.set_shader_parameter("outline_width", 0.0)
 	sprite.material = mat
 	
-func _set_outline(sprite, enabled: bool) -> void:
+func _set_outline(sprite, enabled: bool, color: Color = Color(1, 0, 0)) -> void:
 	var mat := sprite.material as ShaderMaterial
 	if mat:
+			mat.set_shader_parameter("outline_color", color)
 			mat.set_shader_parameter("outline_width", 2.0 if enabled else 0.0)
 
 
 func take_damage(amount: int) -> void:
 	if is_dead or is_invincible or is_blocking:
+		if is_blocking:
+			_block_sound.play()
 		return
 
 	is_invincible = true
 	_reset_invincibility()
 
 	health -= amount
+	_hit_sound.play()
 
 	var popup = DAMAGE_POPUP_SCENE.instantiate()
 	get_tree().current_scene.add_child(popup)
 	popup.show_damage(amount, global_position + Vector2(70, -55))
-
+	
 	if sprite == null:
 		if health <= 0:
 			is_dead = true
@@ -148,6 +173,7 @@ func _move_once(direction: float):
 	velocity.x = 0
 	
 func _play_attack() -> void:
+	_attack_sound.play()
 	var attack_name := &"Attack"
 	if not sprite.sprite_frames.has_animation(attack_name):
 		attack_name = &"BasicAttack"
@@ -161,13 +187,16 @@ func _play_attack() -> void:
 	sprite.play(&"Idle")
 	
 func _play_block() -> void: 
+	_block_sound.play()
 	is_blocking = true
 	velocity.x = 0.0
 	print("Enemy puts block up")
+	_set_outline(sprite, true, Color(0.2, 0.55, 1.0))
 	sprite.play(&"Idle")
 	await get_tree().create_timer(0.4).timeout
 
 func take_turn() -> void:
+	_set_outline(sprite, false)
 	is_blocking = false
 	if sprite.animation == &"Hit":
 		await sprite.animation_finished

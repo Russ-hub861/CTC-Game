@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://lmgvdn72d2ut" path="res://Art/GolbinThief/GoblinScout-Sheet.png" id="1_kkduu"]
 [ext_resource type="Script" uid="uid://blr1sd7txsib1" path="res://scripts/enemy_group.gd" id="2_enemy"]
 [ext_resource type="Script" uid="uid://dgnaqlpyrr63i" path="res://scripts/enemy_attack_area.gd" id="3_attack"]
+[ext_resource type="AudioStream" uid="uid://cknckdj1t1csn" path="res://Sounds/SoundEffects/homemade_sfx-little-creature-hurt-sound-295405.mp3" id="4_scsfv"]
+[ext_resource type="AudioStream" uid="uid://djvwo38ewp1k" path="res://Sounds/SoundEffects/daviddumaisaudio-small-monster-attack-195712.mp3" id="5_672gy"]
+[ext_resource type="AudioStream" uid="uid://dgup347k3rqyi" path="res://Sounds/SoundEffects/dragon-studio-sword-clashhit-393837.mp3" id="6_8ch2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxwnm"]
 atlas = ExtResource("1_kkduu")
@@ -271,10 +274,12 @@ height = 656.6666
 size = Vector2(148.3333, 126.66666)
 
 [node name="Goblin_Thief" type="CharacterBody2D" unique_id=1552054683 groups=["Enemies"]]
-position = Vector2(88, 50)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("2_enemy")
 speed = 300.0
+attack_stream = ExtResource("5_672gy")
+block_stream = ExtResource("6_8ch2m")
+hit_stream = ExtResource("4_scsfv")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1450599730]

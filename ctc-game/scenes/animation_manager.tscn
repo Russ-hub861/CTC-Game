@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4krov5vellbd"]
 
-[ext_resource type="Script" uid="uid://ch8h5j78mqokf" path="res://animation_manager.gd" id="1_e6k3i"]
-[ext_resource type="PackedScene" uid="uid://c7jj8p5vy5h46" path="res://cut_scene.tscn" id="2_18w38"]
+[ext_resource type="Script" uid="uid://ch8h5j78mqokf" path="res://scripts/animation_manager.gd" id="1_e6k3i"]
+[ext_resource type="PackedScene" uid="uid://c7jj8p5vy5h46" path="res://scenes/cut_scene.tscn" id="2_18w38"]
 [ext_resource type="PackedScene" uid="uid://cuiiof1cje36v" path="res://opening_scene.tscn" id="3_iwtsc"]
 
 [node name="AnimationManager" type="Control" unique_id=865325085]
