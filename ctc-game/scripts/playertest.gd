@@ -34,6 +34,8 @@ var _hit_serial := 0
 var is_busy := false
 var facing_left := false
 var is_blocking := false
+var thrust_cooldown := 0
+var aoe_cooldown := 0
 
 var can_control: bool = true
 
@@ -75,7 +77,15 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_just_pressed("attack"):
 			_play_attack()
 		elif Input.is_action_just_pressed("Special_Attack") and unlocked_long_attack:
-			_play_aoe_attack()
+			if aoe_cooldown == 0:
+				_play_aoe_attack()
+			else:
+				$SkillOnCooldown.play()
+		elif Input.is_action_just_pressed("Special_Attack2") and unlocked_double_action:
+			if thrust_cooldown == 0:
+				_play_thrust()
+			else:
+				$SkillOnCooldown.play()
 		elif Input.is_action_just_pressed("block"):
 			_play_block()
 		else:
@@ -118,7 +128,11 @@ func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool
 	_play_idle()
 	is_busy = false
 	if ends_turn:
-		turn_finished.emit()
+		if thrust_cooldown > 0:
+			thrust_cooldown -= 1
+		if aoe_cooldown >0:
+			aoe_cooldown -= 1
+	turn_finished.emit()
 	
 func take_damage(amount: int) -> void:
 	if is_dead:
@@ -170,10 +184,15 @@ func _play_attack() -> void:
 	_set_outline(animated_sprite, false)
 	_play_idle()
 	is_busy = false
+	if thrust_cooldown > 0:
+		thrust_cooldown -= 1
+	if aoe_cooldown >0:
+		aoe_cooldown -= 1
 	turn_finished.emit()
 	
 func _play_aoe_attack() -> void:
 	is_busy = true
+	aoe_cooldown = 2
 	velocity.x = 0.0
 	animated_sprite.flip_h = facing_left
 	attack_area.scale.x = 1.0
@@ -189,7 +208,28 @@ func _play_aoe_attack() -> void:
 	_apply_facing()
 	_play_idle()
 	is_busy = false
+	if thrust_cooldown > 0:
+		thrust_cooldown -= 1
 	turn_finished.emit()
+	
+func _play_thrust() -> void:
+	is_busy = true
+	thrust_cooldown = 1
+	velocity.x = 0.0
+	_apply_facing()
+	$AttackSound.play()
+	_set_outline(animated_sprite, true)
+	animated_sprite.play(&"SpecialAttack2")
+	attack_area.start_attack(attack_area.damage_amount +1)
+	await _wait_for_animation(&"SpecialAttack2")
+	attack_area.end_attack()
+	_set_outline(animated_sprite, false)
+	_play_idle()
+	is_busy = false
+	if aoe_cooldown >0:
+		aoe_cooldown -= 1
+	turn_finished.emit()
+	
 
 func _play_block() -> void:
 	is_busy = true
@@ -200,6 +240,10 @@ func _play_block() -> void:
 	_play_idle()
 	is_busy = false
 	print("Player blocked the Attack")
+	if thrust_cooldown > 0:
+		thrust_cooldown -= 1
+	if aoe_cooldown >0:
+		aoe_cooldown -= 1
 	turn_finished.emit()
 
 

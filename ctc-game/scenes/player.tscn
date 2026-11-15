@@ -12,9 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://ruywokori8bn" path="res://Art/player/ATTACK 2.png" id="5_tuyoq"]
 [ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scripts/attack_area.gd" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://qv6dx420vi6w" path="res://Art/player/Buffed Sword/glow/BUFFF SWORD.png" id="10_oprun"]
+[ext_resource type="Texture2D" uid="uid://dutonov7fgs16" path="res://Art/player/Buffed Sword/no_glow/THRUST ATTACK.png" id="11_a8ls1"]
 [ext_resource type="AudioStream" uid="uid://dn5qrp42rhnkf" path="res://Music/chisper-8-bit-hurt-634753.mp3" id="13_jej6c"]
 [ext_resource type="AudioStream" uid="uid://c602mnhm24bw3" path="res://Sounds/SoundEffects/dragon-studio-sword-slice-393847.mp3" id="14_uheil"]
 [ext_resource type="AudioStream" uid="uid://61f4hxac7yf3" path="res://Sounds/SoundEffects/sectionsound-shield-block-shortsword-143940.mp3" id="15_yamdl"]
+[ext_resource type="AudioStream" uid="uid://efkuaxwrf1nl" path="res://Sounds/SoundEffects/freesound_community-failure-1-89170.mp3" id="17_qfm1y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
 atlas = ExtResource("5_tuyoq")
@@ -324,6 +326,58 @@ region = Rect2(1792, 0, 112, 96)
 atlas = ExtResource("10_oprun")
 region = Rect2(1904, 0, 112, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vfid"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(0, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljgr3"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(112, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr8ja"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(224, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvmy4"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(336, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcu33"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(448, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmsq4"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(560, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vs2b"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(672, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7i4v"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(784, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5l0c"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(896, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a33p"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(1008, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reqs7"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(1120, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yjfb"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(1232, 0, 112, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnnjp"]
+atlas = ExtResource("11_a8ls1")
+region = Rect2(1344, 0, 112, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
 atlas = ExtResource("3_qlg0r")
 region = Rect2(0, 0, 112, 96)
@@ -631,6 +685,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4vfid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljgr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr8ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvmy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcu33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmsq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vs2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7i4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5l0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a33p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reqs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yjfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnnjp")
+}],
+"loop": 0,
+"name": &"SpecialAttack2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bj30b")
 }, {
 "duration": 1.0,
@@ -657,11 +755,6 @@ animations = [{
 "loop": 0,
 "name": &"basicAttack",
 "speed": 12.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"new_animation",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayvh1"]
@@ -684,9 +777,9 @@ material = ExtResource("1_yamdl")
 position = Vector2(7.4999933, -19.499977)
 scale = Vector2(6.1339283, 5.34375)
 sprite_frames = SubResource("SpriteFrames_ayvh1")
-animation = &"SpecialAttack"
+animation = &"SpecialAttack2"
 autoplay = "Idle"
-frame = 17
+frame = 12
 frame_progress = 1.0
 metadata/_edit_group_ = true
 
@@ -720,3 +813,6 @@ stream = ExtResource("14_uheil")
 
 [node name="BlockSound" type="AudioStreamPlayer" parent="." unique_id=430536818]
 stream = ExtResource("15_yamdl")
+
+[node name="SkillOnCooldown" type="AudioStreamPlayer2D" parent="." unique_id=808274534]
+stream = ExtResource("17_qfm1y")
