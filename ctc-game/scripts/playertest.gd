@@ -10,23 +10,35 @@ signal health_changed(health)
 signal turn_finished
 
 #exp point
-signal exp_changed(current_exp, max_exp, level)
+signal exp_changed(current_exp, exp_to_next_level, level)
 signal leveled_up(new_level)
 
 var level: int = 1
 var current_exp: int = 0
 var exp_to_next_level: int = 100
 
+var total_exp: int = 0
+var skill_points: int = 0 # exp point to UNLOCK
+var unlocked_double_action: bool = false
+var unlocked_long_attack: bool = false
+var unlocked_heal: bool = false
+
+#skill cooldown (CT)
+signal cooldown_changed(thrust_cd: int, aoe_cd: int, thrust_unlocked: bool, aoe_unlocked: bool, heal_unlocked: bool)
+
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = $AttackArea
+@onready var attack_area_left: Area2D = $AttackArea2
 
 var _hit_serial := 0
 var is_busy := false
 var facing_left := false
 var is_blocking := false
+var thrust_cooldown := 0
+var aoe_cooldown := 0
 
 var can_control: bool = true
 
@@ -43,9 +55,10 @@ func _setup_outline(sprite: AnimatedSprite2D) -> void:
 	mat.set_shader_parameter("outline_width", 0.0)
 	sprite.material = mat
 	
-func _set_outline(sprite: AnimatedSprite2D, enabled: bool) -> void:
+func _set_outline(sprite: AnimatedSprite2D, enabled: bool, color: Color = Color(1, 0, 0)) -> void:
 	var mat := sprite.material as ShaderMaterial
 	if mat:
+			mat.set_shader_parameter("outline_color", color)
 			mat.set_shader_parameter("outline_width", 1.0 if enabled else 0.0)
 
 
@@ -66,6 +79,16 @@ func _physics_process(delta: float) -> void:
 			_move_once(direction)
 		elif Input.is_action_just_pressed("attack"):
 			_play_attack()
+		elif Input.is_action_just_pressed("Special_Attack") and unlocked_long_attack:
+			if aoe_cooldown == 0:
+				_play_aoe_attack()
+			else:
+				$SkillOnCooldown.play()
+		elif Input.is_action_just_pressed("Special_Attack2") and unlocked_double_action:
+			if thrust_cooldown == 0:
+				_play_thrust()
+			else:
+				$SkillOnCooldown.play()
 		elif Input.is_action_just_pressed("block"):
 			_play_block()
 		else:
@@ -108,12 +131,18 @@ func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool
 	_play_idle()
 	is_busy = false
 	if ends_turn:
-		turn_finished.emit()
+		if thrust_cooldown > 0:
+			thrust_cooldown -= 1
+		if aoe_cooldown >0:
+			aoe_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	turn_finished.emit()
 	
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
 	elif is_blocking:
+		$BlockSound.play()
 		animated_sprite.play(&"Block")
 		return
 		
@@ -150,6 +179,7 @@ func _play_attack() -> void:
 	is_busy = true
 	velocity.x = 0.0
 	_apply_facing()
+	$AttackSound.play()
 	_set_outline(animated_sprite, true)
 	animated_sprite.play(&"basicAttack")
 	attack_area.start_attack()
@@ -158,16 +188,79 @@ func _play_attack() -> void:
 	_set_outline(animated_sprite, false)
 	_play_idle()
 	is_busy = false
+	if thrust_cooldown > 0:
+		thrust_cooldown -= 1
+	if aoe_cooldown >0:
+		aoe_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
+	
+func _play_aoe_attack() -> void:
+	is_busy = true
+	aoe_cooldown = 2
+	velocity.x = 0.0
+	animated_sprite.flip_h = facing_left
+	attack_area.scale.x = 1.0
+	$AttackSound.play()
+	_set_outline(animated_sprite, true)
+	animated_sprite.play(&"SpecialAttack")
+	attack_area.start_attack(4)
+	attack_area_left.start_attack(4)
+	await _wait_for_animation(&"SpecialAttack")
+	attack_area.end_attack()
+	attack_area_left.end_attack()
+	_set_outline(animated_sprite, false)
+	_apply_facing()
+	_play_idle()
+	is_busy = false
+	if thrust_cooldown > 0:
+		thrust_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	turn_finished.emit()
+	
+func _play_thrust() -> void:
+	is_busy = true
+	thrust_cooldown = 4
+	velocity.x = 0.0
+	_apply_facing()
+	$AttackSound.play()
+	_set_outline(animated_sprite, true)
+	animated_sprite.play(&"SpecialAttack2")
+	
+	var original_scale_x = attack_area.scale.x
+	attack_area.scale.x = original_scale_x * 2.1
+	
+	attack_area.start_attack(attack_area.damage_amount + 1)
+	await _wait_for_animation(&"SpecialAttack2")
+	attack_area.end_attack()
+	
+	# reset the range of attack
+	attack_area.scale.x = original_scale_x
+	
+	_set_outline(animated_sprite, false)
+	_play_idle()
+	is_busy = false
+	if aoe_cooldown > 0:
+		aoe_cooldown -= 1
+		
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	turn_finished.emit()
+	
 
 func _play_block() -> void:
 	is_busy = true
 	is_blocking = true
 	velocity.x = 0.0
 	_apply_facing()
+	_set_outline(animated_sprite, true, Color(0.2, 0.55, 1.0))
 	_play_idle()
 	is_busy = false
 	print("Player blocked the Attack")
+	if thrust_cooldown > 0:
+		thrust_cooldown -= 1
+	if aoe_cooldown >0:
+		aoe_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 
 
@@ -199,6 +292,8 @@ func _stop_animation():
 #exp 	
 func gain_exp(amount: int) -> void:
 	current_exp += amount
+	total_exp += amount
+	skill_points += amount # same as above (for unlock)
 	_spawn_exp_popup(amount)
 	
 	while current_exp >= exp_to_next_level:
@@ -211,8 +306,17 @@ func gain_exp(amount: int) -> void:
 
 func _on_level_up() -> void:
 	# for level up
+<<<<<<< HEAD
 	$LevelUp.play()
 	health = max_health
+=======
+	var heal_amount = int(max_health * 0.5)
+	health += heal_amount
+	
+	if health > max_health:
+		health = max_health
+		
+>>>>>>> d28d688e6c44716b3926543dc096b8be781bf30e
 	attack_area.damage_amount += 1
 	health_changed.emit(health)
 	leveled_up.emit(level)
@@ -222,7 +326,7 @@ func _spawn_exp_popup(amount: int) -> void:
 	var label := Label.new()
 	label.text = "+" + str(amount) + " xp"
 	label.add_theme_font_override("font", load("res://fonts/m5x7.ttf"))
-	label.add_theme_font_size_override("font_size", 24)
+	label.add_theme_font_size_override("font_size", 40)
 	label.add_theme_color_override("font_color", Color(0.3, 1.0, 0.4))
 	label.add_theme_color_override("font_outline_color", Color.BLACK)
 	label.add_theme_constant_override("outline_size", 4)
