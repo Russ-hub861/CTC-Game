@@ -15,10 +15,12 @@ extends CanvasLayer
 @onready var confirm_btn = $CenterContainer/PanelContainer/ConfirmPanel/Buttons/ConfirmBtn
 @onready var cancel_btn = $CenterContainer/PanelContainer/ConfirmPanel/Buttons/CancelBtn
 
+
+# Modified: Added req_level and increased cost
 var skill_data = {
-	1: {"name": "Thruster", "cost": 50, "desc": "Block with Attack OR Move"},
-	2: {"name": "Charge Attack", "cost": 80, "desc": "Hit both sides for 4 damage"},
-	3: {"name": "Heal", "cost": 30, "desc": "Regen HP"}
+	1: {"name": "Thruster", "cost": 250, "req_level": 3, "desc": "Powerful forward thrust attack\n(Requires Level 3)"},
+	2: {"name": "Charge Attack", "cost": 400, "req_level": 4, "desc": "Hit both sides for 4 damage\n(Requires Level 4)"},
+	3: {"name": "Heal", "cost": 150, "req_level": 2, "desc": "Regen HP\n(Requires Level 2)"}
 }
 
 var current_selected_skill_id = 0
@@ -100,17 +102,23 @@ func _show_confirm(skill_id):
 	desc_label.text = data["desc"]
 	
 	var current_sp = player_ref.skill_points
+	var current_level = player_ref.level
 	var cost = data["cost"]
+	var req_level = data["req_level"]
 	var after_sp = current_sp - cost
 	
-	# if point is enough
-	if after_sp < 0:
-		preview_label.text = "Not enough EXP\nNeed: " + str(cost) + " / Current SP: " + str(current_sp)
-		preview_label.add_theme_color_override("font_color", Color.RED) # if not enough, RED
+	# Modified: Check both level requirement and SP shortage
+	if current_level < req_level:
+		preview_label.text = "Level Too Low!\nRequires Level: " + str(req_level) + " (Current: " + str(current_level) + ")"
+		preview_label.add_theme_color_override("font_color", Color.RED)
+		confirm_btn.disabled = true
+	elif after_sp < 0:
+		preview_label.text = "Not enough SP\nNeed: " + str(cost) + " / Current SP: " + str(current_sp)
+		preview_label.add_theme_color_override("font_color", Color.RED)
 		confirm_btn.disabled = true
 	else:
 		preview_label.text = "You can UNLOCK\nCost SP: " + str(cost) + "\nSP: " + str(current_sp) + " -> " + str(after_sp)
-		preview_label.add_theme_color_override("font_color", Color.GREEN) # if enough, GREEN
+		preview_label.add_theme_color_override("font_color", Color.GREEN)
 		confirm_btn.disabled = false
 	
 	main_panel.visible = false
@@ -126,15 +134,37 @@ func _on_confirm_pressed():
 	var cost = skill_data[current_selected_skill_id]["cost"]
 	# refer to skill_points
 	if player_ref.skill_points >= cost:
-		player_ref.skill_points -= cost
+		player_ref.skill_points -= cost # Decrease only SP here (EXP remains unchanged)
 		
 		match current_selected_skill_id:
 			1: player_ref.unlocked_double_action = true
 			2: player_ref.unlocked_long_attack = true
 			3: player_ref.unlocked_heal = true
 		
-		print(skill_data[current_selected_skill_id]["name"] + "is UNLOCKED")
-		
-		_update_main_ui()
 		confirm_panel.visible = false
 		main_panel.visible = true
+		main_panel.modulate.a = 0.1 # 0 to 1.0
+		
+		var unlock_msg = Label.new()
+		var skill_name = skill_data[current_selected_skill_id]["name"]
+		unlock_msg.text = "- " + skill_name + " UNLOCKED! -"
+		
+		# visual design settings
+		unlock_msg.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		unlock_msg.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		unlock_msg.add_theme_font_override("font", load("res://fonts/m5x7.ttf"))
+		unlock_msg.add_theme_font_size_override("font_size", 48)
+		unlock_msg.add_theme_color_override("font_color", Color(1.0, 0.9, 0.2)) 
+		unlock_msg.add_theme_color_override("font_outline_color", Color.BLACK)
+		unlock_msg.add_theme_constant_override("outline_size", 4)
+		
+		# show on middle of the screen
+		$CenterContainer.add_child(unlock_msg)
+		
+		# stay 1,2 seconds
+		await get_tree().create_timer(1.2, true).timeout
+		
+		# delete message and bo back
+		unlock_msg.queue_free()
+		_update_main_ui()
+		main_panel.modulate.a = 1.0

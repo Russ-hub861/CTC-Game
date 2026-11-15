@@ -63,14 +63,19 @@ func load_level(level_scene):
 	$LevelContainer.add_child(current_level)
 	$Player.global_position = current_level.get_node("PlayerSpawn").global_position
 	$Player.global_position.y += current_level.get_node("PlayerSpawn").global_position.y - get_node("Player/GroundMarker").global_position.y
-	$Player.died.connect(_on_player_died)
-	$Player.turn_finished.connect(_on_player_turn_finished)	
+	
+	if not $Player.died.is_connected(_on_player_died):
+		$Player.died.connect(_on_player_died)
+
+	if not $Player.turn_finished.is_connected(_on_player_turn_finished):
+		$Player.turn_finished.connect(_on_player_turn_finished)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_level(preload("res://level_2.tscn"))
 	$WaveManager.start_level(current_level,level_1_waves)
 	player.health_changed.connect(hud.update_health)
+	player.cooldown_changed.connect(hud.update_cooldowns)
 	hud.update_health(player.health)
 	player.exp_changed.connect(hud.update_exp)
 	hud.update_exp(player.current_exp, player.exp_to_next_level, player.level)
@@ -121,6 +126,10 @@ func _on_next_button_pressed() -> void:
 		$NextButton.hide()
 		$NextButton.text = "Escape the dungeon"
 		$WaveManager.start_level(current_level,level_2_waves)
-		player.health_changed.connect(hud.update_hearts)
-		hud.update_hearts(player.health)
+		
+		# uncomment to regan player's HP
+		# player.health = player.max_health
+		
+		player.health_changed.emit(player.health)
+		
 		is_level2 = true

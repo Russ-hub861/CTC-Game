@@ -761,7 +761,7 @@ animations = [{
 size = Vector2(128, 211)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3j60"]
-size = Vector2(155.5, 142.5)
+size = Vector2(107.75, 142.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1718794831 groups=["Players"]]
 texture_filter = 1
@@ -792,7 +792,7 @@ metadata/_edit_group_ = true
 script = ExtResource("8_smehm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=707839307]
-position = Vector2(120, 86.75)
+position = Vector2(96.125, 86.75)
 shape = SubResource("RectangleShape2D_t3j60")
 
 [node name="AttackArea2" type="Area2D" parent="." unique_id=2051133405]

@@ -23,6 +23,9 @@ var unlocked_double_action: bool = false
 var unlocked_long_attack: bool = false
 var unlocked_heal: bool = false
 
+#skill cooldown (CT)
+signal cooldown_changed(thrust_cd: int, aoe_cd: int, thrust_unlocked: bool, aoe_unlocked: bool, heal_unlocked: bool)
+
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
 
@@ -132,6 +135,7 @@ func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool
 			thrust_cooldown -= 1
 		if aoe_cooldown >0:
 			aoe_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 func take_damage(amount: int) -> void:
@@ -188,6 +192,7 @@ func _play_attack() -> void:
 		thrust_cooldown -= 1
 	if aoe_cooldown >0:
 		aoe_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 func _play_aoe_attack() -> void:
@@ -210,24 +215,35 @@ func _play_aoe_attack() -> void:
 	is_busy = false
 	if thrust_cooldown > 0:
 		thrust_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 func _play_thrust() -> void:
 	is_busy = true
-	thrust_cooldown = 1
+	thrust_cooldown = 4
 	velocity.x = 0.0
 	_apply_facing()
 	$AttackSound.play()
 	_set_outline(animated_sprite, true)
 	animated_sprite.play(&"SpecialAttack2")
-	attack_area.start_attack(attack_area.damage_amount +1)
+	
+	var original_scale_x = attack_area.scale.x
+	attack_area.scale.x = original_scale_x * 2.1
+	
+	attack_area.start_attack(attack_area.damage_amount + 1)
 	await _wait_for_animation(&"SpecialAttack2")
 	attack_area.end_attack()
+	
+	# reset the range of attack
+	attack_area.scale.x = original_scale_x
+	
 	_set_outline(animated_sprite, false)
 	_play_idle()
 	is_busy = false
-	if aoe_cooldown >0:
+	if aoe_cooldown > 0:
 		aoe_cooldown -= 1
+		
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 
@@ -244,6 +260,7 @@ func _play_block() -> void:
 		thrust_cooldown -= 1
 	if aoe_cooldown >0:
 		aoe_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 
 
@@ -289,7 +306,12 @@ func gain_exp(amount: int) -> void:
 
 func _on_level_up() -> void:
 	# for level up
-	health = max_health
+	var heal_amount = int(max_health * 0.5)
+	health += heal_amount
+	
+	if health > max_health:
+		health = max_health
+		
 	attack_area.damage_amount += 1
 	health_changed.emit(health)
 	leveled_up.emit(level)
@@ -299,7 +321,7 @@ func _spawn_exp_popup(amount: int) -> void:
 	var label := Label.new()
 	label.text = "+" + str(amount) + " xp"
 	label.add_theme_font_override("font", load("res://fonts/m5x7.ttf"))
-	label.add_theme_font_size_override("font_size", 24)
+	label.add_theme_font_size_override("font_size", 40)
 	label.add_theme_color_override("font_color", Color(0.3, 1.0, 0.4))
 	label.add_theme_color_override("font_outline_color", Color.BLACK)
 	label.add_theme_constant_override("outline_size", 4)
