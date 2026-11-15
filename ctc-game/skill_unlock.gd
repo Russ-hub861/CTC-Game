@@ -17,7 +17,7 @@ extends CanvasLayer
 
 var skill_data = {
 	1: {"name": "Thruster", "cost": 50, "desc": "Block with Attack OR Move"},
-	2: {"name": "Charge Slash", "cost": 80, "desc": "Double attack range"},
+	2: {"name": "Charge Attack", "cost": 80, "desc": "Hit both sides for 4 damage"},
 	3: {"name": "Heal", "cost": 30, "desc": "Regen HP"}
 }
 

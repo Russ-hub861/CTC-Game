@@ -28,6 +28,7 @@ var unlocked_heal: bool = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = $AttackArea
+@onready var attack_area_left: Area2D = $AttackArea2
 
 var _hit_serial := 0
 var is_busy := false
@@ -73,6 +74,8 @@ func _physics_process(delta: float) -> void:
 			_move_once(direction)
 		elif Input.is_action_just_pressed("attack"):
 			_play_attack()
+		elif Input.is_action_just_pressed("Special_Attack") and unlocked_long_attack:
+			_play_aoe_attack()
 		elif Input.is_action_just_pressed("block"):
 			_play_block()
 		else:
@@ -165,6 +168,25 @@ func _play_attack() -> void:
 	await _wait_for_animation(&"basicAttack")
 	attack_area.end_attack()
 	_set_outline(animated_sprite, false)
+	_play_idle()
+	is_busy = false
+	turn_finished.emit()
+	
+func _play_aoe_attack() -> void:
+	is_busy = true
+	velocity.x = 0.0
+	animated_sprite.flip_h = facing_left
+	attack_area.scale.x = 1.0
+	$AttackSound.play()
+	_set_outline(animated_sprite, true)
+	animated_sprite.play(&"SpecialAttack")
+	attack_area.start_attack(4)
+	attack_area_left.start_attack(4)
+	await _wait_for_animation(&"SpecialAttack")
+	attack_area.end_attack()
+	attack_area_left.end_attack()
+	_set_outline(animated_sprite, false)
+	_apply_facing()
 	_play_idle()
 	is_busy = false
 	turn_finished.emit()

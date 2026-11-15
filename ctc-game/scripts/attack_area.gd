@@ -4,13 +4,15 @@ extends Area2D
 
 var _already_hit: Array[Node] = []
 var damage_amount: int = 2
+var _swing_damage: int = 2
 
 func _ready() -> void:
 	monitoring = false
 	hitbox.disabled = true
 	body_entered.connect(_on_body_entered)
 
-func start_attack() -> void:
+func start_attack(amount: int = -1) -> void:
+	_swing_damage = damage_amount if amount < 0 else amount
 	_already_hit.clear()
 	hitbox.disabled = false
 	monitoring = true
@@ -38,4 +40,4 @@ func _try_damage(body: Node) -> void:
 	if not body.has_method("take_damage"):
 		return
 	_already_hit.append(body)
-	body.take_damage(damage_amount)
+	body.take_damage(_swing_damage)

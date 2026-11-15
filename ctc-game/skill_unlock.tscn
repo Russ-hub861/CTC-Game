@@ -86,7 +86,7 @@ text = "unlock"
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill2" unique_id=1427836362]
+[node name="AoeAttack" type="Label" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill2" unique_id=1427836362]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.74994075, 0.52375233, 1)
@@ -94,7 +94,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_bbhkb")
-text = "Charge Slash"
+text = "Charge attack"
 horizontal_alignment = 1
 
 [node name="UnlockBtn2" type="Button" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill2" unique_id=469962718]

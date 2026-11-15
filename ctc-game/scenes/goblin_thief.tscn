@@ -274,7 +274,6 @@ height = 656.6666
 size = Vector2(148.3333, 126.66666)
 
 [node name="Goblin_Thief" type="CharacterBody2D" unique_id=1552054683 groups=["Enemies"]]
-position = Vector2(88, 50)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("2_enemy")
 speed = 300.0
