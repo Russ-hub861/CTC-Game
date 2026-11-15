@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://bwmidwi8v4a2y"]
+
+[ext_resource type="Script" uid="uid://cyks8ncks0lre" path="res://skill_unlock.gd" id="1_i05s0"]
+[ext_resource type="FontFile" uid="uid://cikr44jitu7bi" path="res://fonts/m5x7.ttf" id="2_nkqq8"]
+
+[sub_resource type="Theme" id="Theme_bbhkb"]
+default_font = ExtResource("2_nkqq8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r0nh"]
+content_margin_left = 35.0
+content_margin_top = 35.0
+content_margin_right = 35.0
+content_margin_bottom = 35.0
+bg_color = Color(0.26066905, 0.13017672, 0.39320454, 0.7372549)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbhkb"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="SkillUnlock" type="CanvasLayer" unique_id=1495450766]
+process_mode = 3
+script = ExtResource("1_i05s0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=816962147]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7176471)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=762330762]
+custom_minimum_size = Vector2(120, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bbhkb")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=599845238]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r0nh")
+
+[node name="MainPanel" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=362621135]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SkillList" type="HBoxContainer" parent="CenterContainer/PanelContainer/MainPanel" unique_id=676314594]
+layout_mode = 2
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="Skill1" type="VBoxContainer" parent="CenterContainer/PanelContainer/MainPanel/SkillList" unique_id=1937073885]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill1" unique_id=1781545577]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.74994075, 0.52375233, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_bbhkb")
+text = "Thruster"
+horizontal_alignment = 1
+
+[node name="UnlockBtn1" type="Button" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill1" unique_id=564084476]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "unlock"
+
+[node name="Skill2" type="VBoxContainer" parent="CenterContainer/PanelContainer/MainPanel/SkillList" unique_id=537354466]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill2" unique_id=1427836362]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.74994075, 0.52375233, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_bbhkb")
+text = "Charge Slash"
+horizontal_alignment = 1
+
+[node name="UnlockBtn2" type="Button" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill2" unique_id=469962718]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "unlock"
+
+[node name="Skill3" type="VBoxContainer" parent="CenterContainer/PanelContainer/MainPanel/SkillList" unique_id=835860702]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill3" unique_id=668022088]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.74994075, 0.52375233, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_bbhkb")
+text = "Heal"
+horizontal_alignment = 1
+
+[node name="UnlockBtn3" type="Button" parent="CenterContainer/PanelContainer/MainPanel/SkillList/Skill3" unique_id=1297773273]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "unlock"
+
+[node name="StatusArea" type="VBoxContainer" parent="CenterContainer/PanelContainer/MainPanel" unique_id=1755605879]
+layout_mode = 2
+
+[node name="TotalExpLabel" type="Label" parent="CenterContainer/PanelContainer/MainPanel/StatusArea" unique_id=19565851]
+custom_minimum_size = Vector2(120, 36)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nkqq8")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="CenterContainer/PanelContainer/MainPanel/StatusArea" unique_id=862253576]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nkqq8")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="ExpBar" type="ProgressBar" parent="CenterContainer/PanelContainer/MainPanel/StatusArea" unique_id=31954930]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nkqq8")
+theme_override_font_sizes/font_size = 30
+
+[node name="ConfirmPanel" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=1699240486]
+visible = false
+layout_mode = 2
+
+[node name="SkillNameLabel" type="Label" parent="CenterContainer/PanelContainer/ConfirmPanel" unique_id=489793296]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.6774267, 0.59505326, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nkqq8")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+
+[node name="SkillDescLabel" type="Label" parent="CenterContainer/PanelContainer/ConfirmPanel" unique_id=315271755]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="PreviewLabel" type="Label" parent="CenterContainer/PanelContainer/ConfirmPanel" unique_id=537732115]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/PanelContainer/ConfirmPanel" unique_id=1951651027]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ConfirmBtn" type="Button" parent="CenterContainer/PanelContainer/ConfirmPanel/Buttons" unique_id=313328695]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Unlock"
+
+[node name="CancelBtn" type="Button" parent="CenterContainer/PanelContainer/ConfirmPanel/Buttons" unique_id=2047328404]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Cancel"

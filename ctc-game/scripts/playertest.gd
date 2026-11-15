@@ -10,12 +10,18 @@ signal health_changed(new_health)
 signal turn_finished
 
 #exp point
-signal exp_changed(current_exp, max_exp, level)
+signal exp_changed(current_exp, exp_to_next_level, level)
 signal leveled_up(new_level)
 
 var level: int = 1
 var current_exp: int = 0
 var exp_to_next_level: int = 100
+
+var total_exp: int = 0
+var skill_points: int = 0 # exp point to UNLOCK
+var unlocked_double_action: bool = false
+var unlocked_long_attack: bool = false
+var unlocked_heal: bool = false
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
@@ -181,6 +187,8 @@ func _stop_animation():
 #exp 	
 func gain_exp(amount: int) -> void:
 	current_exp += amount
+	total_exp += amount
+	skill_points += amount # same as above (for unlock)
 	_spawn_exp_popup(amount)
 	
 	while current_exp >= exp_to_next_level:
