@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://dvwle4587adth" path="res://scripts/attack_area.gd" id="8_smehm"]
 [ext_resource type="Texture2D" uid="uid://de73w5yku5gja" path="res://Art/player/Buffed Sword/glow/THRUST ATTACK.png" id="9_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://dn5qrp42rhnkf" path="res://Music/chisper-8-bit-hurt-634753.mp3" id="13_jej6c"]
+[ext_resource type="AudioStream" uid="uid://c3piqkd1s6wu7" path="res://Music/chisper-8-bit-power-up-634760.mp3" id="14_f1ej7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ayvh1"]
 shader = ExtResource("1_3v2ag")
@@ -674,3 +675,7 @@ position = Vector2(-39, 173)
 
 [node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=1638618347]
 stream = ExtResource("13_jej6c")
+bus = &"SFX"
+
+[node name="LevelUp" type="AudioStreamPlayer" parent="." unique_id=1513652799]
+stream = ExtResource("14_f1ej7")

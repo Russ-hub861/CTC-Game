@@ -35,10 +35,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 912.0
-offset_top = 547.0
-offset_right = 912.0
-offset_bottom = 547.0
+offset_left = 959.0
+offset_top = 565.0
+offset_right = 959.0
+offset_bottom = 565.0
 
 [node name="NextButton" type="Button" parent="." unique_id=535715869]
 visible = false
@@ -62,6 +62,7 @@ text = "Next Level"
 [node name="levelMusic" type="AudioStreamPlayer" parent="." unique_id=1317143660]
 stream = SubResource("AudioStreamMP3_saih3")
 autoplay = true
+bus = &"SFX"
 
 [connection signal="level_done" from="WaveManager" to="." method="_on_wave_manager_level_done"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
