@@ -210,7 +210,7 @@ func _play_aoe_attack() -> void:
 	aoe_cooldown = 2
 	velocity.x = 0.0
 	animated_sprite.flip_h = facing_left
-	attack_area.scale.x = 1.0
+	attack_area.scale.x = 1.65
 	$AttackSound.play()
 	_set_outline(animated_sprite, true)
 	animated_sprite.play(&"SpecialAttack")
