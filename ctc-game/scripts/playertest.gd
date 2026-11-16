@@ -202,7 +202,7 @@ func _play_attack() -> void:
 		aoe_cooldown -= 1
 	if heal_cooldown > 0:
 			heal_cooldown -= 1
-	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 func _play_aoe_attack() -> void:

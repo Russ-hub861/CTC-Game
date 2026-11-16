@@ -14,11 +14,17 @@
 [ext_resource type="Texture2D" uid="uid://de73w5yku5gja" path="res://Art/player/Buffed Sword/glow/THRUST ATTACK.png" id="9_d2wvv"]
 [ext_resource type="AudioStream" uid="uid://dn5qrp42rhnkf" path="res://Music/chisper-8-bit-hurt-634753.mp3" id="13_jej6c"]
 [ext_resource type="AudioStream" uid="uid://c3piqkd1s6wu7" path="res://Music/chisper-8-bit-power-up-634760.mp3" id="14_f1ej7"]
+<<<<<<< HEAD
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ayvh1"]
 shader = ExtResource("1_3v2ag")
 shader_parameter/outline_color = Color(1, 0, 0, 1)
 shader_parameter/outline_width = 0.0
+=======
+[ext_resource type="AudioStream" uid="uid://c602mnhm24bw3" path="res://Sounds/SoundEffects/dragon-studio-sword-slice-393847.mp3" id="14_uheil"]
+[ext_resource type="AudioStream" uid="uid://61f4hxac7yf3" path="res://Sounds/SoundEffects/sectionsound-shield-block-shortsword-143940.mp3" id="15_yamdl"]
+[ext_resource type="AudioStream" uid="uid://efkuaxwrf1nl" path="res://Sounds/SoundEffects/freesound_community-failure-1-89170.mp3" id="17_qfm1y"]
+>>>>>>> 48ed11899d3c8d88908ed067f5867570131e21f3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfoy"]
 atlas = ExtResource("5_tuyoq")
@@ -679,3 +685,15 @@ bus = &"SFX"
 
 [node name="LevelUp" type="AudioStreamPlayer" parent="." unique_id=1513652799]
 stream = ExtResource("14_f1ej7")
+<<<<<<< HEAD
+=======
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="." unique_id=630312916]
+stream = ExtResource("14_uheil")
+
+[node name="BlockSound" type="AudioStreamPlayer" parent="." unique_id=430536818]
+stream = ExtResource("15_yamdl")
+
+[node name="SkillOnCooldown" type="AudioStreamPlayer2D" parent="." unique_id=808274534]
+stream = ExtResource("17_qfm1y")
+>>>>>>> 48ed11899d3c8d88908ed067f5867570131e21f3
