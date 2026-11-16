@@ -14,8 +14,8 @@ To run the game locally:
 
 ## About the Game
 
-[2-3 paragraphs expanding on the concept. What genre is it? What is the core loop? What is the story or theme? Who is the target audience?]
-
+  The Only Way Out is Up is a turnbased 2D pixel art rougelike about a young villager who wanders into a nearby forest with his dog, falls into a mysterious cave, and is trapped in a underground dungeon. As he explores this cave he eventually finds out that he his stuck in a loop of life and death where his only option of ending it and getting back to his dog is getting strong enough to make his way back to the surface. 
+  Each run starts at the bottom of the dungeon. You can only take one action per turn - move, attack, block or heal. You eventually learn more skills as you get stronger with the experience that you've gained from killing monsters. When your health runs out you get sent back to the bottom to try again for eternity until you can make it back out. 
 ## Screenshots
 
 [Optional but strongly recommended. Include 1-3 screenshots or GIFs showing the game in action. This makes the README visually engaging.]
@@ -31,9 +31,9 @@ To run the game locally:
 
 ## Team
 
-- [Name 1] - [Role, e.g., Programming, Level Design]
-- [Name 2] - [Role]
-- [Name 3] - [Role]
+- Cole Russell - [Role, e.g., Programming, Level Design]
+- Christopher Thunder - [Role]
+- Taiki Sawamata - [Role]
 - [Name 4] - [Role]
 
 ## Development
