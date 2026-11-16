@@ -115,6 +115,7 @@ text = "Next Level"
 [node name="TutorialMusic" type="AudioStreamPlayer" parent="." unique_id=1914757383]
 stream = SubResource("AudioStreamMP3_ohhhg")
 autoplay = true
+bus = &"Music"
 
 [node name="PauseMenu" parent="." unique_id=366174712 instance=ExtResource("8_drjao")]
 process_mode = 2

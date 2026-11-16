@@ -341,12 +341,17 @@ func gain_exp(amount: int) -> void:
 
 func _on_level_up() -> void:
 	# for level up
+<<<<<<< HEAD
+	$LevelUp.play()
+	health = max_health
+=======
 	var heal_amount = int(max_health * 0.5)
 	health += heal_amount
 	
 	if health > max_health:
 		health = max_health
 		
+>>>>>>> d28d688e6c44716b3926543dc096b8be781bf30e
 	attack_area.damage_amount += 1
 	health_changed.emit(health)
 	leveled_up.emit(level)
