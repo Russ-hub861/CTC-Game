@@ -45,7 +45,7 @@ func update_exp(current_exp: int, max_exp: int, level: int) -> void:
 	exp_bar.value = current_exp
 	level_label.text = "Lv." + str(level)
 
-func update_cooldowns(thrust_cd: int, aoe_cd: int, is_thrust_unlocked: bool, is_aoe_unlocked: bool, is_heal_unlocked: bool) -> void:
+func update_cooldowns(thrust_cd: int, aoe_cd: int, heal_cd: int, is_thrust_unlocked: bool, is_aoe_unlocked: bool, is_heal_unlocked: bool) -> void:
 	
 	# Skill 1: Thruster
 	if is_thrust_unlocked:
@@ -73,8 +73,12 @@ func update_cooldowns(thrust_cd: int, aoe_cd: int, is_thrust_unlocked: bool, is_
 		
 	# Skill 3: Heal (now is skeleton so will display READY if it's unlocked)
 	if is_heal_unlocked:
-		skill3_label.text = "Heal"
-		skill3_label.add_theme_color_override("font_color", ready_color)
+		if heal_cd > 0:
+			skill3_label.text = "Heal CD: " + str(heal_cd)
+			skill3_label.add_theme_color_override("font_color", cd_color)
+		else:
+			skill3_label.text = "Heal"
+			skill3_label.add_theme_color_override("font_color", ready_color)
 	else:
 		skill3_label.text = "Heal (Locked)"
 		skill3_label.add_theme_color_override("font_color", locked_color)
