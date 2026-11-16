@@ -64,5 +64,6 @@ text = "Return to menu"
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1475931545]
 stream = SubResource("AudioStreamMP3_ex68u")
+bus = &"SFX"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
