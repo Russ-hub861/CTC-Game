@@ -35,13 +35,34 @@ const OUTLINE_SHADER := preload("res://scenes/outline.gdshader")
 
 func _ready() -> void:
 	add_to_group("Enemies")
+	
+	# calculate as following player's level
+	var player = get_tree().get_first_node_in_group("Player")
+	if player and "level" in player:
+		# hp scale
+		var health_scale = 1.0 + (player.level - 1) * 0.2
+		max_health = round(max_health * health_scale)
+		
+		# exp scale
+		var exp_scale = 1.0 + (player.level - 1) * 0.2
+		exp_reward = round(exp_reward * exp_scale)
+		
+		# attacking damage scale
+		var dmg_scale = 1.0 + (player.level - 1) * 0.25
+		attack_area.damage_amount = round(attack_area.damage_amount * dmg_scale)
+		# to check enemy's status for each player's level
+		print("to check: enemy spawned, player's Lv: ", player.level, " | damage of attack", attack_area.damage_amount)
+			
+
+	# set the changed enemy's HP
 	health = max_health
+
+	# reset animations
 	if sprite == null:
 		return
 	_setup_outline(sprite)
 	_set_animation_loop(&"Hit", false)
 	_set_animation_loop(&"Death", false)
-	# A looping attack never finishes, so the swing below would only start once.
 	_set_animation_loop(&"Attack", false)
 	_set_animation_loop(&"BasicAttack", false)
 	sprite.play(&"Idle")
