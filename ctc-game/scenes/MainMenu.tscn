@@ -1166,9 +1166,5 @@ text = "Start"
 [node name="PauseMenu" parent="." unique_id=366174712 instance=ExtResource("8_6jdhn")]
 visible = false
 layout_mode = 1
-offset_left = -4.0
-offset_top = -3.0
-offset_right = 4.0
-offset_bottom = 12.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

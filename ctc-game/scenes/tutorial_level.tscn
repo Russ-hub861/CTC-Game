@@ -120,15 +120,6 @@ bus = &"Music"
 [node name="PauseMenu" parent="." unique_id=366174712 instance=ExtResource("8_drjao")]
 process_mode = 2
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 965.0
-offset_top = 572.0
-offset_right = 965.0
-offset_bottom = 572.0
 
 [connection signal="tutorial_completed" from="TutorialPopup" to="." method="_on_tutorial_popup_tutorial_completed"]
 [connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

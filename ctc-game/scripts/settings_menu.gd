@@ -5,6 +5,10 @@ extends Control
 @onready var quit_button: Button = $VBoxContainer/QuitButton
 
 func _ready() -> void:
+	# Levels parent this menu under a Node2D. Anchors only work when the
+	# parent is a Control, so size it to the viewport or it stays at a
+	# fixed point in the level instead of the middle of the screen.
+	_fit_to_screen()
 	if get_tree().current_scene and get_tree().current_scene.name == "MainMenu":
 		resume_button.hide()
 		# quit_button.hide()
@@ -38,6 +42,8 @@ func _ready() -> void:
 	) * 100
 
 func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_SIZE_CHANGED:
+		_fit_to_screen()
 	if what == NOTIFICATION_VISIBILITY_CHANGED and is_visible_in_tree() and is_instance_valid(fullscreen_toggle):
 		var current_mode = DisplayServer.window_get_mode()
 		fullscreen_toggle.button_pressed = (
@@ -51,6 +57,29 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+# Covers the visible window. On the main menu the parent is already a
+# full-screen Control, so anchors are enough. In a level the parent is a
+# Node2D and anchors are relative to a zero-size rect, so the offsets have
+# to be the viewport size or the menu collapses to a point.
+func _fit_to_screen() -> void:
+	if not is_inside_tree():
+		return
+	if get_parent() is Control:
+		set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	else:
+		var screen_size := get_viewport_rect().size
+		anchor_left = 0.0
+		anchor_top = 0.0
+		anchor_right = 0.0
+		anchor_bottom = 0.0
+		offset_left = 0.0
+		offset_top = 0.0
+		offset_right = screen_size.x
+		offset_bottom = screen_size.y
+	var controls_page := get_node_or_null("ControlsPage") as Control
+	if controls_page:
+		controls_page.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
 #Unpauses the game and hides the settings menu when the resume button is pressed
 func _on_resume_button_pressed():
