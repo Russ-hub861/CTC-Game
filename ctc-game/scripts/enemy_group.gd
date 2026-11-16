@@ -75,6 +75,7 @@ func _ready() -> void:
 func _add_sound(stream: AudioStream) -> AudioStreamPlayer:
 	var player := AudioStreamPlayer.new()
 	player.stream = stream
+	player.bus = "SFX"
 	add_child(player)
 	return player
 	

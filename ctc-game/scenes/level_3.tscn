@@ -3,6 +3,9 @@
 [ext_resource type="TileSet" uid="uid://cee2exu8iwpnf" path="res://dungeon_set.tres" id="1_ayd5w"]
 [ext_resource type="PackedScene" uid="uid://d24r8xh3mas4f" path="res://scenes/torch.tscn" id="2_1fhj5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3j60"]
+size = Vector2(105, 1176.75)
+
 [node name="Level3" type="Node2D" unique_id=863970569]
 texture_filter = 1
 
@@ -18,7 +21,7 @@ tile_set = ExtResource("1_ayd5w")
 
 [node name="Decorations" type="TileMapLayer" parent="." unique_id=1371385765]
 scale = Vector2(6, 6)
-tile_map_data = PackedByteArray("AAADAAQAAAAJAAEAACADAAMAAAAJAAIAACADAAIAAAAJAAMAACADAAEAAAAJAAQAACAQAAQAAAAJAAEAACAQAAMAAAAJAAIAACAQAAIAAAAJAAMAACAQAAEAAAAJAAQAACABAAcAAAAKACcAAAABAAgAAAAKACgAAAABAAkAAAAKACkAAAACAAcAAAALACcAAAACAAgAAAALACgAAAACAAkAAAALACkAAAADAAcAAAAMACcAAAADAAgAAAAMACgAAAADAAkAAAAMACkAAAAQAAcAAAAKACQAAAAQAAgAAAAKACUAAAAQAAkAAAAKACYAAAARAAcAAAALACQAAAARAAgAAAALACUAAAARAAkAAAALACYAAAASAAcAAAAMACQAAAASAAgAAAAMACUAAAASAAkAAAAMACYAAAA=")
+tile_map_data = PackedByteArray("AAADAAQAAAAJAAEAACADAAMAAAAJAAIAACADAAIAAAAJAAMAACADAAEAAAAJAAQAACAQAAQAAAAJAAEAACAQAAMAAAAJAAIAACAQAAIAAAAJAAMAACAQAAEAAAAJAAQAACAQAAcAAAAKACQAAAAQAAgAAAAKACUAAAAQAAkAAAAKACYAAAARAAcAAAALACQAAAARAAgAAAALACUAAAARAAkAAAALACYAAAASAAcAAAAMACQAAAASAAgAAAAMACUAAAASAAkAAAAMACYAAAAEAAcAAAAKACcAAAAEAAgAAAAKACgAAAAEAAkAAAAKACkAAAAFAAcAAAALACcAAAAFAAgAAAALACgAAAAFAAkAAAALACkAAAAGAAcAAAAMACcAAAAGAAgAAAAMACgAAAAGAAkAAAAMACkAAAA=")
 tile_set = ExtResource("1_ayd5w")
 
 [node name="torch" parent="." unique_id=1120984477 instance=ExtResource("2_1fhj5")]
@@ -30,10 +33,20 @@ position = Vector2(1584.0001, 492.99997)
 scale = Vector2(5.9, 4.3)
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1319131053]
-position = Vector2(204, 966)
+position = Vector2(530, 966)
 
 [node name="EnemySpawn1" type="Marker2D" parent="." unique_id=1640441016]
 position = Vector2(1646, 966)
 
 [node name="EnemySpawn2" type="Marker2D" parent="." unique_id=21547575]
-position = Vector2(397, 966)
+position = Vector2(205, 966)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=947467872]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=742244753]
+position = Vector2(42.5, 565.625)
+shape = SubResource("RectangleShape2D_t3j60")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=822251834]
+position = Vector2(1881, 582)
+shape = SubResource("RectangleShape2D_t3j60")
