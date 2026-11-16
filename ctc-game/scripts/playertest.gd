@@ -24,7 +24,7 @@ var unlocked_long_attack: bool = false
 var unlocked_heal: bool = false
 
 #skill cooldown (CT)
-signal cooldown_changed(thrust_cd: int, aoe_cd: int, thrust_unlocked: bool, aoe_unlocked: bool, heal_unlocked: bool)
+signal cooldown_changed(thrust_cd: int, aoe_cd: int, heal_cd: int, thrust_unlocked: bool, aoe_unlocked: bool, heal_unlocked: bool)
 
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
@@ -143,7 +143,7 @@ func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool
 			aoe_cooldown -= 1
 		if heal_cooldown > 0:
 			heal_cooldown -= 1
-	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 func take_damage(amount: int) -> void:
@@ -202,7 +202,7 @@ func _play_attack() -> void:
 		aoe_cooldown -= 1
 	if heal_cooldown > 0:
 			heal_cooldown -= 1
-	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 func _play_aoe_attack() -> void:
@@ -227,7 +227,7 @@ func _play_aoe_attack() -> void:
 		thrust_cooldown -= 1
 	if heal_cooldown > 0:
 		heal_cooldown -= 1
-	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 func _play_thrust() -> void:
@@ -256,7 +256,7 @@ func _play_thrust() -> void:
 		aoe_cooldown -= 1
 	if heal_cooldown > 0:
 			heal_cooldown -= 1
-	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
 func _play_heal() -> void:
@@ -277,7 +277,7 @@ func _play_heal() -> void:
 		thrust_cooldown -= 1
 	if aoe_cooldown > 0:
 		aoe_cooldown -= 1
-	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 
 func _play_block() -> void:
@@ -293,7 +293,9 @@ func _play_block() -> void:
 		thrust_cooldown -= 1
 	if aoe_cooldown >0:
 		aoe_cooldown -= 1
-	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
+	if heal_cooldown > 0:
+		heal_cooldown -= 1
+	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 
 
