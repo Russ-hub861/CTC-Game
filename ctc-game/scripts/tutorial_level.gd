@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		_toggle_settings()
 	if !$PauseMenu.visible == true:
 		$TutorialMusic.stream_paused = false
-	
+		
 
 #Skips all of the tutorial when the skip button is pressed
 func _on_skip_button_pressed() -> void:

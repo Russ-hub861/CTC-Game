@@ -2,19 +2,17 @@ extends Control
 #List of all the messages to be displayed during tutorial
 var messages = [
 	"You hear an eerie voice \nfrom the statue",
-	"If you ever want to see your dog agian \n
-	You must listen to what I say very carefully...",
+	"If you ever want to see your dog agian \nYou must listen to what I say very carefully...",
 	"Use the arrow keys or a and d to move",
-	"use the s key to block enemy attacks or skip your turn",
+	"use the s key to block enemy attacks \nor skip your turn",
 	"Use the space bar to attack enemies",
 	"Your health is located in the top left corner \n
 	once its depleated you will die.",
 	"Press 'esc' to pause, quit, \nand to look at the controls",
-	"Every time you complete an action such as\n blocking, attacking or moving
-	each of your enemies will get a chance to do something before you",
-	"Defeat waves of enemies during \neach level in order to escape",
-	"When you are ready to attempt your escape \n click the button above my head",
-	"Good luck!"
+	"Every time you block, attack or \nmove a certain direction every enemy will \nget a chance to do something before you",
+	"Defeat waves of enemies during \neach level in order to gain exp and level up",
+	"leveling up will earn you SP which you can use to \nupgrade your attacks and\ngain your health back by pressing 'tab'",
+	"When you are ready to attempt your escape \nclick the button above my head\nGood luck!"
 ]
 var current_message = 0
 var tutorial_active = false
