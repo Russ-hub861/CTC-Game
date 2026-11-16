@@ -17,20 +17,27 @@ size_flags_vertical = 4
 script = ExtResource("1_x0egx")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1546227678]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1108699440]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -566.0
+offset_top = -355.0
 offset_right = 566.0
-offset_bottom = 710.0
+offset_bottom = 355.0
 grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1167082855]
 layout_mode = 2

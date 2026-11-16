@@ -16,22 +16,23 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">
 base_scale = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h437d"]
-content_margin_left = 500.0
+content_margin_left = 8.0
 content_margin_top = 16.0
+content_margin_right = 8.0
 bg_color = Color(0.6, 0.6, 0.6, 0.43529412)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiqec"]
-content_margin_left = 500.0
-content_margin_top = 500.0
-content_margin_right = 500.0
-content_margin_bottom = 500.0
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mlw3h"]
-content_margin_left = 500.0
-content_margin_top = 500.0
-content_margin_right = 500.0
-content_margin_bottom = 500.0
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
 bg_color = Color(0.96254605, 0.96254593, 0.96254593, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucygd"]
@@ -66,7 +67,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -368.0
-offset_right = 325.0
+offset_right = 368.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.99861187)
@@ -165,6 +166,11 @@ text = "Quit"
 [node name="ControlsPage" parent="." unique_id=1022934269 instance=ExtResource("4_labj1")]
 visible = false
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="value_changed" from="VBoxContainer/Sliders/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
