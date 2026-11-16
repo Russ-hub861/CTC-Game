@@ -18,7 +18,7 @@ extends CanvasLayer
 
 # Modified: Added req_level and increased cost
 var skill_data = {
-	1: {"name": "Thruster", "cost": 250, "req_level": 3, "desc": "Powerful forward thrust attack\n(Requires Level 3)"},
+	1: {"name": "Thruster", "cost": 300, "req_level": 3, "desc": "Powerful forward thrust attack\n(Requires Level 3)"},
 	2: {"name": "Charge Attack", "cost": 400, "req_level": 4, "desc": "Hit both sides for 4 damage\n(Requires Level 4)"},
 	3: {"name": "Heal", "cost": 150, "req_level": 2, "desc": "Regen HP\n(Requires Level 2)"}
 }
