@@ -5,6 +5,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Starts the animation of the dog
 	dog.play("Idle")
 	if is_instance_valid(settings_menu):
 		settings_menu.hide()
@@ -25,7 +26,7 @@ func toggle_settings() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+#Starts the game when the player presses the button by changing the scene
 func _on_button_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://tutorial_level.tscn")

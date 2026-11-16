@@ -26,7 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#This updates the players health and changes the number of hearts visible
 func update_health(new_health: int):
 	#current_health = new_health
 	var hearts = $VBoxContainer.get_children()

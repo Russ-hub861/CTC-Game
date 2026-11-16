@@ -10,11 +10,13 @@ var enemy_scene = preload("res://scenes/goblin_thief.tscn")
 var enemy_scenetwo = preload("res://scenes/goblin_tank.tscn")
 signal level_done
 
-
+#Checks whether the enemy spawned has died and updates the counter 
+# of how many enemies alive there are
 func _on_enemy_died():
 	enemies_alive -=1
 	check_wave_completion()
 
+#Chooses an enemy according to the weights assigned in main
 func choose_enemy(enemy_pool: Array) -> PackedScene:
 	var total_weight = 0
 	for enemy in enemy_pool:
@@ -26,7 +28,7 @@ func choose_enemy(enemy_pool: Array) -> PackedScene:
 			return enemy["scene"]
 	return enemy_pool[0]["scene"]
 
-
+#Spawns the enemy at current spawn point
 func spawn_enemy():
 	var spawn_points = [
 	current_level.get_node("EnemySpawn1"),
@@ -45,6 +47,7 @@ func spawn_enemy():
 	enemy.died.connect(_on_enemy_died)
 	enemies_alive += 1
 
+#Starts the level and resets enemy counter and wave counter
 func start_level(level: Node2D, level_waves: Array):
 	$WaveMessages.hide()
 	current_level = level
@@ -52,10 +55,11 @@ func start_level(level: Node2D, level_waves: Array):
 	current_wave = 0
 	enemies_alive = 0
 	start_wave()
-
+#Starts the intended wave of enemies 
 func start_wave():
+	#Checks to see if player has completed all waves if so
+	#changes wave message
 	if current_wave >= waves.size():
-		#level_completed()
 		$WaveMessages/wavemessage.text = "Level complete!"
 		await get_tree().create_timer(1.0).timeout
 		$WaveMessages.hide()
@@ -81,11 +85,11 @@ func start_wave():
 	all_enemies_spawned = true
 	check_wave_completion()
 	
-
+#Checks to see if the wave has been completed
 func check_wave_completion():
 	if all_enemies_spawned and enemies_alive == 0 and not wave_transitioning:
 		wave_completed()
-
+#Changes wave and wave messages once wave has been completed
 func wave_completed():
 	wave_transitioning = true
 	$WaveMessages/wavemessage.text = "Wave "+str(current_wave+1)+" complete!"

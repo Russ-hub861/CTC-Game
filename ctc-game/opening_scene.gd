@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#Makes sure the player cannot move during cut scene and plays the animation
 	$Player.set_physics_process(false)
 	$OpeningAnimation.play("opening")
 	

@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://cc2jikroem53d" path="res://dog.gd" id="6_boq4u"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="7_irkw0"]
 [ext_resource type="Texture2D" uid="uid://byms4qo102fhf" path="res://Art/Tears.png" id="9_gdyj6"]
-[ext_resource type="Script" uid="uid://d2ugm2cybnjlw" path="res://tears.gd" id="10_daeyy"]
 [ext_resource type="Texture2D" uid="uid://bgjp4ene4j115" path="res://Art/exclamation.png" id="11_03584"]
 
 [sub_resource type="Animation" id="Animation_fynoa"]
@@ -245,7 +244,7 @@ _data = {
 &"opening": SubResource("Animation_36pq8")
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hw364"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03584"]
 texture = ExtResource("1_fynoa")
 2:0/0 = 0
 3:0/0 = 0
@@ -282,9 +281,9 @@ texture = ExtResource("1_fynoa")
 4:7/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0lcmu"]
-sources/0 = SubResource("TileSetAtlasSource_hw364")
+sources/0 = SubResource("TileSetAtlasSource_03584")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwn6d"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_boq4u"]
 texture = ExtResource("2_36pq8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -323,7 +322,7 @@ texture_region_size = Vector2i(32, 32)
 8:3/0 = 0
 9:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dest"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_irkw0"]
 texture = ExtResource("3_gdyj6")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -344,7 +343,7 @@ texture_region_size = Vector2i(32, 32)
 4:2/0 = 0
 5:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wepl0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hw364"]
 texture = ExtResource("4_daeyy")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -553,9 +552,9 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_xkoff"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_gwn6d")
-sources/1 = SubResource("TileSetAtlasSource_3dest")
-sources/3 = SubResource("TileSetAtlasSource_wepl0")
+sources/0 = SubResource("TileSetAtlasSource_boq4u")
+sources/1 = SubResource("TileSetAtlasSource_irkw0")
+sources/3 = SubResource("TileSetAtlasSource_hw364")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fynoa"]
 texture = ExtResource("4_daeyy")
@@ -1579,6 +1578,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_0lcmu"]
+script/source = "extends TextureRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+"
+
 [node name="OpeningScene" type="Control" unique_id=484148700]
 layout_mode = 3
 anchors_preset = 15
@@ -1641,7 +1655,7 @@ offset_bottom = 717.0
 scale = Vector2(0.71477216, 0.5149311)
 texture = ExtResource("9_gdyj6")
 expand_mode = 1
-script = ExtResource("10_daeyy")
+script = SubResource("GDScript_0lcmu")
 
 [node name="exclamationpoint" type="TextureRect" parent="." unique_id=1170723720]
 visible = false
