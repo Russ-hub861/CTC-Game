@@ -160,13 +160,15 @@ func _on_next_button_pressed() -> void:
 		$WaveManager.start_level(current_level, level_3_waves)
 		
 		is_level3 = true
+		is_level2 = false
 		
 	elif is_level3:
+		$NextButton.text = "Escape the Dungeon"
 		get_tree().change_scene_to_file("res://scenes/cut_scene.tscn")
 	else:
 		load_level(preload("res://scenes/level_1_fr.tscn"))
 		$NextButton.hide()
-		$NextButton.text = "Escape the dungeon"
+		$NextButton.text = "Next Level"
 		$WaveManager.start_level(current_level,level_2_waves)
 		
 		# uncomment to regan player's HP
