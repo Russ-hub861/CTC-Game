@@ -9,8 +9,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+#Plays the walk animation
 func _play_walk():
 	play("ani")
+#Plays the sit animation
 func _play_sit():
 	play("sit")

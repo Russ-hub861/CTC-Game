@@ -304,7 +304,7 @@ func _apply_facing() -> void:
 	# AttackArea's shape sits to the right of the player. Flip it with facing.
 	attack_area.scale.x = -1.0 if facing_left else 1.0
 
-
+#Plays the idle animation
 func _play_idle() -> void:
 	#animated_sprite.flip_h = facing_left
 	animated_sprite.play(&"Idle")
@@ -317,10 +317,12 @@ func _wait_for_animation(anim_name: StringName) -> void:
 		return
 	await get_tree().create_timer(frames.get_frame_count(anim_name) / speed).timeout
 
+#Plays the player walking animation and loops it
 func _play_move():
 	$AnimatedSprite2D.sprite_frames.set_animation_loop("Move",true)
 	$AnimatedSprite2D.play("Move")
 
+#Stops the current animation
 func _stop_animation():
 	$AnimatedSprite2D.stop()
 	
@@ -342,12 +344,13 @@ func gain_exp(amount: int) -> void:
 func _on_level_up() -> void:
 	# for level up
 	$LevelUp.play()
+
 	var heal_amount = int(max_health * 0.5)
 	health += heal_amount
 	
 	if health > max_health:
 		health = max_health
-		
+
 	attack_area.damage_amount += 1
 	health_changed.emit(health)
 	leveled_up.emit(level)
@@ -372,5 +375,6 @@ func _spawn_exp_popup(amount: int) -> void:
 	tween.tween_property(label, "modulate:a", 0.0, 0.8)
 	tween.chain().tween_callback(label.queue_free)
 	
+#Plays the fall animation
 func _play_fall():
 	$AnimatedSprite2D.play("Fall")
