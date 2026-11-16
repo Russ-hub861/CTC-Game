@@ -23,10 +23,11 @@ To run the game locally:
 ## How to Play
 
 [Controls and basic instructions. For example:]
-- **Left player:** WASD
-- **Right player:** Arrow keys
-- **Undo:** Z
-- **Restart level:** R
+- **move:** ad or arrow keys
+- **block:** s
+- **attack:** space
+- **Pause:** esc
+- **attack menu:** tab
 
 ## Team
 
@@ -39,9 +40,9 @@ To run the game locally:
 
 This game was developed as part of COMP 480/490: Game Design & Development at Kalamazoo College (Fall 2026).
 
-- **Engine:** Godot 4.x
+- **Engine:** Godot 4.7
 - **Language:** GDScript
-- **Art Style:** [e.g., Small-size pixel art using the Darkworld Palette]
+- **Art Style:** pixel art with a dungeon theme
 
 ## Design Documents
 
