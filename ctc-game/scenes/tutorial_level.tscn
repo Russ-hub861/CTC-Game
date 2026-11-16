@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://ce2bemjov8r5l"]
 
-[ext_resource type="Script" uid="uid://fy47i8m6hhgf" path="res://tutorial_level.gd" id="1_2dagw"]
+[ext_resource type="Script" uid="uid://fy47i8m6hhgf" path="res://scripts/tutorial_level.gd" id="1_2dagw"]
 [ext_resource type="TileSet" uid="uid://cee2exu8iwpnf" path="res://dungeon_set.tres" id="1_sp2du"]
-[ext_resource type="PackedScene" uid="uid://d24r8xh3mas4f" path="res://torch.tscn" id="2_tfbhh"]
-[ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://tutorial_popup.tscn" id="3_3hotv"]
+[ext_resource type="PackedScene" uid="uid://d24r8xh3mas4f" path="res://scenes/torch.tscn" id="2_tfbhh"]
+[ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://scenes/tutorial_popup.tscn" id="3_3hotv"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="5_7w0ls"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="6_a5404"]
 [ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="7_ohhhg"]
-[ext_resource type="PackedScene" uid="uid://b4hofpq18cmqf" path="res://settings_menu.tscn" id="8_drjao"]
+[ext_resource type="PackedScene" uid="uid://b4hofpq18cmqf" path="res://scenes/settings_menu.tscn" id="8_drjao"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohhhg"]
 bg_color = Color(1, 1, 1, 0.45490196)

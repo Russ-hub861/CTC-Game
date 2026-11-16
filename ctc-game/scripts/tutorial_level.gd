@@ -31,7 +31,7 @@ func _on_skip_button_pressed() -> void:
 
 #Takes player to the first level when the continue button is pressed
 func _on_continue_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://test_main.tscn")
+	get_tree().change_scene_to_file("res://scenes/test_main.tscn")
 
 #shows continue button once tutorial has been completed
 func _on_tutorial_popup_tutorial_completed() -> void:

@@ -10,10 +10,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _input(event):
+	if event.is_action_pressed("toggle_skill_menu"):
+		toggle_menu()
 
-
-
+func toggle_menu():
+	visible = !visible
+	get_tree().paused = visible
 
 func _on_save_changes_pressed() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	hide()
+	get_parent().get_node("VBoxContainer").show()

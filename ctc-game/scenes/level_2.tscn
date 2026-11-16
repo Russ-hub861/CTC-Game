@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c0feqypysgdmb"]
 
-[ext_resource type="PackedScene" uid="uid://cglr03uyon7g1" path="res://level_2_background.tscn" id="1_nmjpi"]
+[ext_resource type="PackedScene" uid="uid://cglr03uyon7g1" path="res://scenes/level_2_background.tscn" id="1_nmjpi"]
 [ext_resource type="TileSet" uid="uid://cee2exu8iwpnf" path="res://dungeon_set.tres" id="2_xdadj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkllb"]

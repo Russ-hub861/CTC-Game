@@ -1,17 +1,15 @@
 [gd_scene format=4 uid="uid://c7jj8p5vy5h46"]
 
-[ext_resource type="Script" uid="uid://d1tlvcqwfvcuf" path="res://scripts/cut_scene.gd" id="1_jbfw6"]
+[ext_resource type="Script" uid="uid://chrlwk3fsgtn5" path="res://scripts/cut_scene.gd" id="1_jbfw6"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="1_li4wx"]
 [ext_resource type="Texture2D" uid="uid://bxno4a6pwa66l" path="res://Art/DogBundle/PNGs/Labrador.png" id="2_jbfw6"]
 [ext_resource type="Texture2D" uid="uid://h1pkxwmreyrd" path="res://Art/Cloud Tileset.png" id="3_38t87"]
 [ext_resource type="Texture2D" uid="uid://34usb2ccvvl1" path="res://Art/Pixel Art Grassland Tileset 32x32/tilesetgrass.png" id="4_hnyv4"]
 [ext_resource type="Texture2D" uid="uid://lg2tumbljq3" path="res://Art/Pixel Art Grassland Tileset 32x32/tree.png" id="5_sko4d"]
 [ext_resource type="Texture2D" uid="uid://deqhx6esanlww" path="res://Art/tileset/Tilesetv3.png" id="6_8xgrg"]
-[ext_resource type="Script" uid="uid://cc2jikroem53d" path="res://dog.gd" id="7_38t87"]
+[ext_resource type="Script" uid="uid://cc2jikroem53d" path="res://scripts/dog.gd" id="7_38t87"]
 [ext_resource type="Texture2D" uid="uid://cup0k4yatsre5" path="res://Art/new_hearts/heart_spritesheet_32x32.png" id="9_sko4d"]
-[ext_resource type="Script" uid="uid://bm3addpxnumym" path="res://love_heart.gd" id="10_8xgrg"]
-[ext_resource type="Script" uid="uid://crbfie3to44lq" path="res://love_heart_2.gd" id="11_8xgrg"]
-[ext_resource type="Script" uid="uid://bduk756m7ompp" path="res://love_heart_3.gd" id="12_wwagk"]
+[ext_resource type="Script" uid="uid://bm3addpxnumym" path="res://scripts/love_heart.gd" id="12_wwagk"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="13_sog3x"]
 
 [sub_resource type="Animation" id="Animation_li4wx"]
@@ -866,7 +864,7 @@ scale = Vector2(4.4326744, 5.621777)
 sprite_frames = SubResource("SpriteFrames_rkllb")
 animation = &"love"
 frame_progress = 0.28605932
-script = ExtResource("10_8xgrg")
+script = ExtResource("12_wwagk")
 
 [node name="loveHeart2" type="AnimatedSprite2D" parent="." unique_id=166195342]
 position = Vector2(1234.0001, 558)
@@ -874,7 +872,7 @@ scale = Vector2(2.4349043, 3.1517572)
 sprite_frames = SubResource("SpriteFrames_rkllb")
 animation = &"love"
 frame_progress = 0.28605932
-script = ExtResource("11_8xgrg")
+script = ExtResource("12_wwagk")
 
 [node name="loveHeart3" type="AnimatedSprite2D" parent="." unique_id=2057860156]
 position = Vector2(1379, 539)

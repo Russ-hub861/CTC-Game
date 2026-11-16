@@ -345,7 +345,7 @@ func _on_level_up() -> void:
 	# for level up
 	$LevelUp.play()
 
-	var heal_amount = int(max_health * 0.5)
+	var heal_amount = int(max_health * 0.2)
 	health += heal_amount
 	
 	if health > max_health:

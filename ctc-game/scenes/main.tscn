@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://wmlhyldrwt0d"]
 
-[ext_resource type="PackedScene" uid="uid://cl6qnygcn4sd8" path="res://level_1_fr.tscn" id="1_sugp2"]
-[ext_resource type="Script" uid="uid://3hki16l8oedm" path="res://scenes/main.gd" id="1_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cl6qnygcn4sd8" path="res://scenes/level_1_fr.tscn" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://3hki16l8oedm" path="res://scripts/main.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b5oiy6clrlpvk" path="res://scenes/goblin_archer.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://gac36anssyni" path="res://scenes/goblin_tank.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="6_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://tutorial_popup.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bnxlkheb83cya" path="res://scenes/tutorial_popup.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://d2d4t8t51km7g" path="res://scenes/goblin_thief.tscn" id="8_tipki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4r0nh"]

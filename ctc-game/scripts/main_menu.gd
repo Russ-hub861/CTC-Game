@@ -29,4 +29,4 @@ func _process(delta: float) -> void:
 #Starts the game when the player presses the button by changing the scene
 func _on_button_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://tutorial_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/tutorial_level.tscn")

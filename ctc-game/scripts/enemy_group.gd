@@ -24,7 +24,7 @@ var health: int
 var is_dead: bool = false
 var is_invincible: bool = false
 signal died
-const DAMAGE_POPUP_SCENE = preload("res://damege_popup.tscn")
+const DAMAGE_POPUP_SCENE = preload("res://scenes/damege_popup.tscn")
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = $AttackArea

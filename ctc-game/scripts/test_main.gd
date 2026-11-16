@@ -103,7 +103,7 @@ func load_level(level_scene):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Loads the first level and connects the player and hud signals
-	load_level(preload("res://level_2.tscn"))
+	load_level(preload("res://scenes/level_2.tscn"))
 	$WaveManager.start_level(current_level,level_1_waves)
 	player.health_changed.connect(hud.update_health)
 	player.cooldown_changed.connect(hud.update_cooldowns)
@@ -129,7 +129,7 @@ func _process(_delta):
 		
 #Shows death screen if player dies
 func _on_player_died() -> void:
-	get_tree().change_scene_to_file("res://death_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 	$levelMusic.stop()
 	
 
@@ -154,7 +154,7 @@ func _on_wave_manager_level_done() -> void:
 #changes level once next button is pressed
 func _on_next_button_pressed() -> void:
 	if is_level2:
-		load_level(preload("res://level_3.tscn"))
+		load_level(preload("res://scenes/level_3.tscn"))
 		$NextButton.hide()
 		$NextButton.text = "Next Level"
 		$WaveManager.start_level(current_level, level_3_waves)
@@ -162,9 +162,9 @@ func _on_next_button_pressed() -> void:
 		is_level3 = true
 		
 	elif is_level3:
-		get_tree().change_scene_to_file("res://cut_scene.tscn")
+		get_tree().change_scene_to_file("res://scenes/cut_scene.tscn")
 	else:
-		load_level(preload("res://level_1_fr.tscn"))
+		load_level(preload("res://scenes/level_1_fr.tscn"))
 		$NextButton.hide()
 		$NextButton.text = "Escape the dungeon"
 		$WaveManager.start_level(current_level,level_2_waves)

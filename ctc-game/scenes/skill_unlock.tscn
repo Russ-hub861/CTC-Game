@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bwmidwi8v4a2y"]
 
-[ext_resource type="Script" uid="uid://cyks8ncks0lre" path="res://skill_unlock.gd" id="1_i05s0"]
+[ext_resource type="Script" uid="uid://cyks8ncks0lre" path="res://scripts/skill_unlock.gd" id="1_i05s0"]
 [ext_resource type="FontFile" uid="uid://cikr44jitu7bi" path="res://fonts/m5x7.ttf" id="2_nkqq8"]
 
 [sub_resource type="Theme" id="Theme_bbhkb"]

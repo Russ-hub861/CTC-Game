@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://bj0tyxd84jjgt"]
 
-[ext_resource type="Script" uid="uid://cvfvpe12nqkgd" path="res://scenes/main_menu.gd" id="1_grv7l"]
+[ext_resource type="Script" uid="uid://cvfvpe12nqkgd" path="res://scripts/main_menu.gd" id="1_grv7l"]
 [ext_resource type="Texture2D" uid="uid://bxno4a6pwa66l" path="res://Art/DogBundle/PNGs/Labrador.png" id="2_pyvri"]
 [ext_resource type="Texture2D" uid="uid://h1pkxwmreyrd" path="res://Art/Cloud Tileset.png" id="3_j6mnh"]
 [ext_resource type="Texture2D" uid="uid://34usb2ccvvl1" path="res://Art/Pixel Art Grassland Tileset 32x32/tilesetgrass.png" id="4_vg7mf"]
 [ext_resource type="Texture2D" uid="uid://lg2tumbljq3" path="res://Art/Pixel Art Grassland Tileset 32x32/tree.png" id="5_kl36m"]
 [ext_resource type="Texture2D" uid="uid://deqhx6esanlww" path="res://Art/tileset/Tilesetv3.png" id="6_7vhhh"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="7_tqqr3"]
-[ext_resource type="PackedScene" uid="uid://b4hofpq18cmqf" path="res://settings_menu.tscn" id="8_6jdhn"]
+[ext_resource type="PackedScene" uid="uid://b4hofpq18cmqf" path="res://scenes/settings_menu.tscn" id="8_6jdhn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mipys"]
 atlas = ExtResource("2_pyvri")

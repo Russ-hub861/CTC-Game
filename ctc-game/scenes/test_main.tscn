@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://c1jqkk6kqbd6g"]
 
-[ext_resource type="Script" uid="uid://dym2wxm06qij" path="res://test_main.gd" id="1_2n3av"]
+[ext_resource type="Script" uid="uid://dym2wxm06qij" path="res://scripts/test_main.gd" id="1_2n3av"]
 [ext_resource type="PackedScene" uid="uid://p2dflpd0trvy" path="res://scenes/player.tscn" id="1_tcanr"]
 [ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="2_2n3av"]
-[ext_resource type="PackedScene" uid="uid://bwmidwi8v4a2y" path="res://skill_unlock.tscn" id="2_soafa"]
-[ext_resource type="PackedScene" uid="uid://bqwaimbg7owe2" path="res://wave_manager.tscn" id="4_nuuvo"]
-[ext_resource type="PackedScene" uid="uid://b4hofpq18cmqf" path="res://settings_menu.tscn" id="5_aueqv"]
+[ext_resource type="PackedScene" uid="uid://bwmidwi8v4a2y" path="res://scenes/skill_unlock.tscn" id="2_soafa"]
+[ext_resource type="PackedScene" uid="uid://bqwaimbg7owe2" path="res://scenes/wave_manager.tscn" id="4_nuuvo"]
+[ext_resource type="PackedScene" uid="uid://b4hofpq18cmqf" path="res://scenes/settings_menu.tscn" id="5_aueqv"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="6_saih3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aueqv"]

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d32pbjlh13u5g"]
 
 [ext_resource type="TileSet" uid="uid://cee2exu8iwpnf" path="res://dungeon_set.tres" id="1_ayd5w"]
-[ext_resource type="PackedScene" uid="uid://d24r8xh3mas4f" path="res://torch.tscn" id="2_1fhj5"]
+[ext_resource type="PackedScene" uid="uid://d24r8xh3mas4f" path="res://scenes/torch.tscn" id="2_1fhj5"]
 
 [node name="Level3" type="Node2D" unique_id=863970569]
 texture_filter = 1

@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://coougs03twnp4"]
 
-[ext_resource type="Script" uid="uid://dx3s3u63lcsvl" path="res://second_scene.gd" id="1_fydxn"]
+[ext_resource type="Script" uid="uid://dx3s3u63lcsvl" path="res://scripts/second_scene.gd" id="1_fydxn"]
 [ext_resource type="Texture2D" uid="uid://h1pkxwmreyrd" path="res://Art/Cloud Tileset.png" id="1_rkxw5"]
 [ext_resource type="Texture2D" uid="uid://34usb2ccvvl1" path="res://Art/Pixel Art Grassland Tileset 32x32/tilesetgrass.png" id="2_fydxn"]
 [ext_resource type="Texture2D" uid="uid://lg2tumbljq3" path="res://Art/Pixel Art Grassland Tileset 32x32/tree.png" id="3_lbm4r"]
 [ext_resource type="Texture2D" uid="uid://deqhx6esanlww" path="res://Art/tileset/Tilesetv3.png" id="4_pdaoj"]
 [ext_resource type="Texture2D" uid="uid://bxno4a6pwa66l" path="res://Art/DogBundle/PNGs/Labrador.png" id="5_01sre"]
-[ext_resource type="Script" uid="uid://cc2jikroem53d" path="res://dog.gd" id="6_1x684"]
+[ext_resource type="Script" uid="uid://cc2jikroem53d" path="res://scripts/dog.gd" id="6_1x684"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s2aau"]
 texture = ExtResource("1_rkxw5")

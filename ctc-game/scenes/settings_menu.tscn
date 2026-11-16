@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://b4hofpq18cmqf"]
 
-[ext_resource type="Script" uid="uid://myv4g0k0k3yw" path="res://settings_menu.gd" id="1_0cmel"]
+[ext_resource type="Script" uid="uid://myv4g0k0k3yw" path="res://scripts/settings_menu.gd" id="1_0cmel"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="1_ufg0w"]
 [ext_resource type="StyleBox" uid="uid://18se0xgcpws0" path="res://text_box_norm.tres" id="3_mlw3h"]
+[ext_resource type="PackedScene" uid="uid://c2r431f2w83la" path="res://scenes/control_remap.tscn" id="4_labj1"]
 
 [sub_resource type="DPITexture" id="DPITexture_mlw3h"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
@@ -47,6 +48,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0cmel")
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="ColorRect" parent="." unique_id=1267693615]
 layout_mode = 1
@@ -159,6 +161,10 @@ theme_override_fonts/font = ExtResource("1_ufg0w")
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = ExtResource("3_mlw3h")
 text = "Quit"
+
+[node name="ControlsPage" parent="." unique_id=1022934269 instance=ExtResource("4_labj1")]
+visible = false
+layout_mode = 1
 
 [connection signal="value_changed" from="VBoxContainer/Sliders/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]

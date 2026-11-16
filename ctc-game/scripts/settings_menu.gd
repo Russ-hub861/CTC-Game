@@ -63,8 +63,8 @@ func _on_quit_button_pressed():
 	
 #Opens up the controls menu when the controls button is pressed
 func _on_controls_button_pressed():
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/control_remap.tscn")
+	$ControlsPage.show()
+	$VBoxContainer.hide()
 	
 
 #Finds and changes master audio when the master slider is moved

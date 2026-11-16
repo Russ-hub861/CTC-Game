@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c2r431f2w83la"]
 
-[ext_resource type="Script" uid="uid://bj3y4gnewchfu" path="res://scenes/control_remap.gd" id="1_x0egx"]
+[ext_resource type="Script" uid="uid://bj3y4gnewchfu" path="res://scripts/control_remap.gd" id="1_x0egx"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="2_askmm"]
 [ext_resource type="StyleBox" uid="uid://18se0xgcpws0" path="res://text_box_norm.tres" id="3_4315t"]
-[ext_resource type="Script" uid="uid://xksqoo00acx0" path="res://InputRemapButton.gd" id="4_2owgf"]
+[ext_resource type="Script" uid="uid://xksqoo00acx0" path="res://scripts/InputRemapButton.gd" id="4_2owgf"]
 
 [node name="Control" type="Control" unique_id=1022934269]
 layout_mode = 3
