@@ -3,6 +3,7 @@ var current_level
 @onready var player = $Player
 @onready var hud = $HUD
 var is_level2 = false
+var is_level3 = false
 var level_1_waves = [
 	{
 		"enemies": 2,
@@ -49,6 +50,32 @@ var level_2_waves = [
 	{
 		"enemies": 2,
 		"spawn_delay": 1.0,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":50},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":50}
+		]
+	}
+]
+var level_3_waves = [
+	{
+		"enemies": 3,
+		"spawn_delay": 2.0,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":70},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":30}
+		]
+	},
+	{
+		"enemies": 2,
+		"spawn_delay": 1.5,
+		"enemy_pool": [
+			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":60},
+			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":40}
+		]
+	},
+	{
+		"enemies": 4,
+		"spawn_delay": 2.5,
 		"enemy_pool": [
 			{"scene":preload("res://scenes/goblin_thief.tscn"), "weight":50},
 			{"scene":preload("res://scenes/goblin_tank.tscn"), "weight":50}
@@ -120,6 +147,14 @@ func _on_wave_manager_level_done() -> void:
 
 func _on_next_button_pressed() -> void:
 	if is_level2:
+		load_level(preload("res://level_3.tscn"))
+		$NextButton.hide()
+		$NextButton.text = "Next Level"
+		$WaveManager.start_level(current_level, level_3_waves)
+		
+		is_level3 = true
+		
+	elif is_level3:
 		get_tree().change_scene_to_file("res://cut_scene.tscn")
 	else:
 		load_level(preload("res://level_1_fr.tscn"))
