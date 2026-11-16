@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfljfu7poo6a6"]
 
-[ext_resource type="Script" path="res://tutorial_popup.gd" id="1_6aqww"]
+[ext_resource type="Script" uid="uid://frh7sy7x8iwf" path="res://tutorial_popup.gd" id="1_6aqww"]
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="1_l5emp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkllb"]

@@ -1035,12 +1035,15 @@ bus = &"SFX"
 
 [node name="LevelUp" type="AudioStreamPlayer" parent="." unique_id=1513652799]
 stream = ExtResource("14_f1ej7")
+bus = &"SFX"
 
 [node name="AttackSound" type="AudioStreamPlayer" parent="." unique_id=630312916]
 stream = ExtResource("14_uheil")
+bus = &"SFX"
 
 [node name="BlockSound" type="AudioStreamPlayer" parent="." unique_id=430536818]
 stream = ExtResource("15_yamdl")
+bus = &"SFX"
 
 [node name="SkillOnCooldown" type="AudioStreamPlayer2D" parent="." unique_id=808274534]
 stream = ExtResource("17_qfm1y")

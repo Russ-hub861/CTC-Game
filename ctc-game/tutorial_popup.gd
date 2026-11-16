@@ -8,10 +8,11 @@ var messages = [
 	"Use the space bar to attack enemies",
 	"Your health is located in the top left corner \n
 	once its depleated you will die.",
-	"Press 'esc' to pause, quit, \nand to look at the controls",
+	"Press 'esc' to pause, quit, \nand to look at or change the controls",
 	"Every time you block, attack or \nmove a certain direction every enemy will \nget a chance to do something before you",
 	"Defeat waves of enemies during \neach level in order to gain exp and level up",
 	"leveling up will earn you SP which you can use to \nupgrade your attacks and\ngain your health back by pressing 'tab'",
+	"You can press q to heal once you unlock the skill",
 	"When you are ready to attempt your escape \nclick the button above my head\nGood luck!"
 ]
 var current_message = 0
