@@ -215,7 +215,7 @@ func _play_aoe_attack() -> void:
 	_set_outline(animated_sprite, true)
 	animated_sprite.play(&"SpecialAttack")
 	attack_area.start_attack(attack_area.damage_amount + 2)
-	attack_area_left.start_attack(attack_area.damage_amount + 2)
+	attack_area_left.start_attack(attack_area.damage_amount + 1)
 	await _wait_for_animation(&"SpecialAttack")
 	attack_area.end_attack()
 	attack_area_left.end_attack()
