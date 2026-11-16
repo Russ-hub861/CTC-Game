@@ -20,9 +20,9 @@ To run the game locally:
 
 <img width="1025" height="620" alt="Screenshot 2026-11-16 at 3 51 39 PM" src="https://github.com/user-attachments/assets/9cf9812c-a62e-433b-8d6a-7e75887f928c" />
 
-<img width="1025" height="620" alt="Screenshot 2026-11-16 at 3 55 06 PM" src="https://github.com/user-attachments/assets/8e1d4f2a-3dd1-4547-8bc5-6013972cd995" />
-
 <img width="1025" height="620" alt="Screenshot 2026-11-16 at 3 52 33 PM" src="https://github.com/user-attachments/assets/a61be688-de4c-48d7-8749-928d4087b376" />
+
+<img width="1025" height="620" alt="Screenshot 2026-11-16 at 3 55 06 PM" src="https://github.com/user-attachments/assets/8e1d4f2a-3dd1-4547-8bc5-6013972cd995" />
 
 
 ## How to Play
