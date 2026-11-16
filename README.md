@@ -18,7 +18,12 @@ To run the game locally:
   Each run starts at the bottom of the dungeon. You can only take one action per turn - move, attack, block or heal. You eventually learn more skills as you get stronger with the experience that you've gained from killing monsters. When your health runs out you get sent back to the bottom to try again for eternity until you can make it back out. 
 ## Screenshots
 
-[Optional but strongly recommended. Include 1-3 screenshots or GIFs showing the game in action. This makes the README visually engaging.]
+<img width="1025" height="620" alt="Screenshot 2026-11-16 at 3 51 39 PM" src="https://github.com/user-attachments/assets/9cf9812c-a62e-433b-8d6a-7e75887f928c" />
+
+<img width="1025" height="620" alt="Screenshot 2026-11-16 at 3 55 06 PM" src="https://github.com/user-attachments/assets/8e1d4f2a-3dd1-4547-8bc5-6013972cd995" />
+
+<img width="1025" height="620" alt="Screenshot 2026-11-16 at 3 52 33 PM" src="https://github.com/user-attachments/assets/a61be688-de4c-48d7-8749-928d4087b376" />
+
 
 ## How to Play
 
