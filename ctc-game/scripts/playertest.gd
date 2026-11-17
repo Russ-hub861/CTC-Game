@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
+# Starting stats
 @export var max_health: int = 5
 @export var SPEED: float = 100.0
 @export var attack_range: float = 250.0
+
+# Current health, death flag, signals the HUD and level listen for
 var health: int 
 var is_dead: bool = false
 signal died
@@ -45,24 +48,27 @@ var can_control: bool = true
 
 const OUTLINE_SHADER := preload("res://scenes/outline.gdshader")
 
+# Sets up the player for when they are loaded in 
 func _ready() -> void:
 	add_to_group("Player")
 	health = max_health
 	_setup_outline(animated_sprite)
 
+# Adds the outline to the sprite
 func _setup_outline(sprite: AnimatedSprite2D) -> void:
 	var mat := ShaderMaterial.new()
 	mat.shader = OUTLINE_SHADER
 	mat.set_shader_parameter("outline_width", 0.0)
 	sprite.material = mat
 	
+# Turns the outline on or off. Red is attack color. Blue is for blocking
 func _set_outline(sprite: AnimatedSprite2D, enabled: bool, color: Color = Color(1, 0, 0)) -> void:
 	var mat := sprite.material as ShaderMaterial
 	if mat:
 			mat.set_shader_parameter("outline_color", color)
 			mat.set_shader_parameter("outline_width", 1.0 if enabled else 0.0)
 
-
+# Runs every frame and controls the Move, attack, specials, block and heal actions
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -104,12 +110,12 @@ func _physics_process(delta: float) -> void:
 
 
 
-
+# Turns the player around 
 func _flip_facing() -> void:
 	facing_left = not facing_left
 	_apply_facing()
 
-
+# Returns -1 for left and 1 for right and 0 for neither
 func _tapped_direction() -> float:
 	var left_tapped := Input.is_action_just_pressed("left") or Input.is_action_just_pressed("ui_left")
 	var right_tapped := Input.is_action_just_pressed("right") or Input.is_action_just_pressed("ui_right")
@@ -145,7 +151,8 @@ func _move_once(direction: float, speed_multiplier: float = 1.0, ends_turn: bool
 			heal_cooldown -= 1
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
-	
+
+# Controls when the player takes damage and when they shouldn't
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
@@ -179,10 +186,11 @@ func take_damage(amount: int) -> void:
 	if not is_dead and serial == _hit_serial:
 		animated_sprite.play(&"Idle")
 		
+# Tells whoevers listening that the player died
 func player_death() -> void:
 	died.emit()
 
-
+# The basic attack for the player that turns on the front hit box
 func _play_attack() -> void:
 	is_busy = true
 	velocity.x = 0.0
@@ -205,6 +213,7 @@ func _play_attack() -> void:
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
+# One of the special attacks that is a wide attack that hits from infront and behind the player
 func _play_aoe_attack() -> void:
 	is_busy = true
 	aoe_cooldown = 2
@@ -214,7 +223,9 @@ func _play_aoe_attack() -> void:
 	$AttackSound.play()
 	_set_outline(animated_sprite, true)
 	animated_sprite.play(&"SpecialAttack")
+	#Damage for front hit box
 	attack_area.start_attack(attack_area.damage_amount + 2)
+	#Damage for back hitbox
 	attack_area_left.start_attack(attack_area.damage_amount + 1)
 	await _wait_for_animation(&"SpecialAttack")
 	attack_area.end_attack()
@@ -223,6 +234,7 @@ func _play_aoe_attack() -> void:
 	_apply_facing()
 	_play_idle()
 	is_busy = false
+	# Cooldown counters for the other special move and heal 
 	if thrust_cooldown > 0:
 		thrust_cooldown -= 1
 	if heal_cooldown > 0:
@@ -230,6 +242,7 @@ func _play_aoe_attack() -> void:
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
+# The second Special attack that is a long attack that stretches the hitbox and puts it back
 func _play_thrust() -> void:
 	is_busy = true
 	thrust_cooldown = 4
@@ -252,6 +265,7 @@ func _play_thrust() -> void:
 	_set_outline(animated_sprite, false)
 	_play_idle()
 	is_busy = false
+	# Cooldowns for the aoe attack and the heal
 	if aoe_cooldown > 0:
 		aoe_cooldown -= 1
 	if heal_cooldown > 0:
@@ -259,6 +273,7 @@ func _play_thrust() -> void:
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 	
+# heals the player for 20% of their max health, and is capped at maxhealth
 func _play_heal() -> void:
 	heal_cooldown = 10
 	is_busy = true
@@ -273,13 +288,14 @@ func _play_heal() -> void:
 	
 	_play_idle()
 	is_busy = false
+	# Cooldown counters for the special attack
 	if thrust_cooldown > 0:
 		thrust_cooldown -= 1
 	if aoe_cooldown > 0:
 		aoe_cooldown -= 1
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
-
+# Plays the block action for the player 
 func _play_block() -> void:
 	is_busy = true
 	is_blocking = true
@@ -289,6 +305,7 @@ func _play_block() -> void:
 	_play_idle()
 	is_busy = false
 	print("Player blocked the Attack")
+	# Cooldown counters for the special attacks and the heal
 	if thrust_cooldown > 0:
 		thrust_cooldown -= 1
 	if aoe_cooldown >0:
@@ -298,7 +315,7 @@ func _play_block() -> void:
 	cooldown_changed.emit(thrust_cooldown, aoe_cooldown, heal_cooldown, unlocked_double_action, unlocked_long_attack, unlocked_heal)
 	turn_finished.emit()
 
-
+# Flips the sprite and the hit box so they both face the right way
 func _apply_facing() -> void:
 	animated_sprite.flip_h = facing_left
 	# AttackArea's shape sits to the right of the player. Flip it with facing.
@@ -309,7 +326,7 @@ func _play_idle() -> void:
 	#animated_sprite.flip_h = facing_left
 	animated_sprite.play(&"Idle")
 
-
+# Waits for the length of the animation instead of the finished signal
 func _wait_for_animation(anim_name: StringName) -> void:
 	var frames := animated_sprite.sprite_frames
 	var speed := frames.get_animation_speed(anim_name) * animated_sprite.speed_scale
@@ -340,7 +357,8 @@ func gain_exp(amount: int) -> void:
 		_on_level_up()
 	
 	exp_changed.emit(current_exp, exp_to_next_level, level)
-
+	
+# Says what should happen when the player levels up 
 func _on_level_up() -> void:
 	# for level up
 	$LevelUp.play()
@@ -356,6 +374,7 @@ func _on_level_up() -> void:
 	leveled_up.emit(level)
 	print("LEVEL UP! Now Level: ", level)
 
+# Spawns a pop up that shows the player gained exp
 func _spawn_exp_popup(amount: int) -> void:
 	var label := Label.new()
 	label.text = "+" + str(amount) + " xp"
