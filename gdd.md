@@ -10,7 +10,7 @@
 **Platform(s): Windows/MacOS**  
 
 **Elevator Pitch:** 
-In this game you play as a villager who went exploring and ended up trapped in a dungeon with no way out even through death. You must fight, get stronger, and find your way out to get back to your dog at home.  
+In this game you play as a villager who went exploring with their dog and ended up trapped in a dungeon with no way out even through death. To get back to your dog you must fight, get stronger, and find your way out to the surface.   
 
 **Target Audience: For Everyone, people who enjoy the rougue like genre as well as rpg's** 
 
@@ -21,26 +21,25 @@ In this game you play as a villager who went exploring and ended up trapped in a
  
 - **Go into dungeon** - pick your class and begin your journey out the dungeon
 - **Fight Enemies** - Fight enemies along the way who get stronger closer to the top 
-- **Collect Loot** - Find better items and materials to buy, sell, or equip
-- **Upgrade Character** - Use the items and materials you found to make your character stronger as you go 
-- **Die/Getout** - You either die and get sent back to the bottom or find your way out 
+- **Upgrade Character** - Use experience you gain from killing enemies to learn new skills
+- **Die/Getout** - You either die and get sent back to the bottom or find your way out back to your dog  
 
 
 ---
 
 ## 3. Game Mechanics
 
-- **Player Actions: Move left, right, turn around, attack, block, heal**
+- **Player Actions:** Move left, right, turn around, attack, block, heal
 
-- **Interactions: Open chest?, buying weapons, buying moves, buying upgrades, move on to next room, selling weapons and moves**
+- **Interactions:** Using experience points to unlock new skills 
 
-- **Rules: You can only do one action per turn, once your health runs out game over**
+- **Rules:** You can only do one action per turn, once your health runs out game over
 
-- **Progression: Your character starts with 2 moves and you slowly improve your character and get more moves as you progress through the dungeon. Along the way you can buy new items or materials from the Embassy and find new moves, health, items/powerups. Enemies become stronger as you progress**
+- **Progression:** Your character starts with 2 moves and you slowly improve your character and get more moves as you progress through the dungeon. Enemies become stronger as you progress
 
-- **Rewards: Progression based on how far into the dungeon you've gotten**
+- **Rewards:** Progression based on how far into the dungeon you've gotten
 
-- **Feedback: When the player gets hit the screen shakes, different music and background for fights, pop up notifications for unlocks, and a room completion animation**
+- **Feedback:** When the player and enemies gets hit theres sound and animation, when blocking players and enemies have. a blue outline and when attacking a red one,  different background for fights, pop up notifications and sound effects for unlocks, and a room completion button
 
 ---
 
