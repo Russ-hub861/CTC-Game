@@ -38,7 +38,7 @@ To run the game locally:
 
 - Cole Russell - [Role, e.g., Programming, Level Design]
 - Christopher Thunder - [Role]
-- Taiki Sawamata - [Role]
+- Taiki Sawamata - [Leveling, Exp Systems & UI, fixking bugs]
 
 ## Development
 

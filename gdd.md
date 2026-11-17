@@ -94,7 +94,7 @@ In this game you play as a villager who went exploring and ended up trapped in a
 
 **Programming Language(s): GDScript**
 
-**Tools for Assets (art, sound, etc.):**
+**Tools for Assets: Godot Engine (Integrated Editor) / Git & GitHub (Version Control)**
 
 **Deployment Platform: PC**
 
