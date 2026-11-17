@@ -46,154 +46,57 @@ In this game you play as a villager who went exploring with their dog and ended 
 ## 4. Story & Narrative *(when applicable)*
 
 **Premise:**
-- The main character a young villager ventures into a forest and finds a cave with a shiny gem deep inside. They go further in and touch it then suddenly appear in a room deep deep underground. They wake up to find the gem imbedded in their hand, and as they try to get out they find themselves surrounded by monsters and dies and returns back to the room they first woke up in. Determined to get back to their dog they decide to get stronger with the power of the gem and fight their way out no matter how long it takes. 
+- The main character a young villager who ventures into a forest with his dog and falls into a mysterious cave. They wake up lost looking for their dog and start to worry more and more as they are deep underground in a unfamiliar area. As the villager explores they see enemies everywhere besides the place they woke up at and one wrong step leads them to die for the first time...
 
 
 **Main Characters: The player**
 
-**Conflict/Goal: trapped at the bottom of a dungeon and the only way out is up**
+**Conflict/Goal: trapped at the bottom of a dungeon away from their dog and the only way out is up**
 
 ---
 
 ## 5. Level & World Design
 
-**Setting/Theme: Fantasy medival**
+**Setting/Theme:** Fantasy medival
 
-**Level Structure: hub-based**
+**Level Structure:** hub-based
 
-**Tutorial/Onboarding: Players learn the game as they die, try and get out the dungeon, and reapeat**
+**Tutorial/Onboarding:** There is a tutorial level at the start of the game that introduces the player to the basic controls but the player must learn the strategy to making their way to the top from trial and error 
 
-**Exploration/Challenges/Puzzles: each level is different and might have different enemies, bosses, npcs, and traps**
+**Exploration/Challenges/Puzzles:** Each level is different and has a different amount of enemies during each wave
 
 ---
 
 ## 6. Visual & Audio Style
 
-**Art Style Reference: pixel art**
+**Art Style Reference:** Pixel art
 
-**Color Palette: dark shades, underground earthy tones to fit the trappend underground theme**
+**Color Palette:** Dark shades, underground earthy tones to fit the trappend underground theme
 
-**Music/Audio Resources: Older pixel game type**
+**Music/Audio Resources:** Older pixel game type
 
 ---
 
 ## 7. User Interface (UI/UX)
 
-**HUD (Heads-Up Display) Elements: health similar to minecraft, currency, attacks available**
+**HUD (Heads-Up Display) Elements:** health similar to Minecraft, experience points, and the attacks available
 
-**Menus:Pause menue will include a resume button as well as a stats button that would take a player to see their current run stats, and a help button that would show the controls and basic mechanics of the game**
+**Menus:** A pause menu that will include a quit button as well as a resume button that would take a player to see their current run, controls input menu for if you want to change the controls, and as well as a skills menu for unlocking different skills during the play though
 
-**Accessibility Features (if any):**
+**Accessibility Features (if any):** A control input menu, and sound sliders 
 
 ---
 
 ## 8. Technical Requirements
 
-**Engine: Godot**
+**Engine:** Godot
 
-**Programming Language(s): GDScript**
+**Programming Language(s):** GDScript
 
-**Tools for Assets: Godot Engine (Integrated Editor) / Git & GitHub (Version Control)**
+**Tools for Assets (art, sound, etc.):** itch.io and Pixabay
 
-**Deployment Platform: PC**
+**Deployment Platform:** Web, MacOs, and Windows 
 
 ---
-
-## 9. Development Plan 
-
-## **Week 4 – Foundation & Setup**
-
-- Finish the Game Design Document (GDD)
-- Set up and organize the main Godot project
-- Start coding and working on the actual game
-- Create a basic dungeon room using placeholder assets
-- Add the player character and begin implementing movement
-- Decide what type of backgrounds and visual style we want
-- Find sprites/assets that match the pixel-art style
-- Find possible music and sound effects
-- Brainstorm enemy types and their attacks
-- Begin planning the health system and HUD
-
-**Goal:** Have a basic dungeon environment where the player character can appear and move.
-
-## **Week 5 – Player, Combat & Enemies**
-
-- Have the basic dungeon background implemented
-- Finish basic player movement
-- Add the first enemy type
-- Implement basic player attacks
-- Implement enemy movement and attacks
-- Add a player health system
-- Start creating the HUD with hearts for health
-- Implement player death
-- Begin implementing the system that sends the player back to the bottom after dying
-- Begin working on the one-action-per-turn system
-
-**Goal:** Have a basic combat encounter where the player and an enemy can attack each other and the player can die.
-
-## **Week 6 – Core Mechanics & Progression**
-
-- Finish the death/reset system
-- Make sure the player can move, attack, block, and heal
-- Finish the basic turn/action system
-- Work out the math for player and enemy stats:
-  - Health
-  - Damage
-  - Defense/blocking
-  - Healing
-  - Different attacks
-- Create multiple dungeon rooms
-- Allow the player to progress upward between rooms
-- Add the dungeon progress bar to the HUD
-- Add basic loot or rewards after defeating enemies
-- Make enemies stronger as the player progresses
-
-**Goal:** Have the main gameplay loop working:
-
-**Fight → Win → Get Reward → Move Up → Fight Stronger Enemy → Die → Restart**
-
-## **Week 7 – Additional Content & Visuals**
-
-- Make sure all core mechanics work correctly before adding more features
-- Fix problems with movement, combat, death, and room progression
-- Add additional enemy types
-- Add more player attacks/moves
-- Add different dungeon room layouts
-- Add weapons or upgrades
-- Add chests or other ways of receiving loot
-- Add a boss encounter if time allows
-- Begin replacing placeholder sprites with final character and enemy sprites
-- Improve the dungeon background and visual details
-- Add the Embassy/shop system if time allows
-
-**Goal:** Turn the basic gameplay loop into a more complete prototype with different enemies, rooms, attacks, and upgrades.
-
-## **Week 8 – Polish & Testing**
-
-- Playtest the entire prototype
-- Fix major bugs
-- Balance player and enemy health, damage, and attacks
-- Finish character and enemy visuals
-- Finish the HUD and progress bar
-- Add music and sound effects
-- Add screen shake when the player gets hit
-- Add attack and hit effects
-- Add room completion effects
-- Add unlock notifications if time allows
-- Improve menus and other UI elements
-- Make sure death and restarting work consistently
-- Make sure the player can progress from the bottom to the end of the prototype
-
-**Goal:** Have a finished and playable version of the prototype.
-
-## **Week 9 – Final Prototype**
-
-- Have a complete working prototype of *Only Way Out is Up*
-- Complete final playtesting
-- Fix any remaining major bugs
-- Make final balancing changes
-- Make sure the game can be played from beginning to end
-- Export the final build
-- Prepare the game for the final presentation/demo
 
 **Final Goal:** Have a playable prototype that demonstrates the game's combat, enemies, upgrades, dungeon progression, death/reset system, and core roguelike loop.
