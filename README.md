@@ -37,8 +37,9 @@ To run the game locally:
 ## Team
 
 - Cole Russell - Mechanics and level design 
-- Christopher Thunder - [Role]
+- Christopher Thunder - [HUD, tutorial, cutscenes, charcter & enemy design, cutscene animation]
 - Taiki Sawamata - [Leveling, Exp Systems & UI, fixking bugs]
+
 
 ## Development
 
@@ -77,6 +78,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 This project is for educational purposes. All rights reserved by the authors.
 
-## Disclaimer
 
-*This template was generated using DeepSeek GPT engine.*
