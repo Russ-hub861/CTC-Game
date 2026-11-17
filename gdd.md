@@ -1,5 +1,6 @@
 # Game Design Document (GDD)
-### Team's Project Template
+### Team CTC
+### The Only Way Out is Up
 
 ## 1. Game Concept
 
