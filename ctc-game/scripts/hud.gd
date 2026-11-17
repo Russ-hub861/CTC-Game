@@ -50,7 +50,7 @@ func update_cooldowns(thrust_cd: int, aoe_cd: int, heal_cd: int, is_thrust_unloc
 	# Skill 1: Thruster
 	if is_thrust_unlocked:
 		if thrust_cd > 0:
-			skill1_label.text = "Thruster CT: " + str(thrust_cd)
+			skill1_label.text = "Thruster CD: " + str(thrust_cd)
 			skill1_label.add_theme_color_override("font_color", cd_color)
 		else:
 			skill1_label.text = "Thruster"
@@ -62,7 +62,7 @@ func update_cooldowns(thrust_cd: int, aoe_cd: int, heal_cd: int, is_thrust_unloc
 	# Skill 2: Charge Attack
 	if is_aoe_unlocked:
 		if aoe_cd > 0:
-			skill2_label.text = "Charge CT: " + str(aoe_cd)
+			skill2_label.text = "Charge CD: " + str(aoe_cd)
 			skill2_label.add_theme_color_override("font_color", cd_color)
 		else:
 			skill2_label.text = "Charge Attack"
@@ -71,7 +71,7 @@ func update_cooldowns(thrust_cd: int, aoe_cd: int, heal_cd: int, is_thrust_unloc
 		skill2_label.text = "Charge Attack (Locked)"
 		skill2_label.add_theme_color_override("font_color", locked_color)
 		
-	# Skill 3: Heal (now is skeleton so will display READY if it's unlocked)
+	# Skill 3: Heal 
 	if is_heal_unlocked:
 		if heal_cd > 0:
 			skill3_label.text = "Heal CD: " + str(heal_cd)
