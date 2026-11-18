@@ -38,7 +38,7 @@ To run the game locally:
 
 - Cole Russell - Mechanics and level design 
 - Christopher Thunder - [HUD, tutorial, cutscenes, charcter & enemy design, cutscene animation]
-- Taiki Sawamata - [Leveling, Exp Systems & UI, fixking bugs]
+- Taiki Sawamata - [Leveling, EXP Systems & UI/UX, fixing bugs, Combat Balancing]
 
 
 ## Development
