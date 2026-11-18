@@ -3,14 +3,18 @@
 The game is a turnbased 2D RPG that has rougelike elements. In the game you start at the bottom of a dungeon and work your way up leveling up and unlocking new skills as you go. 
 ## Play the Game
 
-[If hosting on GitHub Pages or a server:]
-Play the web version here: [link]
+### Play Online
+Play the web version directly in your browser via GitHub Pages:
+https://tz-crypto4160.github.io/CTC-game-web/
 
-[If not hosting online:]
-To run the game locally:
-1. Download the files from the `web-export/` folder.
+### Run Locally
+1. Clone or download the web build repository: https://github.com/Tz-crypto4160/CTC-game-web
 2. Open a terminal in that folder and run `python3 -m http.server`.
 3. Open `http://localhost:8000` in your browser.
+
+### Run from Source (Godot Engine)
+1. Clone this repository (`https://github.com/Russ-hub861/CTC-Game`) and open `project.godot` in Godot Engine (v4.7.2).
+2. Press `F5` (or click the Play button in the top-right corner) to run the game.
 
 ## About the Game
 
@@ -27,18 +31,25 @@ To run the game locally:
 
 ## How to Play
 
-[Controls and basic instructions. For example:]
-- **move:** ad or arrow keys
-- **block:** s
-- **attack:** space
-- **Pause:** esc
-- **attack menu:** tab
+### Basic Controls
+- **move:** `A` / `D` or Left / Right Arrow keys
+- **block:** `S`
+- **attack:** `Space`
+- **Pause:** `Esc`
+- **attack menu:** `Tab`
+
+### Unlocked Skills
+- **Thruster** `E`
+- **Charge attack** `R`
+- **Heal** `Q`
+
+*(Controls can be customized in the in-game Settings menu.)*
 
 ## Team
 
 - Cole Russell - Mechanics and level design 
-- Christopher Thunder - [HUD, tutorial, cutscenes, charcter & enemy design, cutscene animation]
-- Taiki Sawamata - [Leveling, EXP Systems & UI/UX, fixing bugs, Combat Balancing]
+- Christopher Thunder - HUD, tutorial, cutscenes, charcter & enemy design, cutscene animation
+- Taiki Sawamata - Leveling, EXP Systems & UI/UX, fixing bugs, Combat Balancing
 
 
 ## Development
