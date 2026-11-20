@@ -166,11 +166,6 @@ text = "Quit"
 [node name="ControlsPage" parent="." unique_id=1022934269 instance=ExtResource("4_labj1")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="value_changed" from="VBoxContainer/Sliders/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]

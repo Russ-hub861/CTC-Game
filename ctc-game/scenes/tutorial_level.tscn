@@ -8,7 +8,7 @@
 [ext_resource type="FontFile" uid="uid://2aj8oolhr4lq" path="res://Art/tinypixelfont/tinypixel.otf" id="6_a5404"]
 [ext_resource type="PackedScene" uid="uid://bgbrb6psfe874" path="res://scenes/hud.tscn" id="7_ohhhg"]
 [ext_resource type="PackedScene" uid="uid://b4hofpq18cmqf" path="res://scenes/settings_menu.tscn" id="8_drjao"]
-[ext_resource type="AudioStream" uid="uid://wo8j3mpm2n12" path="res://Music/tutorial_music.tres" id="8_w40hx"]
+[ext_resource type="AudioStream" uid="uid://ctcgamehaunt1" path="res://Music/haunted-pixels.ogg" id="9_haunted"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohhhg"]
 bg_color = Color(1, 1, 1, 0.45490196)
@@ -110,7 +110,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rkllb")
 text = "Next Level"
 
 [node name="TutorialMusic" type="AudioStreamPlayer" parent="." unique_id=1914757383]
-stream = ExtResource("8_w40hx")
+stream = ExtResource("9_haunted")
 autoplay = true
 bus = &"Music"
 
