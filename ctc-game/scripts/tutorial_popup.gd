@@ -2,9 +2,10 @@ extends Control
 #List of all the messages to be displayed during tutorial
 var messages = [
 	"You hear an eerie voice \nfrom the statue",
-	"If you ever want to see your dog agian \nYou must listen to what I say very carefully...",
+	"If you ever want to see your dog again \nYou must listen to what I say very carefully...",
 	"Use the arrow keys or a and d to move",
 	"use the s key to block enemy attacks \nor skip your turn",
+	"Enemies will flash blue when theyre blocking\nand red when theyre attacking",
 	"Use the space bar to attack enemies",
 	"Your health is located in the top left corner \n
 	once its depleated you will die.",
