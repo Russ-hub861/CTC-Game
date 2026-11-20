@@ -6,24 +6,24 @@
 
 **Working Title: Only Way Out is Up**  
 
-**Genre: Rougelike, Strategy RPG, Action Adventure**  
+**Genre: Roguelike, Strategy RPG, Action Adventure**  
 
-**Platform(s): Windows/MacOS**  
+**Platform(s): Windows/MacOS/Web**  
 
 **Elevator Pitch:** 
 In this game you play as a villager who went exploring with their dog and ended up trapped in a dungeon with no way out even through death. To get back to your dog you must fight, get stronger, and find your way out to the surface.   
 
-**Target Audience: For Everyone, people who enjoy the rougue like genre as well as rpg's** 
+**Target Audience: For Everyone, people who enjoy the roguelike genre as well as RPGs** 
 
 
 ---
 
 ## 2. Core Loop
  
-- **Go into dungeon** - pick your class and begin your journey out the dungeon
+- **Go into dungeon** - Start your run as the villager and begin your journey out the dungeon
 - **Fight Enemies** - Fight enemies along the way who get stronger closer to the top 
 - **Upgrade Character** - Use experience you gain from killing enemies to learn new skills
-- **Die/Getout** - You either die and get sent back to the bottom or find your way out back to your dog  
+- **Die / Get Out** - You either die and get sent back to the bottom or find your way out back to your dog  
 
 
 ---
@@ -40,27 +40,27 @@ In this game you play as a villager who went exploring with their dog and ended 
 
 - **Rewards:** Progression based on how far into the dungeon you've gotten
 
-- **Feedback:** When the player and enemies gets hit theres sound and animation, when blocking players and enemies have. a blue outline and when attacking a red one,  different background for fights, pop up notifications and sound effects for unlocks, and a room completion button
+- **Feedback:** When the player and enemies get hit, there is sound and animation, when blocking players and enemies have a blue outline and when attacking a red one,  different background for fights, pop up notifications and sound effects for unlocks, and a room completion button
 
 ---
 
-## 4. Story & Narrative *(when applicable)*
+## 4. Story & Narrative
 
 **Premise:**
-- The main character a young villager who ventures into a forest with his dog and falls into a mysterious cave. They wake up lost looking for their dog and start to worry more and more as they are deep underground in a unfamiliar area. As the villager explores they see enemies everywhere besides the place they woke up at and one wrong step leads them to die for the first time...
+- The main character a young villager who ventures into a forest with his dog and falls into a mysterious cave. They wake up lost looking for their dog and start to worry more and more as they are deep underground in an unfamiliar area. As the villager explores they see enemies everywhere besides the place they woke up at and one wrong step leads them to die for the first time...
 
 
 **Main Characters: The player**
 
-**Conflict/Goal: trapped at the bottom of a dungeon away from their dog and the only way out is up**
+**Conflict/Goal: Trapped at the bottom of a dungeon away from their dog and the only way out is up**
 
 ---
 
 ## 5. Level & World Design
 
-**Setting/Theme:** Fantasy medival
+**Setting/Theme:** Fantasy medieval
 
-**Level Structure:** hub-based
+**Level Structure:** Hub-based
 
 **Tutorial/Onboarding:** There is a tutorial level at the start of the game that introduces the player to the basic controls but the player must learn the strategy to making their way to the top from trial and error 
 
@@ -72,7 +72,7 @@ In this game you play as a villager who went exploring with their dog and ended 
 
 **Art Style Reference:** Pixel art
 
-**Color Palette:** Dark shades, underground earthy tones to fit the trappend underground theme
+**Color Palette:** Dark shades, underground earthy tones to fit the trapped underground theme
 
 **Music/Audio Resources:** Older pixel game type
 
@@ -84,7 +84,7 @@ In this game you play as a villager who went exploring with their dog and ended 
 
 **Menus:** A pause menu that will include a quit button as well as a resume button that would take a player to see their current run, controls input menu for if you want to change the controls, and as well as a skills menu for unlocking different skills during the play though
 
-**Accessibility Features (if any):** A control input menu, and sound sliders 
+**Accessibility Features:** A control input menu, and sound sliders 
 
 ---
 
@@ -96,7 +96,7 @@ In this game you play as a villager who went exploring with their dog and ended 
 
 **Tools for Assets (art, sound, etc.):** itch.io and Pixabay
 
-**Deployment Platform:** Web, MacOs, and Windows 
+**Deployment Platform:** Web, MacOS, and Windows 
 
 ---
 
